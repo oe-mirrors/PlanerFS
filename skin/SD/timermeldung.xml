@@ -1,0 +1,6 @@
+<!--for class Timermeldung -->
+<screen name="Timermeldung" position="20,20" size="250,139" title=" " flags="wfNoBorder" >
+	<widget name="text1" position="30,10" zPosition="4" size="235,30" font="Regular;22" valign="center" halign="center" foregroundColor="#FFEA00" backgroundColor="#FFEA00" transparent="1" />
+	<ePixmap pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/PFStimer.png" position="0,0" size="250,139" transparent="1" alphatest="on" />
+	<widget name="text2" position="15,40" size="210,80" font="Regular;20" zPosition="3" valign="center" halign="center"  foregroundColor="#FFEA00" backgroundColor="#C10000"/>
+</screen>
