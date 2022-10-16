@@ -236,7 +236,7 @@ class online_import():
         errmeld = None
         if nofer:
             if os.path.exists(opath):
-                fp = file(opath, 'r')
+                fp = open(opath, 'r')
                 onl_lines = fp.readlines()
                 fp.close()
 

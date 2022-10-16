@@ -26,7 +26,10 @@ from Tools import Notifications
 from Tools.Directories import copyfile, fileExists
 
 from Components.config import config
-from ConfigParser import ConfigParser
+try:
+    from ConfigParser import ConfigParser, DuplicateSectionError
+except ImportError:
+    from configparser import ConfigParser, DuplicateSectionError
 
 from enigma import eTimer
 
@@ -161,7 +164,7 @@ else:
 
 onl_lines = []
 if os.path.exists('/etc/ConfFS/PlanerFS_online.txt'):
-    fp = file('/etc/ConfFS/PlanerFS_online.txt', 'r')
+    fp = open('/etc/ConfFS/PlanerFS_online.txt', 'r')
     onl_lines = fp.readlines()
     fp.close()
 else:

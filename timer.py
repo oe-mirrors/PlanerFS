@@ -185,7 +185,7 @@ class Timer_dats:
 
     def T_Liste(self):
         if os.path.exists("/tmp/plfst1"):
-            fp = file('/tmp/plfst1', 'r')
+            fp = open('/tmp/plfst1', 'r')
             t_lines = fp.readlines()
             fp.close()
             text = "verpasste Timer-Meldungen:\n\n"

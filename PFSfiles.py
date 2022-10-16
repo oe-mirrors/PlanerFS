@@ -256,7 +256,7 @@ class PFS_filemenu7(Screen):
             if pathExists(path):
                 last_backup_path = path
                 conf_l = []
-                fp = file('/etc/ConfFS/PlanerFS.conf', 'r')
+                fp = open('/etc/ConfFS/PlanerFS.conf', 'r')
                 conf_lines = fp.readlines()
                 fp.close()
                 for x in conf_lines:
@@ -518,7 +518,7 @@ class PFS_allfilelist(Screen):
                 files.append(("", conf["cals_dir"] + cal_file, 1, ""))
         if onlines:
             files.append(("", "in online-file: " + str(onlines), None, "", ""))
-            fp = file(onlines, 'r')
+            fp = open(onlines, 'r')
             onl_lines = fp.readlines()
             fp.close()
             for x in onl_lines:
@@ -534,7 +534,7 @@ class PFS_allfilelist(Screen):
                         files.append(("", " " * 5 + "url:" + splits[1], 1, "", x))
         if os.path.exists('/etc/ConfFS/PlanerFS_online.txt'):
             files.append(("", "in online-file: " + '/etc/ConfFS/PlanerFS_online.txt', None, "", ""))
-            fp = file('/etc/ConfFS/PlanerFS_online.txt', 'r')
+            fp = open('/etc/ConfFS/PlanerFS_online.txt', 'r')
             onl_lines = fp.readlines()
             fp.close()
             for x in onl_lines:
