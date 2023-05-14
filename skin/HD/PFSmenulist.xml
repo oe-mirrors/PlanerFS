@@ -1,16 +1,16 @@
 <!--for class PanerFS_menu -->
 <!--for class PFS_filemenu -->
 <!--for class del_files -->
-<screen name ="menulist7" position="240,100" size="700,340" title="PlanerFS" >
+<screen name ="menulist7" position="240,100" size="600,420" title="PlanerFS" >
 	<widget source="menulist" render="Listbox" position="20,10" size="740,300" scrollbarMode="showOnDemand" foregroundColor="#FFFFFF" enableWrapAround="1" >
 		<convert type="TemplatedMultiContent">
 			{"templates": 
                             {"default": (30,[
-    					    MultiContentEntryText(pos = (10, 0), size = (30, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0), 
-                                            MultiContentEntryText(pos = (30, 0), size = (730, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), 
+    					    MultiContentEntryText(pos = (10, 0), size = (30, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
+                                            MultiContentEntryText(pos = (30, 0), size = (730, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
 					],True),
                             "files": (30,[
-    					    MultiContentEntryText(pos = (10, 0), size = (730, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1), 
+    					    MultiContentEntryText(pos = (10, 0), size = (730, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
 
 					],True),
                              },	"fonts": [gFont("Regular", 22),gFont("Regular", 28)],

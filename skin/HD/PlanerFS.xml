@@ -1,19 +1,16 @@
 <!-- PlanerFS calendar -->
-
-<screen name="PlanerFS7" position="center,center" size="960,620" title="PlanerFS" backgroundColor="#20343c4f" flags="wfNoBorder" > 
-	<widget name="kal_num" position="8,0" size="80,40" halign="left" valign="center" zPosition="1" font="Regular;24" foregroundColor="#FFFFFF" backgroundColor="#000000" /> 
-	<widget name="titel" position="0,0" size="950,40" halign="center" valign="center" zPosition="1" font="Regular;24" foregroundColor="#FFFFFF" backgroundColor="#000000" /> 
-        <widget name="datum" position="640,0" size="300,40" halign="right" valign="center" zPosition="4" font="Regular;22" foregroundColor="#FFFFFF" backgroundColor="#000000" /> 
-
-        <widget name="greena_1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/gra.png" position="450,55" zPosition="4" size="24,24" transparent="1" alphatest="on" />
-        <widget name="greena_2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/gra.png" position="520,55" zPosition="4" size="24,24" transparent="1" alphatest="on" /> 
-        <widget name="errs" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/errs.png" position="20,52" zPosition="4" size="27,27" transparent="1" alphatest="on" /> 
-        <widget name="help" position="10,88" zPosition="15" size="940,520" font="Regular;24"/> 
-
-	<widget name="list_titel" position="530,52" size="416,28" font="Regular;22" foregroundColor="#FFFFFF" zPosition="3" halign="center" valign="center" backgroundColor="#20343c4f" /> 
+<screen name="PlanerFS7" position="center,center" size="1130,620" title="PlanerFS" backgroundColor="#20343c4f" flags="wfNoBorder" >
+	<widget name="kal_num" position="8,0" size="80,40" halign="left" valign="center" zPosition="1" font="Regular;24" foregroundColor="#FFFFFF" backgroundColor="#000000" />
+	<widget name="titel" position="0,0" size="950,40" halign="center" valign="center" zPosition="1" font="Regular;24" foregroundColor="#FFFFFF" backgroundColor="#000000" />
+  <widget name="datum" position="640,0" size="300,40" halign="right" valign="center" zPosition="4" font="Regular;22" foregroundColor="#FFFFFF" backgroundColor="#000000" />
+  <widget name="greena_1" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/gra.png" position="450,55" zPosition="4" size="24,24" transparent="1" alphatest="on" />
+  <widget name="greena_2" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/gra.png" position="520,55" zPosition="4" size="24,24" transparent="1" alphatest="on" />
+  <widget name="errs" pixmap="/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/errs.png" position="20,52" zPosition="4" size="27,27" transparent="1" alphatest="on" />
+  <widget name="help" position="10,88" zPosition="15" size="940,520" font="Regular;24"/>
+	<widget name="list_titel" position="530,52" size="416,28" font="Regular;22" foregroundColor="#FFFFFF" zPosition="3" halign="center" valign="center" backgroundColor="#20343c4f" />
 	<widget source="event_list" render="Listbox" position="530,88" size="416,300" zPosition="12" scrollbarMode="showOnDemand" backgroundColor="#20343c4f" foregroundColor="#FFFFFF" enableWrapAround="1" >
 		<convert type="TemplatedMultiContent">
-			{"templates": 
+			{"templates":
                             {"default": (30,[
     					MultiContentEntryText(pos = (10, 0), size = (490, 30), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0,color=MultiContentTemplateColor(1)), # index 0: text
 					],True),
@@ -25,7 +22,6 @@
 			}
 		</convert>
 	</widget>
-
 	<widget source="weekdays" render="Listbox" position="10,90" size="500,38" zPosition="12" backgroundColor="#000000" foregroundColor="#FFFFFF" scrollbarMode="showOnDemand" >
 		<convert type="TemplatedMultiContent">
 			{"template": [
@@ -38,15 +34,12 @@
     					MultiContentEntryText(pos = (380, 0), size = (58, 50), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = 6),
     					MultiContentEntryText(pos = (440, 0), size = (58, 50), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = 7),
 					],
-
                              	"fonts": [gFont("Regular", 25),gFont("Regular", 28)],
                              "itemHeight": 50,
                              "selectionEnabled": False
 			}
 		</convert>
 	</widget>
-
-
 	<widget source="kwlist" render="Listbox" position="10,135" size="60,300"  zPosition="12" backgroundColor="#20343c4f" foregroundColor="#FFFFFF" scrollbarMode="showOnDemand" >
 		<convert type="TemplatedMultiContent">
 			{"template": [
@@ -59,12 +52,10 @@
 			}
 		</convert>
 	</widget>
-
-
-	<widget name="ueberschrift" font="Regular;22" position="0,52" size="490,28" valign="center" halign="center" foregroundColor="#FFFFFF" zPosition="3" backgroundColor="#20343c4f" /> 
+	<widget name="ueberschrift" font="Regular;22" position="0,52" size="490,28" valign="center" halign="center" foregroundColor="#FFFFFF" zPosition="3" backgroundColor="#20343c4f" />
 	<widget source="calendar" render="Listbox" position="84,133" size="430,300" zPosition="14" backgroundColor="#20343c4f" foregroundColor="#ffffff" scrollbarMode="showOnDemand" >
 		<convert type="TemplatedMultiContent">
-			{"templates": 
+			{"templates":
                              {"default":(50,[
     					MultiContentEntryText(pos = (0, 0), size = (58, 50), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = 0,color=MultiContentTemplateColor(2),backcolor =MultiContentTemplateColor(1), border_width = 4, border_color = MultiContentTemplateColor(3)),
     					MultiContentEntryText(pos = (60, 0), size = (58, 50), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = 4,color=MultiContentTemplateColor(6),backcolor =MultiContentTemplateColor(5), border_width = 4, border_color = MultiContentTemplateColor(7)),
@@ -74,7 +65,6 @@
     					MultiContentEntryText(pos = (300, 0), size = (58, 50), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = 20,color=MultiContentTemplateColor(22),backcolor =MultiContentTemplateColor(21), border_width = 4, border_color = MultiContentTemplateColor(23)),
     					MultiContentEntryText(pos = (360, 0), size = (58, 50), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = 24,color=MultiContentTemplateColor(26),backcolor =MultiContentTemplateColor(25), border_width = 4, border_color = MultiContentTemplateColor(27))
 					]),
-
                              "with_schicht":(50,[
     					MultiContentEntryText(pos = (0, 2), size = (58, 38), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = 0,backcolor = MultiContentTemplateColor(1),color=MultiContentTemplateColor(2), border_width = 4, border_color = MultiContentTemplateColor(3)),
     					   MultiContentEntryText(pos = (4, 40), size = (50, 8), font=0, flags = RT_HALIGN_CENTER|RT_VALIGN_CENTER, text = "",backcolor =MultiContentTemplateColor(4)),
@@ -95,38 +85,26 @@
                              	"fonts": [gFont("Regular", 25),gFont("Regular", 28)],
                              "itemHeight": 40,
                              "selectionEnabled": False
-                             
 			}
 		</convert>
 	</widget>
-
-	<widget name="descreption" position="10,450" size="920,120" font="Regular;20" foregroundColor="#FFFFFF" backgroundColor="#20343c4f" zPosition="3" halign="left" />  
-
-
-
-	<widget name="key_red" position="70,587" zPosition="1" size="120,25" font="Regular;18" foregroundColor="#FFFFFF" backgroundColor="#20343c4f" halign="left" transparent="1" /> 
-	<widget name="key_green" position="220,587" zPosition="1" size="120,25" font="Regular;18" foregroundColor="#FFFFFF" backgroundColor="#20343c4f" halign="left" transparent="1" /> 
-	<widget name="key_yellow" position="370,587" zPosition="1" size="120,25" font="Regular;18" foregroundColor="#FFFFFF" backgroundColor="#20343c4f" halign="left" transparent="1" /> 
-	<widget name="key_blue" position="520,587" zPosition="1" size="120,25" font="Regular;18" foregroundColor="#FFFFFF" backgroundColor="#20343c4f" halign="left" transparent="1" /> 
-
-	<ePixmap pixmap="skin_default/buttons/button_red.png" position="50,590" zPosition="2" size="24,24" transparent="1" alphatest="on" /> 
-	<ePixmap pixmap="skin_default/buttons/button_green.png" position="200,590" zPosition="2" size="24,24" transparent="1" alphatest="on" /> 
-	<ePixmap pixmap="skin_default/buttons/button_yellow.png" position="350,590" zPosition="2" size="24,24" transparent="1" alphatest="on" /> 
-	<ePixmap pixmap="skin_default/buttons/button_blue.png" position="500,590" zPosition="2" size="24,24" transparent="1" alphatest="on" /> 
-	<ePixmap pixmap="skin_default/buttons/key_menu.png" position="700,588" zPosition="2" size="60,24" transparent="1" alphatest="on" /> 
-
-
-
-
+	<widget name="description" position="10,450" size="920,120" font="Regular;20" foregroundColor="#FFFFFF" backgroundColor="#20343c4f" zPosition="3" halign="left" />
+	<widget name="key_red" position="70,587" zPosition="1" size="120,25" font="Regular;18" foregroundColor="#FFFFFF" backgroundColor="#20343c4f" halign="left" transparent="1" />
+	<widget name="key_green" position="220,587" zPosition="1" size="120,25" font="Regular;18" foregroundColor="#FFFFFF" backgroundColor="#20343c4f" halign="left" transparent="1" />
+	<widget name="key_yellow" position="370,587" zPosition="1" size="120,25" font="Regular;18" foregroundColor="#FFFFFF" backgroundColor="#20343c4f" halign="left" transparent="1" />
+	<widget name="key_blue" position="520,587" zPosition="1" size="120,25" font="Regular;18" foregroundColor="#FFFFFF" backgroundColor="#20343c4f" halign="left" transparent="1" />
+	<ePixmap pixmap="skin_default/buttons/button_red.png" position="50,590" zPosition="2" size="24,24" transparent="1" alphatest="on" />
+	<ePixmap pixmap="skin_default/buttons/button_green.png" position="200,590" zPosition="2" size="24,24" transparent="1" alphatest="on" />
+	<ePixmap pixmap="skin_default/buttons/button_yellow.png" position="350,590" zPosition="2" size="24,24" transparent="1" alphatest="on" />
+	<ePixmap pixmap="skin_default/buttons/button_blue.png" position="500,590" zPosition="2" size="24,24" transparent="1" alphatest="on" />
+	<ePixmap pixmap="skin_default/buttons/key_menu.png" position="700,590" zPosition="2" size="35,25" transparent="1" alphatest="on" />
 <!-- background and lines -->
-		<eLabel position="528,84" size="424,354" zPosition="2" backgroundColor="#bbbbbb" />
-		<eLabel position="530,86" size="420,350" zPosition="2" backgroundColor="#20343c4f" />
-		<eLabel position="6,84" size="514,354" zPosition="2" backgroundColor="#bbbbbb" />
-		<eLabel position="8,86" size="510,350" zPosition="2" backgroundColor="#20343c4f" />
-		<eLabel position="8,128" size="510,2" zPosition="3" backgroundColor="#ffffff"/>
-		<eLabel position="76,128" size="3,307" zPosition="3" backgroundColor="#ffffff"/>
-
-		<eLabel position="8,575" size="935,3" zPosition="3" backgroundColor="#ffffff"/>
-		<eLabel position="8,40" size="935,3" zPosition="3" backgroundColor="#ffffff"/>
-
+	<eLabel position="528,84" size="424,354" zPosition="2" backgroundColor="#bbbbbb" />
+	<eLabel position="530,86" size="420,350" zPosition="2" backgroundColor="#20343c4f" />
+	<eLabel position="6,84" size="514,354" zPosition="2" backgroundColor="#bbbbbb" />
+	<eLabel position="8,86" size="510,350" zPosition="2" backgroundColor="#20343c4f" />
+	<eLabel position="8,128" size="510,2" zPosition="3" backgroundColor="#ffffff"/>
+	<eLabel position="76,128" size="3,307" zPosition="3" backgroundColor="#ffffff"/>
+	<eLabel position="8,575" size="935,3" zPosition="3" backgroundColor="#ffffff"/>
+	<eLabel position="8,40" size="935,3" zPosition="3" backgroundColor="#ffffff"/>
 </screen>
