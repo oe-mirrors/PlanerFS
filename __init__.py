@@ -1,20 +1,17 @@
 # -*- coding: utf-8 -*-
 from Components.Language import language
 from Tools.Directories import resolveFilename, SCOPE_PLUGINS
-import gettext
-
+from gettext import bindtextdomain, dgettext, gettext
 
 def localeInit():
-    gettext.bindtextdomain("PlanerFS", resolveFilename(SCOPE_PLUGINS, "Extensions/PlanerFS/locale"))
-
+    bindtextdomain("PlanerFS", resolveFilename(SCOPE_PLUGINS, "Extensions/PlanerFS/locale"))
 
 def _(txt):
-    t = gettext.dgettext("PlanerFS", txt)
+    t = dgettext("PlanerFS", txt)
     if t == txt:
         print("[PlanerFS] fallback to default translation for %s" % txt)
-        t = gettext.gettext(txt)
+        t = gettext(txt)
     return t
-
 
 localeInit()
 language.addCallback(localeInit)
