@@ -53,7 +53,7 @@ except Exception:
 
 try:
 	if not fileExists(termindatei):
-		copyfile("/usr/lib/enigma2/python/Plugins/Extensions/sample_PlanerFS/sample.ics", termindatei)
+		copyfile("/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/sample.ics", termindatei)
 	if not fileExists("/etc/ConfFS/PlanerFS.vcf"):
 		copyfile("/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/sample.vcf", "/etc/ConfFS/PlanerFS.vcf")
 except Exception:
@@ -120,9 +120,8 @@ if exists(CONFIGFILE):
 			configparser.read(CONFIGFILE)
 			configparser.set("settings", "version", version)
 			conf["version"] = version
-			file1 = open(CONFIGFILE, "w")
-			configparser.write(file1)
-			file1.close()
+			with open(CONFIGFILE, "w") as file1:
+				configparser.write(file1)
 else:
 	datei = open(CONFIGFILE, "w")
 	configparser.add_section("settings")
@@ -132,14 +131,12 @@ else:
 	datei.close()
 onl_lines = []
 if exists(ONLINETEXT):
-	fp = open(ONLINETEXT, 'r')
-	onl_lines = fp.readlines()
-	fp.close()
+	with open(ONLINETEXT, 'r') as fp:
+		onl_lines = fp.readlines()
 else:
-	fp = open("/etc/ConfFS/PlanerFS_online.txt", "w")
-	fp.write("##internetadressen fuer online-Kalender\n# Aufbau:\n##    name = url = calendarNr\n##sample (delete # / entferne #) :\n")
-	fp.write("\n#Feiertage_Germany = https://calendar.google.com/calendar/ical/de.german%23holiday%40group.v.calendar.google.com/public/basic.ics\n")
-	fp.close()
+	with open("/etc/ConfFS/PlanerFS_online.txt", "w") as fp:
+		fp.write("# Internetadressen fuer online-Kalender\n# Aufbau:\n# name = url = calendarNr\n##sample (delete # / entferne #):\n")
+		fp.write("\nFeiertage_Germany = https://calendar.google.com/calendar/ical/de.german%23holiday%40group.v.calendar.google.com/public/basic.ics\n")
 time_timer = Timer_dats(None, None, None)
 global akt_intv
 if int(conf["akt_intv"]):

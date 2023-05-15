@@ -107,9 +107,8 @@ class all_import():
 				else:
 					continue
 		events.append("\nEND:VCALENDAR")
-		f2 = open(termindatei, "w")
-		f2.writelines(events)
-		f2.close()
+		with open(termindatei, "w") as f2:
+			f2.writelines(events)
 		self.ok = 1
 
 	def einles(self, cal_datei):
@@ -153,20 +152,18 @@ class vcf_import():
 			list2 = self.einles(imp_datei)
 			if len(list2) > 0:
 				list1.extend(list2)
-				f2 = open(cardfile, "w")
-				for x in list1:
-					for x2 in x:
-						f2.write(x2 + "\n")
-				f2.close()
+				with open(cardfile, "w") as f2:
+					for x in list1:
+						for x2 in x:
+							f2.write(x2 + "\n")
 				self.ok = 1
 		return self.ok
 
 	def einles(self, vcf_datei):
 		dataLines = []
 		if isfile(vcf_datei):
-			tempFile = open(vcf_datei, 'rb')
-			dataLines.extend(tempFile.readlines())
-			tempFile.close()
+			with open(vcf_datei, 'rb') as tempFile:
+				dataLines.extend(tempFile.readlines())
 		cards1 = []
 		if dataLines:
 			mask = {}
@@ -197,9 +194,8 @@ class online_import():
 		onl_lines = []
 		errmeld = None
 		if nofer is True and exists(opath):
-			fp = open(opath, 'r')
-			onl_lines = fp.readlines()
-			fp.close()
+			with open(opath, 'r') as fp:
+				onl_lines = fp.readlines()
 		ferien = fer
 		if ferien is None and nofer is False and exists(CONFIGFILE):
 			configparser = ConfigParser()
@@ -227,10 +223,9 @@ class online_import():
 				kalnum = "1"
 				if len(x) and not x.startswith("#"):
 					spl = x.partition('=')
-#					spl=x.split("=")
 					if len(spl) == 3:
-						kt = spl[2].rpartition("=")  # .strip())
-						kn = int(kt[2].strip())
+						kt = spl[2].rpartition("=")
+						kn = int(kt[2].strip()) if kt[2].strip().isdigit() else kt[2].strip()
 						if kn == 1 or kn == 2:
 							kalnum = kn
 							url = kt[0].strip()
@@ -239,25 +234,23 @@ class online_import():
 						datei2 = "%s%s%s.ics" % (cals_dir, kalnum, spl[0].strip())
 					if url:
 						headers = {
-							 'Accept': u"text/html,application/xhtml+xml,application/xml",
-							 'User-Agent': u"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36",
-							 'Accept-Encoding': u"gzip,deflate",
-							 'Accept-Language': u"en-US,en;q=0.8"
-							}
+								 'Accept': u"text/html,application/xhtml+xml,application/xml",
+								 'User-Agent': u"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_9_2) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36",
+								 'Accept-Encoding': u"gzip,deflate",
+								 'Accept-Language': u"en-US,en;q=0.8"
+								}
 						resp = get(url, headers=headers, timeout=15, verify=False)
 						status = resp.status_code
 						if datei2 and status == 200:
 							res = resp.content.decode("utf-8")
-							f = open(datei2, "w")
-							f.write(res)
-							f.close()
+							with open(datei2, "w") as f:
+								f.write(res)
 							erg = 2
 						else:
 							errmeld = str(status) + "\n"
 							erg = 0
 						if errmeld:
-							fx = open("/tmp/PlanerFS-Errors.txt", "a")
-							fx.write("import1 read-error for: " + str(spl[0]) + "\n" + " " * 5 + str(url) + "\n" + " " * 5)
-							fx.write(errmeld)
-							fx.close()
+							with open("/tmp/PlanerFS-Errors.txt", "a") as fx:
+								fx.write("import1 read-error for: " + str(spl[0]) + "\n" + " " * 5 + str(url) + "\n" + " " * 5)
+								fx.write(errmeld)
 		return erg
