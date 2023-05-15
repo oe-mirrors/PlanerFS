@@ -135,8 +135,8 @@ if exists(ONLINETEXT):
 		onl_lines = fp.readlines()
 else:
 	with open("/etc/ConfFS/PlanerFS_online.txt", "w") as fp:
-		fp.write("## Internetadressen fuer online-Kalender\n## Aufbau:\n## name = url = calendarNr\n## sample (delete # / entferne #) :\n")
-		fp.write("\n#Feiertage_Germany = https://calendar.google.com/calendar/ical/de.german%23holiday%40group.v.calendar.google.com/public/basic.ics\n")
+		fp.write("# Internetadressen fuer online-Kalender\n# Aufbau:\n# name = url = calendarNr\n##sample (delete # / entferne #):\n")
+		fp.write("\nFeiertage_Germany = https://calendar.google.com/calendar/ical/de.german%23holiday%40group.v.calendar.google.com/public/basic.ics\n")
 time_timer = Timer_dats(None, None, None)
 global akt_intv
 if int(conf["akt_intv"]):
