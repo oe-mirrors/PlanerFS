@@ -1,0 +1,1287 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: planerfs\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: shadowrider <plugins@fselbig.de>\n"
+"Language-Team: shadowrider <shadowrider@unknown.de>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
+"X-Generator: Poedit 1.8.10\n"
+
+msgid "2. File for Startscreen"
+msgstr "2. Datei für Startanzeige"
+
+msgid "Activated"
+msgstr "aktiviert"
+
+msgid "Add new event"
+msgstr "Neuen Termin hinzufügen"
+
+msgid "Add new event or timer"
+msgstr "Neuen Termin oder Timer hinzufügen"
+
+msgid ""
+"After how many seconds to the startup screen will disappear automatically? "
+"(0 = not Auto-hide)"
+msgstr ""
+"Nach wievielen Sekunden soll die Startanzeige automatisch ausgeblendet "
+"werden? (0 = nicht automatisch ausblenden)"
+
+msgid "Alarm-Sound"
+msgstr "Timer-Sound"
+
+msgid "Alert by date-time"
+msgstr "Alarm bei Datum+Zeit"
+
+msgid "Alert date"
+msgstr "Alarm-Datum"
+
+msgid "Alert on Display"
+msgstr "Erinnerung anzeigen"
+
+msgid "Alert reminder beforehand"
+msgstr "Alarm vor Termin"
+
+msgid "Alert time"
+msgstr "Alarm-Zeit"
+
+msgid "Alert-description"
+msgstr "Alarm-Text"
+
+msgid "All"
+msgstr "Alle"
+
+msgid "Anniversaries"
+msgstr "Jahrestage"
+
+msgid "Anniversaries today:"
+msgstr "Jahrestage heute:"
+
+msgid "Anniversary"
+msgstr "Jahrestag"
+
+msgid "Another directory for data files"
+msgstr "Anderes Verzeichnis für Datendateien"
+
+msgid "April"
+msgstr "April"
+
+msgid "Ascension"
+msgstr "Himmelfahrt"
+
+msgid "August"
+msgstr "August"
+
+msgid "Backup ConfFS..."
+msgstr "Sicherung von ConfFS..."
+
+msgid "Backup Files and Settings..."
+msgstr "sichere Daten und Einstellungen ..."
+
+msgid "Big screen"
+msgstr "Kalender im Vollbild"
+
+msgid "Birthday"
+msgstr "Geburtstag"
+
+msgid "Break execution"
+msgstr "Programm abgebrochen"
+
+msgid "By how many seconds to the start can be delayed?"
+msgstr "Um wieviel Sekunden soll der Start verzögert werden?"
+
+msgid "Calendar"
+msgstr "Kalender"
+
+msgid "Call Number"
+msgstr "anrufen"
+
+msgid "Cancel"
+msgstr "Abbruch"
+
+msgid "Categories"
+msgstr "Kategorien"
+
+msgid "Category"
+msgstr "Kategorie"
+
+msgid "Caution, this is a recurring appointment! Delete recurring appointment?"
+msgstr "Vorsicht, das ist ein Serientermin! Terminserie löschen?"
+
+msgid "Change calendar file"
+msgstr "zeige nächste/vorige Kalender-Datei"
+
+msgid "City"
+msgstr "Ort"
+
+msgid "Close PlanerFS"
+msgstr "PlanerFS beenden"
+
+msgid "Close adress book"
+msgstr "Adressbuch schließen"
+
+msgid "Color"
+msgstr "Farbe"
+
+msgid "Color an category setting"
+msgstr "Einstellung Farben und Kategorien"
+
+msgid "Copy ics-File of PlanerFS path"
+msgstr "Kopiere eine  ics-Datei aus dem PlanerFS -Verzeichnis"
+
+msgid "Copy ics-File to PlanerFS path"
+msgstr "Kopiere eine ics-Datei in das PlanerFS-Verzeichnis"
+
+msgid "Corpus Christi"
+msgstr "Fronleichnam"
+
+msgid "Count"
+msgstr "Anzahl"
+
+msgid ""
+"Countdown for the start display and LCD screen, insert in the text 'pd' for "
+"the number of days"
+msgstr ""
+"Einen Countdown im Startdisplay und/oder LCD-Screen anzeigen, für 'pd' im "
+"Text wird dann die Anzahl Tage angezeigt"
+
+msgid "Countdown-Dat:"
+msgstr "Countdown-Datum:"
+
+msgid "Countdown-Text:"
+msgstr "Countdown-Text:"
+
+msgid "DAILY"
+msgstr "täglich"
+
+msgid "DESCRIPTION"
+msgstr "ausführlicher Text"
+
+msgid "Date Error"
+msgstr "Datum-Fehler!"
+
+msgid "Date display"
+msgstr "Termin-Anzeige"
+
+msgid "Day"
+msgstr "Tag"
+
+msgid "December"
+msgstr "Dezember"
+
+msgid "Defaults"
+msgstr "Standard-einstellungen"
+
+msgid "Delay on event announcement (sec)"
+msgstr "Terminanzeige autom. ausblenden (sek)"
+
+msgid "Delete  buisness card of selected Name"
+msgstr "lösche Datensatz von ausgewählten Namen"
+
+msgid "Delete selected  entry"
+msgstr "gewählten Eintrag löschen"
+
+msgid "Design"
+msgstr "Gestaltung/Aussehen des Planers"
+
+msgid "Designation"
+msgstr "Bezeichnung"
+
+msgid "Differentiate between: with/without description"
+msgstr "unterscheide mit/ohne Beschreibung"
+
+msgid "Display on Start"
+msgstr "Im Startscreen anzeigen"
+
+msgid "Distance from left (%)"
+msgstr "Abstand von links (%):"
+
+msgid "Distance from top (pixel)"
+msgstr "Abstand von oben (Pixel):"
+
+msgid "Do you really want to delete this entry?"
+msgstr "Diesen Eintrag wirklich löschen?"
+
+msgid "Do you really want to delete this file?"
+msgstr "Diese Datei wirklich löschen?"
+
+msgid "Download"
+msgstr "Download"
+
+msgid "Download completed successfully"
+msgstr ""
+"Download erfolgreich abgeschlossen,\n"
+"wechsle in den Kalender"
+
+msgid "Duration of sound at timer (sec)"
+msgstr "Dauer Alarm-Sound bei Timermeldung"
+
+msgid "Easter Monday"
+msgstr "Ostermontag"
+
+msgid "Easter Sunday"
+msgstr "Ostersonntag"
+
+msgid "Edit Call-Number"
+msgstr "Telefonnummer bearbeiten"
+
+msgid "Edit Event"
+msgstr "Termin bearbeiten"
+
+msgid "Edit Timer"
+msgstr "Timer bearbeiten"
+
+msgid "Edit categories"
+msgstr "Kategorien bearbeiten"
+
+msgid "Edit colors and categories"
+msgstr "Farben und Kategorien bearbeiten"
+
+msgid "Edit data of selected name"
+msgstr "Bearbeite Datensatz von ausgewählten Namen"
+
+msgid "Edit online calendar list"
+msgstr "Liste der Online-Kalender"
+
+msgid "Edit selected Termin"
+msgstr "gewählten Eintrag bearbeiten"
+
+msgid "Edit text for categorie"
+msgstr "Text der Kategorie bearbeiten"
+
+msgid "Edit text for category"
+msgstr "Text der Kategorie bearbeiten"
+
+msgid "End-Date"
+msgstr "End-Datum"
+
+msgid "End-Time"
+msgstr "Ende-Zeit"
+
+msgid "Enter Text"
+msgstr "Text eingeben/ändern"
+
+msgid "Enter the name that describes the shift plan in PlannerFS_online.txt"
+msgstr "Name aus PlanerFS_online.txt eintragen"
+
+msgid "Entry can only be copied from external to internal (*...)"
+msgstr "Eintrag kann nur von extern (*...) nach intern kopiert werden"
+
+msgid "Error: at least one external file could not be loaded!"
+msgstr ""
+"Fehler: eine oder mehrere extrene Datei(en) konnten nicht geladen werden!"
+
+msgid "Event"
+msgstr "Termin"
+
+msgid "Event by Date"
+msgstr "Termin an Datum"
+
+msgid "Event by Rules"
+msgstr "Termin mit Regeln"
+
+msgid "Event end"
+msgstr "Termin endet"
+
+msgid "Event is due!"
+msgstr "Timer-Meldung!"
+
+msgid "Event or Timer"
+msgstr "Termin oder Timer"
+
+msgid "Event-List"
+msgstr "Termin-Liste"
+
+msgid "Event-text"
+msgstr "Termin-Text"
+
+msgid "Events"
+msgstr "Termine"
+
+msgid "Events for today"
+msgstr "Termine heute"
+
+msgid "Extensionsmenu"
+msgstr "Erweiterungsmenü"
+
+msgid "February"
+msgstr "Februar"
+
+msgid "File %s nonexistent."
+msgstr "Datei %s existiert nicht."
+
+msgid "File containing only shift data"
+msgstr "Datei welche nur Schicht enthält"
+
+msgid "Files Handling"
+msgstr "Datei-Verwaltung"
+
+msgid "Filter - Letter down"
+msgstr "Filter -> nächster Buchstabe"
+
+msgid "Filter - Letter up"
+msgstr "Filter -> voriger Buchstabe"
+
+msgid ""
+"Floating holidays to Gregorian or Julian calendar to calculate or calculate "
+"off"
+msgstr ""
+"Bewegliche Feiertage nach gregorianischem oder julianischem Kalendet "
+"berechnen oder Berechnung abschalten"
+
+msgid ""
+"For example: if you enter here 365, with end-dates earlier date 365 days "
+"will be deleted."
+msgstr ""
+"zum Beispiel: wenn hier 365 eingegeben wird, werden Termine mit End-Datum "
+"älter 365 Tage gelöscht."
+
+msgid "For timer: off = the feature timer is off, there are no timer processed"
+msgstr ""
+"Für Timer: Aus = die Funktion für Timer ist aus, es werden keine Timer "
+"abgearbeitet"
+
+msgid "Frequency"
+msgstr "Frequenz"
+
+msgid "Fri"
+msgstr "Fr"
+
+msgid "Friday"
+msgstr "Freitag"
+
+msgid ""
+"Full http or ftp Enter address to display for an iCal file from which data "
+"in the current calendar PlanerFS (PressOK for Virtual Keyboard)"
+msgstr ""
+"Vollständige http oder ftp Adresse eingeben, von welcher aktuelle "
+"Kalenderdaten im Kalender angezeigt werden sollen (OK drücken für Virtuelle "
+"Tastatur)"
+
+msgid "Good Friday"
+msgstr "Karfreitag"
+
+msgid "HOLIDAY"
+msgstr "Feiertag"
+
+msgid "HOME"
+msgstr "privat"
+
+msgid "High total"
+msgstr "Höhe gesamt"
+
+msgid "Holidays are to be displayed in the startup screen?"
+msgstr "Sollen Feiertage in der Startanzeige angezeigt werden?"
+
+msgid "Holidays in Startscreen"
+msgstr "Feiertage in Startanzeige"
+
+msgid "Hours"
+msgstr "Stunden"
+
+msgid ""
+"How many months in advance, the dates are displayed in the startup screen?"
+msgstr ""
+"Für wieviele Monate im voraus sollen die Termine in der Startanzeige "
+"angezeigt werden?"
+
+msgid "Identifier text in calendar"
+msgstr "Anzeige-Text im Kalender"
+
+msgid ""
+"If a date is copied, deleted or created, appointments can be older than they "
+"should automatically be deleted (default for days in the next step). Events "
+"with no rules that have an end-date have less than today minus default days "
+"are deleted without asking!"
+msgstr ""
+"Wenn ein Termin kopiert, gelöscht oder neu angelegt wird, können Termine "
+"älter als vorgegeben automatisch gelöscht werden (Vorgabe für Tage im "
+"nächsten Schritt) . Termine ohne Regeln, welche ein ein Ende-Datum kleiner "
+"als Heute minus Vorgabe-Tage haben, werden ohne Nachfrage gelöscht!"
+
+msgid "If description"
+msgstr "Wenn Beschreibung"
+
+msgid "Import"
+msgstr "Importieren"
+
+msgid "Import all Data of ics-File"
+msgstr "Importiere alle Termine aus einer ics-Datei"
+
+msgid "Import all cards from an vcf file"
+msgstr "Importiere alle Daten aus einer vCard-Datei"
+
+msgid "Import all events from an ics file"
+msgstr "Importiere alle Termine aus einer ics-Datei"
+
+msgid "Import completed successfully"
+msgstr ""
+"Import erfolgreich abgeschlossen,\n"
+"wechsle in den Kalender"
+
+msgid "Import ics-File"
+msgstr "Importiere alle Termine aus einer ics-Datei"
+
+msgid "Import selected  entry"
+msgstr "ausgewählten Termin importieren"
+
+msgid "In Calendar"
+msgstr "in Kalender"
+
+msgid "Insert new event / timer"
+msgstr "neuen Termin oder Timer erstellen"
+
+msgid "Internal calculated holiday, import not possible"
+msgstr "Intern berechneter Feiertag, Import nicht möglich"
+
+msgid "Interval"
+msgstr "Intervall"
+
+msgid "January"
+msgstr "Januar"
+
+msgid "July"
+msgstr "Juli"
+
+msgid "June"
+msgstr "Juni"
+
+msgid "LCD4Linux-Settings"
+msgstr "LCD4Linux-Einstellungen"
+
+msgid ""
+"Length of the alarm sound in seconds (will be played again and again). For "
+"the alarm sound, the file 'PFSsound.mp3' with any same mp3 file in the "
+"plugin directory will be replaced."
+msgstr ""
+"Länge des Alarm-Sound in Sekunden (wird immer wieder abgespielt). Für den "
+"Alarm-Sound kann die Datei 'PFSsound.mp3' mit einer  beliebigen "
+"gleichnamigen mp3-Datei im Pluginverzeichnis ersetzt werden werden."
+
+msgid "Limit line length"
+msgstr "maximale Länge (Anzahl Zeichen)"
+
+msgid "Lines"
+msgstr "Linien"
+
+msgid "Location"
+msgstr "wo (Location) "
+
+msgid "Long-Text for the event announcement"
+msgstr "ausführlicher Text"
+
+msgid "Long-Text, press ok for edit"
+msgstr "ausführlicher Text, OK drücken zum bearbeiten"
+
+msgid "MOBIL"
+msgstr "Handy"
+
+msgid "MONTHLY"
+msgstr "monatlich"
+
+msgid "Main Menu"
+msgstr "Hauptmenü"
+
+msgid "Make new buisness card"
+msgstr "Neuen Datensatz anlegen"
+
+msgid "March"
+msgstr "März"
+
+msgid "May"
+msgstr "Mai"
+
+msgid "Menu"
+msgstr "Menü"
+
+msgid "Minutes"
+msgstr "Minuten"
+
+msgid "Missing / Mismatch in the event file"
+msgstr "Termin-Datei fehlt oder fehlerhaft"
+
+msgid "Missing event file"
+msgstr "Termin-Datei fehlt"
+
+msgid "Mon"
+msgstr "Mo"
+
+msgid "Monday"
+msgstr "Montag"
+
+msgid "Month"
+msgstr "Monat"
+
+msgid "Monthday"
+msgstr "Tag im Monat"
+
+msgid "Months for events preview"
+msgstr "Vorschau für Termine (Monate)"
+
+msgid "Name already exists or not allowed"
+msgstr "Name bereits vorhanden oder ungültig"
+
+msgid "Name for download file"
+msgstr "Speicher-Name für Download-Datei"
+
+msgid "New Card"
+msgstr "neue Karte"
+
+msgid "Next events:"
+msgstr "nächste Termine:"
+
+msgid "Next timer earliest in 5 minutes or 5 minutes after standby"
+msgstr "Timer wird frühestens in 5min bzw 5min nach standby aktiv !"
+
+msgid "No"
+msgstr "Nein"
+
+msgid "No Events"
+msgstr "keine Termine"
+
+msgid "No Events registered for today"
+msgstr "heute kein Termin"
+
+msgid "No anniversary"
+msgstr "keine Jahrestage"
+
+msgid "No anniversary registered for today"
+msgstr "heute kein Jahrestag"
+
+msgid "No entry found in business cards"
+msgstr "Kein Eintrag in den Visitenkarten gefunden"
+
+msgid "No extern ics-File exist!"
+msgstr "keine zusätzliche ics-Datei vorhanden"
+
+msgid "No ics-File in this Path exist!"
+msgstr "keine ics-Datei in diesem Verzeichnis gefunden"
+
+msgid "No placeholder 'pd' for count of days in text!"
+msgstr "kein Platzhalter 'pd' für Anzahl Tage im Text!"
+
+msgid "Not number of years"
+msgstr "keine Anzahl Jahre"
+
+msgid "November"
+msgstr "November"
+
+msgid "Number of years"
+msgstr "zeige Anzahl Jahre"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "October"
+msgstr "Oktober"
+
+msgid "Off"
+msgstr "Aus"
+
+msgid "On"
+msgstr "An"
+
+msgid "Open Calendar"
+msgstr "Kalender anzeigen"
+
+msgid "Open adress book"
+msgstr "Adressbuch öffnen"
+
+msgid "Open color list"
+msgstr "Farbenliste öffnen"
+
+msgid "Overview in Menu:"
+msgstr "Startscreen im Menü:"
+
+msgid "Overwrite existing Backup?"
+msgstr "vorhandene Sicherung überschreiben?"
+
+msgid "Overwrite existing Settings and Files?"
+msgstr "Daten und Einstellungen überschreiben?"
+
+msgid "Page not available:"
+msgstr "URL micht erreichbar"
+
+msgid "Pentecost Sunday"
+msgstr "Pfingstsonntag"
+
+msgid "Placeholder in text for number of days = pd"
+msgstr "Platzhalter im Text für Anzahl Tage = pd"
+
+msgid "PlanerFS address book"
+msgstr "PlanerFS Adressbuch"
+
+msgid "PlanerFS overview"
+msgstr "PlanerFS Übersicht"
+
+msgid "Please select source path..."
+msgstr "Bitte Quell-Verzeichnis wählen..."
+
+msgid "Please select the backup path..."
+msgstr "Bitte Sicherungspfad auswählen"
+
+msgid "Please select the restore path..."
+msgstr "von wo soll die Sicherung wiederhergestellt werden?"
+
+msgid "Please select the target path..."
+msgstr "Bitte Ziel-Verzeichnis wählen..."
+
+msgid "Press 'OK' for Virtual Keyboard"
+msgstr "  'Ok'  drücken für virtuelle Tastatur"
+
+msgid "Press 'OK' for list"
+msgstr " Auswahlliste anzuzeigen = 'Ok'  drücken"
+
+msgid "Press 'help' for explanation and 'ok' for virtual keyboard"
+msgstr ""
+"nutze die Hilfe-Taste für Erläuterungen und   'Ok'  für virtuelle Tastatur"
+
+msgid "Press 'ok' for standard-list or write"
+msgstr "auswählen aus Standard_Liste mit  'Ok'  oder schreiben"
+
+msgid "Press OK for Edit, Press 1 for aktivate/deaktivate"
+msgstr "Taste 'OK' zum bearbeiten, Taste'1' zum (de)aktivieren"
+
+msgid "Really close without saving settings?"
+msgstr "wirklich beenden ohne zu speichern?"
+
+msgid ""
+"Restart PlanerFS for new settings\n"
+"Please wait a moment"
+msgstr ""
+"PlanerFS wird zur Aktivierung der Änderungen neu gestartet\n"
+"Bitte einen Moment Geduld"
+
+msgid "Restore Files and Settings..."
+msgstr "stelle Daten und Einstellungen wieder her...."
+
+msgid "Sat"
+msgstr "Sa"
+
+msgid "Saturday"
+msgstr "Samstag"
+
+msgid "Save"
+msgstr "speichern"
+
+msgid "Save and exit"
+msgstr "speichern und beenden"
+
+msgid "Save-Name of File for download, no extension"
+msgstr ""
+"Unter welchem Namen soll die download-Datei auf der Box gespeichert werden? "
+"(keine Endung eingeben)"
+
+msgid "Schedule appointments, view events"
+msgstr "Termine planen, Erinnerungen anzeigen"
+
+msgid "Screen"
+msgstr "Haupt-Anzeige"
+
+msgid "Select categorie"
+msgstr "Kategorien auswählen"
+
+msgid "Select for edit or new"
+msgstr "auswählen zum Bearbeiten oder neu"
+
+msgid "Select standard categorie"
+msgstr "Standard-Kategorie auswählen"
+
+msgid "Selected card delete?"
+msgstr "ausgewählte Karte wirklich löschen?"
+
+msgid "September"
+msgstr "September"
+
+msgid "Setting Start"
+msgstr "wie starten"
+
+msgid "Setting shifts"
+msgstr "Schicht Einstellung"
+
+msgid "Settings in Menu->Shift Setting..."
+msgstr "einstellen in Menü->Schicht-Einstellung"
+
+msgid "Settings-Menu"
+msgstr "Einstellungen"
+
+msgid "Shift colors:"
+msgstr "Schicht-Farben:"
+
+msgid "Show  buisness card of selected Name"
+msgstr "Zeige Datensatz von ausgewählten Namen"
+
+msgid "Show buisness card of selected name"
+msgstr "Zeige Visitenkarte von ausgewählten Namen"
+
+msgid "Show current month"
+msgstr "aktuellen Monat anzeigen"
+
+msgid "Show external reminders"
+msgstr "externe Erinnerungen anzeigen"
+
+msgid "Show in LCD"
+msgstr "Im LCD anzeigen"
+
+msgid "Show more Options in Menu"
+msgstr "Menü anzeigen (weitere Funktionen)"
+
+msgid "Show repetitions in lists"
+msgstr "Zeige Wiederholungen in Listen"
+
+msgid "Show same named appointment with all dates?"
+msgstr "Wiederholende, gleichnamige Termine in Listen anzeigen?"
+
+msgid "Show shift on startscreen"
+msgstr "Zeige Schichten in Startscreen"
+
+msgid "Show start screen with overview"
+msgstr "Startscreen mit Übersicht anzeigen"
+
+msgid "Show timer"
+msgstr "wechsle Liste Timer<->Termine"
+
+msgid "Simple event"
+msgstr "einfacher Termin"
+
+msgid "Size for a single"
+msgstr "Größe für Einzelelement"
+
+msgid "Split screen"
+msgstr "geteilte Anzeige"
+
+msgid "Start Display AutoHide (0=Off)"
+msgstr "Startanzeige autom. ausblenden (0=nein)"
+
+msgid "Start delay"
+msgstr "Start-Verzögerung (sek)"
+
+msgid "Start-Date"
+msgstr "Start-Datum"
+
+msgid "Start-Time"
+msgstr "Start-Zeit"
+
+msgid "Startscreen lines"
+msgstr "Startscreen Linien"
+
+msgid "Street"
+msgstr "Straße"
+
+msgid "Su"
+msgstr "So"
+
+msgid "Successfully loaded data"
+msgstr "Daten erfolgreich geladen"
+
+msgid "Sunday"
+msgstr "Sonntag"
+
+msgid "Termin from downloaded file"
+msgstr "Termin von externer Datei"
+
+msgid "Terminlist"
+msgstr "Terminliste"
+
+msgid "Text"
+msgstr "Text"
+
+msgid "Thu"
+msgstr "Do"
+
+msgid "Thursday"
+msgstr "Donnerstag"
+
+msgid "Time"
+msgstr "Uhrzeit"
+
+msgid "Timer"
+msgstr "Timer"
+
+msgid "Timer / Reminder"
+msgstr "Timer/Erinnerungen"
+
+msgid "Timer by Rules"
+msgstr "Timer mit Regeln"
+
+msgid "Timer display time (0=endless)"
+msgstr "Anzeigedauer (0=endlos)"
+
+msgid "Timer max volume"
+msgstr "maximale Lautstärke"
+
+msgid "Timer on"
+msgstr "Timermeldungen an/aus"
+
+msgid "Timer sound"
+msgstr "Timer Sound"
+
+msgid "Timer start volume"
+msgstr "Start- Lautstärke"
+
+msgid "Timer-List"
+msgstr "Timer-Liste"
+
+msgid "Timers message!"
+msgstr "Timer-Meldung!"
+
+msgid ""
+"To enable the setting, a restart is necessary to \n"
+"restart Enigma?"
+msgstr ""
+"Um die neuen Einstellung zu aktivieren, ist ein Neustart nötig. \n"
+"System jetzt neu starten?"
+
+msgid "Toggle Calender/Terminlist"
+msgstr "wechsel Kalender/Terminliste"
+
+msgid "Toggle number of years"
+msgstr "umschalten Anzahl Jahre zeigen"
+
+msgid "Toggle screen big/split"
+msgstr "Anzeige Vollbild/geteilt umschalten"
+
+msgid "Tue"
+msgstr "Di"
+
+msgid "Tuesday"
+msgstr "Dienstag"
+
+msgid "Unit of time"
+msgstr "Zeiteinheit"
+
+msgid "Upcoming calendar events"
+msgstr "bevorstehende Termine"
+
+msgid "Update data"
+msgstr "Akualisieren"
+
+msgid "Use rules"
+msgstr "Regeln verwenden"
+
+msgid "Use shift plan"
+msgstr "Schichtplanfunktion verwenden"
+
+msgid "WEEKLY"
+msgstr "wöchentlich"
+
+msgid "WN"
+msgstr "KW."
+
+msgid "WORK"
+msgstr "geschäftlich"
+
+msgid "Wed"
+msgstr "Mi"
+
+msgid "Wedding day"
+msgstr "Hochzeitstag"
+
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+msgid "WeekDays"
+msgstr "Wochentage"
+
+msgid "When is the start screen displayed?"
+msgstr "Wann soll der Startscreen angezeigt werden?"
+
+msgid "When standby display later"
+msgstr "zeige verpasste Termine nach Standby"
+
+msgid "When standby(Idle) display later"
+msgstr "Verzögere Anzeige nach Deepstandby"
+
+msgid "Whit Monday"
+msgstr "Pfingstmontag"
+
+msgid "Widht total"
+msgstr "Breite gesamt"
+
+msgid "YEARLY"
+msgstr "jährlich"
+
+msgid "Years"
+msgstr "Jahre"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "address book in Menu:"
+msgstr "Adressbuch in Menüs anzeigen:"
+
+msgid "addresses and phone numbers search, find, manage, and more"
+msgstr "Adressen und Telefonnummern finden, suchen, verwalten und mehr..."
+
+msgid "after count"
+msgstr "nach Anzahl"
+
+msgid "alarm time"
+msgstr "Weck - Zeit"
+
+msgid "alarm-clock"
+msgstr "Wecker"
+
+msgid "at Wakeup from Deep-Standby"
+msgstr "bei Systemstart"
+
+msgid "at Wakeup from Deep-Standby and Standby(Idle)"
+msgstr "bei Systemstart und nach Standby(Idle)"
+
+msgid "at Wakeup from Deep-Standby and time"
+msgstr "bei Systemstart und Uhrzeit"
+
+msgid "at Wakeup from Standby(Idle)"
+msgstr "nach Standby(Idle)"
+
+msgid "at Wakeup from Standby(Idle) and time"
+msgstr "nach Standby(Idle) und bei Uhrzeit"
+
+msgid "at time"
+msgstr "bei Uhrzeit"
+
+msgid "backup files and settings"
+msgstr "Daten und Einstellungen sichern"
+
+msgid "business card"
+msgstr "Visitenkarte"
+
+msgid "by date"
+msgstr "an Datum"
+
+msgid "cal.1"
+msgstr "Kal.1"
+
+msgid "cal.2"
+msgstr "Kal.2"
+
+msgid "calculated"
+msgstr "berechnet"
+
+msgid "calendar 1"
+msgstr "Kalender 1"
+
+msgid "calendar 2"
+msgstr "Kalender 2"
+
+msgid "calendar background"
+msgstr "PlanerFS Hintergrund"
+
+msgid "calendar days"
+msgstr "Kalender Tage"
+
+msgid "calendar event"
+msgstr "Kalender Termin"
+
+msgid "calendar holiday"
+msgstr "Kalender Feiertag"
+
+msgid "calendar in Menu:"
+msgstr "PlanerFS in Menüs anzeigen:"
+
+msgid "calendar today background"
+msgstr "Hintergrundfarbe für heute"
+
+msgid ""
+"colored date on the calendar for events from additional calendar files or "
+"online calendar"
+msgstr ""
+"Termine aus zusätzlichen ics oder Online-Kalendern farbig im Kalender "
+"markieren"
+
+msgid "cur. month"
+msgstr "Akt. Monat"
+
+msgid "daylong"
+msgstr "ganztägig"
+
+msgid "days"
+msgstr "Tage"
+
+msgid "delete extern ics-File"
+msgstr "zusätzliche ics-Datei löschen"
+
+msgid "delete old events"
+msgstr "alte Termine automatisch löschen?"
+
+msgid "delete older than (days)"
+msgstr "lösche älter als (Tage)"
+
+msgid "distance between"
+msgstr "Abstand dazwischen"
+
+msgid "double name!"
+msgstr "doppelter Name!"
+
+msgid "download address for data update"
+msgstr "Download-Adresse für Datenaktualisierung"
+
+msgid "download for data update"
+msgstr "aktuelle Daten downloaden"
+
+msgid "download on Start"
+msgstr "Download akt. Daten bei Start automatisch"
+
+msgid "edit file: /etc/ConfFS/PlanerFS_online.txt"
+msgstr "bearbeite Datei: /etc/ConfFS/PlanerFS_online.txt"
+
+msgid "edit selected  entry"
+msgstr "gewählten Eintrag bearbeiten"
+
+msgid "extended"
+msgstr "erweitert"
+
+msgid "extern dats"
+msgstr "externe Daten"
+
+msgid "extern events color in calendar"
+msgstr "externe Termine im Kalender farbig"
+
+msgid "external file can not be edited, Import this event?"
+msgstr ""
+"externe Datei kann nicht bearbeitet werden, den ausgewählten Termin "
+"importieren?"
+
+msgid "file is deleted"
+msgstr "Datei erfolgreich gelöscht."
+
+msgid "floating holidays"
+msgstr "bewegl. Feiertage"
+
+msgid "fontsize in list"
+msgstr "Schriftgröße in Terminliste"
+
+msgid "fontsize_list"
+msgstr "Schriftgröße in Terminliste"
+
+msgid "for countdown in start display (pd days to christmas)"
+msgstr ""
+"Für Countdown in Startanzeige, zB 'pd Tage bis Weihnacht' oder 'noch pd Tage "
+"bis Urlaub'"
+
+msgid "for font size smaller or larger decrease or increase the number"
+msgstr "für Schriftgröße kleiner oder größer die Zahl verringern oder erhöhen"
+
+msgid "from a separate file"
+msgstr "von extra Datei"
+
+msgid "from extern file: "
+msgstr "aus externer Datei: "
+
+msgid "from list of names"
+msgstr "Liste von Namen"
+
+msgid "gregorianisch"
+msgstr "Alle"
+
+msgid "incorrect entry in"
+msgstr "fehlerhafter Eintrag"
+
+msgid "info, no ical-module"
+msgstr "Information, fehlendes ical-Modul"
+
+msgid "julianisch"
+msgstr "Termine für Heute"
+
+msgid "last Backup Path"
+msgstr "letztes Backup Verzeichnis"
+
+msgid "lcd list fontsize"
+msgstr "Schriftgröße für LCD-Liste"
+
+msgid "lcd on/off"
+msgstr "LCD-Ausgabe An/Aus"
+
+msgid "lcd screen-nr"
+msgstr "LCD Schirm-Nr"
+
+msgid "lcd timer fontsize"
+msgstr "Schriftgröße Timermeldung"
+
+msgid "lcd-nr"
+msgstr "LCD-Nr"
+
+msgid "list anniversaries"
+msgstr "Listen Jubiläen"
+
+msgid "list heading"
+msgstr "Listen Überschriften"
+
+msgid "list inactive"
+msgstr "Listen inaktiv"
+
+msgid "list text"
+msgstr "Listen Text"
+
+msgid "make second calendar"
+msgstr "zweite Kalender-Datei erstellen"
+
+msgid "max volume"
+msgstr "maximale Lautstärke"
+
+msgid "maximum characters per line"
+msgstr "wieviele Zeichen maximal anzeigen pro Zeile"
+
+msgid "monthly backward"
+msgstr "monatlich rückwärts"
+
+msgid "monthly backward = for Day of Month backward (last Day...)"
+msgstr "monatlich rückwärts = Tage vom Monatsende, letzter im Monat usw."
+
+msgid "never"
+msgstr "Nie"
+
+msgid "next Month"
+msgstr "nächster Monat"
+
+msgid "no category"
+msgstr " keine Kategorie"
+
+msgid ""
+"no icalendar import from system possible\n"
+"please ask in the forum to the image how it can be installed"
+msgstr ""
+"kein Import von icalendar möglich\n"
+"bitte im Forum zum Image nachfragen, wie das Modul installiert werden kann"
+
+msgid "no lines"
+msgstr "keine Linien"
+
+msgid "not"
+msgstr "nicht markieren"
+
+msgid "not a valid URL!"
+msgstr "keine gültige URL!"
+
+msgid "not extra"
+msgstr "nein"
+
+msgid "on and standby"
+msgstr "wenn eingeschaltet und aus Standby"
+
+msgid "on, standby and deepstandby"
+msgstr "eingeschaltet, Standby, Deepstandby"
+
+msgid "online-calendars"
+msgstr "Online-Kalender"
+
+msgid ""
+"or\n"
+" call the Number with blue Key"
+msgstr ""
+"oder\n"
+"blaue Taste drücken zum anrufen der markierten Nummer"
+
+msgid "parameters setting"
+msgstr "Einstellungen"
+
+msgid "pick up the latest data automatically at startup?"
+msgstr "abholen der aktuellen Daten automatisch bei Programmstart?"
+
+msgid "previous month"
+msgstr "voriger Monat"
+
+msgid "radio alarm Clock"
+msgstr "Radio-Wecker"
+
+msgid "repeat"
+msgstr "Wiederholung"
+
+msgid "restore files and settings"
+msgstr "Daten und Einstellungen  wiederherstellen"
+
+msgid "sample: you will MO,TH,SA,SU then type: 1467"
+msgstr "Beispiel: für Mo,Do,Sa und So eingeben: 1467"
+
+msgid ""
+"second calendar was created successfully, to see push-button Bouquet on the "
+"calendar"
+msgstr ""
+"zweite Datei wurde erfolgreich erstellt, im Kalender Bouquet-Taste drücken "
+"zum anzeigen"
+
+msgid "selceted File is:"
+msgstr "ausgewählte Datei:"
+
+msgid "select from the list: Event by Date, Event by Rules, Timer"
+msgstr ""
+"wähle aus Liste: Termin an Datum (einfache Eingabe), Termin nach Regeln "
+"(ausführlich Einstellmöglichkeit), Timer"
+
+msgid "select from the list: repeat, repeat until, none"
+msgstr "Wiederholen, Wiederholen bis zu einem Datum, nicht wiederholen"
+
+msgid ""
+"set mp3-URL for radio-Stream: http:\\....\n"
+" (mp3,ogg, aac - not pls,m3u,wmp,flash....)"
+msgstr ""
+"Eingabe für Stream-URL: http:\\....\n"
+"(mp3,ogg, aac - kein pls,m3u,wmp,flash....)"
+
+msgid ""
+"show events from additional calendar files or online calendar in calendar 1 "
+"or calendar 2"
+msgstr ""
+"Termine aus zusätzlichen ics oder Online Kalender in Kalender 1 oder "
+"Kalender 2 anzeigen"
+
+msgid "show extern events in calendar"
+msgstr "in welchem Kalender externe Termine zeigen"
+
+msgid "start volume"
+msgstr "Start- Lautstärke"
+
+msgid "startscreen background"
+msgstr "Startscreen Hintergrund"
+
+msgid "startscreen text"
+msgstr "Startscreen Text"
+
+msgid "text for List, press ok for edit"
+msgstr "Kurztext für die Listenanzeige, OK drücken zum bearbeiten"
+
+msgid ""
+"to activate a new / changed timer is unfortunately still necessary to restart"
+msgstr ""
+"um einen neuen/geänderten Timer zu aktivieren ist leider noch ein Neustart "
+"nötig"
+
+msgid "today"
+msgstr "Heute"
+
+msgid "unique"
+msgstr "einmalig"
+
+msgid "unknown error"
+msgstr "unbekannter Fehler"
+
+msgid "unlisted"
+msgstr "nicht in Liste"
+
+msgid "until repeat"
+msgstr "Wiederholung bis"
+
+msgid "update every ? minutes,0=Off"
+msgstr "aktualisiere alle ? Minuten, 0=aus"
+
+msgid "vCard- edit Text"
+msgstr "vCard - Text bearbeiten"
+
+msgid "when on"
+msgstr "wenn Box eingeschaltet"
+
+msgid "without text"
+msgstr "kein Text"
+
+msgid "write /tmp/plfs_ges for 'see text file' in LCD4Linux"
+msgstr "schreibe Datei /tmp/plfs_ges für 'zeige Textdatei' in LCD4Linux"
+
+msgid "write text file"
+msgstr "schreibe Textdatei"
+
+msgid "zip code"
+msgstr "Postleitzahl"
