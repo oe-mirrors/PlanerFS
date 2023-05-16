@@ -10,8 +10,8 @@
 # PYTHON IMPORTS
 from configparser import ConfigParser
 from datetime import datetime, timedelta
-from os import listdir, system
-from os.path import exists
+from os import listdir, system, makedirs
+from os.path import exists, join
 from pickle import dump
 from time import localtime, time, strftime
 
@@ -23,7 +23,7 @@ from Screens.MessageBox import MessageBox
 from Screens.Standby import inStandby
 from Screens import Standby
 from Tools import Notifications
-from Tools.Directories import copyfile, fileExists
+from Tools.Directories import SCOPE_SYSETC, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN, resolveFilename, copyfile, fileExists
 
 # PLUGIN IMPORTS
 from . import _ # for localized messages
@@ -39,11 +39,11 @@ from .PlanerFS import PlanerFS7
 
 version = "10.0beta"
 txt = "Version: %s\n" % version
-CONFIGFILE = "/etc/ConfFS/PlanerFS.conf"
-ONLINETEXT = "/etc/ConfFS/PlanerFS_online.txt"
-cal_files_path = "/etc/ConfFS"
-icsdatei = "PlanerFS.ics"
-termindatei = "%s/%s" % (cal_files_path, icsdatei)
+cal_files_path = join(resolveFilename(SCOPE_SYSETC), "ConfFS/")
+CONFIGFILE = join(cal_files_path, "PlanerFS.conf")
+ONLINETEXT = join(cal_files_path, "PlanerFS_online.txt")
+termindatei = join(cal_files_path, "PlanerFS.ics")
+PLUGINPATH = join(resolveFilename(SCOPE_PLUGINS), "Extensions/PlanerFS/")
 try:
 	from Plugins.Extensions.LCD4linux.module import L4Lelement
 	L4L = True
@@ -51,15 +51,12 @@ except Exception:
 	L4L = None
 	txt += "No L4L\n"
 
-try:
-	if not fileExists(termindatei):
-		copyfile("/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/sample.ics", termindatei)
-	if not fileExists("/etc/ConfFS/PlanerFS.vcf"):
-		copyfile("/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/sample.vcf", "/etc/ConfFS/PlanerFS.vcf")
-except Exception:
-	pass
-
-#DPKG = False
+if not exists(cal_files_path):
+	makedirs(cal_files_path)
+if not fileExists(termindatei):
+	copyfile(join(PLUGINPATH, "sample.ics"), termindatei)
+if not fileExists(join(cal_files_path, "PlanerFS.vcf")):
+	copyfile(join(PLUGINPATH, "sample.vcf"), join(cal_files_path, "PlanerFS.vcf"))
 conf = {
 		"ext_menu": "True",
 		"startscreen_plus": "True",
@@ -83,7 +80,7 @@ conf = {
 		"l_ferien": 0,
 		"ferien": 0,
 		"schicht_send_url": None,
-		"dat_dir": '/etc/ConfFS/',
+		"dat_dir": cal_files_path,
 		"cals_dir": "/tmp/",
 		"categories": "Keine,Geburtstag,Feiertag,Jahrestag,Hochzeitstag,Keine,Keine,Keine,Keine,Keine",
 		"cat_color_list": "#00008B,#D2691E,#006400,#696969,#FFD700,#000000,#B22222,#8B8878,#CD0000,#00868B,#f0f8ff,#ff4500,#20343c4f,#deb887,#228B22,#5F9EA0,#DC143C,#F0F8FF,#EEC900",
@@ -134,7 +131,7 @@ if exists(ONLINETEXT):
 	with open(ONLINETEXT, 'r') as fp:
 		onl_lines = fp.readlines()
 else:
-	with open("/etc/ConfFS/PlanerFS_online.txt", "w") as fp:
+	with open(ONLINETEXT, "w") as fp:
 		fp.write("# Internetadressen fuer online-Kalender\n# Aufbau:\n# name = url = calendarNr\n##sample (delete # / entferne #):\n")
 		fp.write("\nFeiertage_Germany = https://calendar.google.com/calendar/ical/de.german%23holiday%40group.v.calendar.google.com/public/basic.ics\n")
 time_timer = Timer_dats(None, None, None)
@@ -164,8 +161,8 @@ class einlesen():
 			erg = 1
 			if conf["autosync"] == "Yes":
 				path = ONLINETEXT
-				if conf["dat_dir"] != '/etc/ConfFS/' and exists(conf["dat_dir"] + 'PlanerFS_online.txt'):
-					path = conf["dat_dir"] + 'PlanerFS_online.txt'
+				if conf["dat_dir"] != cal_files_path and exists(conf["dat_dir"] + "PlanerFS_online.txt"):
+					path = conf["dat_dir"] + "PlanerFS_online.txt"
 				erg = online_import().run(path, fer, True)
 				if erg == 0 and not inStandby:
 					Notifications.AddNotification(MessageBox, "PlanerFS\n" + _("Error: at least one external file could not be loaded!"), type=MessageBox.TYPE_ERROR, timeout=30)
@@ -177,7 +174,7 @@ class einlesen():
 			if exists(conf["dat_dir"]):
 				for cal_file in listdir(conf["dat_dir"]):
 					n1 = conf["dat_dir"] + cal_file
-					if cal_file.endswith(".ics") and not n1 in files:
+					if cal_file.endswith(".ics") and n1 not in files:
 						files.append(n1)
 			if conf["cals_dir"] != conf["dat_dir"] and exists(conf["cals_dir"]):
 				for cal_file in listdir(conf["cals_dir"]):
