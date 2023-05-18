@@ -4,24 +4,24 @@ from datetime import datetime, date
 from os.path import exists
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGFILE, _ # for localized messages
 
-conf = {
-"vorschaum": 3,
-"countdown": 0,
-"sec_file": "",
-"kalender_art": "Off",
-"l4l_ges_file": "On",
-"l4l_ges_file_len": 200,
-"holidays_in_startscreen": "Yes",
-"doubles": 0,
-}
+conf =	{
+		"vorschaum": 3,
+		"countdown": 0,
+		"sec_file": "",
+		"kalender_art": "Off",
+		"l4l_ges_file": "On",
+		"l4l_ges_file_len": 200,
+		"holidays_in_startscreen": "Yes",
+		"doubles": 0,
+		}
 
 categories1 = (_('Birthday'), _('Anniversary'), _('Wedding day'), 'Birthday', 'Anniversary', 'Wedding day')
 z_liste = ("0", "1", "1", "0", "1", "1", "0", "0", "0", "0")
-if exists('/etc/ConfFS/PlanerFS.conf'):
+if exists(CONFIGFILE):
 	configparser = ConfigParser()
-	configparser.read("/etc/ConfFS/PlanerFS.conf")
+	configparser.read(CONFIGFILE)
 	if configparser.has_section("settings"):
 		l1 = configparser.items("settings")
 		for k, v in l1:
@@ -37,14 +37,12 @@ if exists('/etc/ConfFS/PlanerFS.conf'):
 					conf[k] = int(v)
 				except Exception:
 					conf[k] = v
-
 vorschaum = int(conf["vorschaum"])
 wochentage = ("Mo", "Di", "Mi", "Do", "Fr", "Sa", "So")
 
 
 class PFS_l4l():
 	def __init__(self, listnew, l4l_sets, vorschaut, display_size):
-
 		from Plugins.Extensions.LCD4linux.module import L4Lelement
 		MyElements = L4Lelement()
 		lcd = l4l_sets[0]

@@ -19,7 +19,7 @@
 from configparser import ConfigParser
 from datetime import datetime, timedelta, date
 from os import listdir
-from os.path import exists, isfile, getsize
+from os.path import exists, isfile, getsize, join
 from re import compile
 from time import localtime, strftime, strptime
 
@@ -43,7 +43,7 @@ except ImportError:
 	fbf = None
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, _ # for localized messages
 from .PFSconfig import PlanerFSConfiguration
 from .PFScateg import PFS_categorie_conf7, schicht_conf
 from .PFSCards import PFS_show_card7, PFS_show_card_List7
@@ -61,7 +61,7 @@ except Exception:
 	msp = False
 
 conf = {
-		"dat_dir": '/etc/ConfFS/',
+		"dat_dir": CONFIGPATH,
 		"altloesch": 365,
 		"cals_dir": "/tmp/",
 		"altloesch_on": "No",
@@ -70,7 +70,7 @@ conf = {
 		"ansicht": 1,
 		"version": "",
 		"cards_on": None,
-		"dat_dir": '/etc/ConfFS/',
+		"dat_dir": CONFIGPATH,
 		"schicht_art": 0,
 		"ferien": 0,
 		"l_ferien": 0,
@@ -81,8 +81,8 @@ categories1 = []
 color_list = []
 z_liste = ("0", "1", "1", "0", "1", "1", "0", "0", "0", "0")
 configparser = ConfigParser()
-if exists('/etc/ConfFS/PlanerFS.conf'):
-	configparser.read("/etc/ConfFS/PlanerFS.conf")
+if exists(CONFIGFILE):
+	configparser.read(CONFIGFILE)
 	if configparser.has_section("settings"):
 		l1 = configparser.items("settings")
 		for k, v in l1:
@@ -110,12 +110,12 @@ rot = Farben().farb_re(color_list[16])
 weiss = Farben().farb_re(color_list[17])
 ansicht = 1
 DWide = getDesktop(0).size().width()
-cal_files_path = "/etc/ConfFS"
+CONFIGPATH = "/etc/ConfFS"
 icsdatei = "PlanerFS.ics"
 icsdatei2 = "PlanerFS2.ics"
-termindatei = "%s/%s" % (cal_files_path, icsdatei)
-termindatei_2 = "%s/%s" % (cal_files_path if isfile("%s/%s" % (cal_files_path, icsdatei2)) else "", icsdatei2)
-vcfdatei = "%s/PlanerFS.vcf" % cal_files_path
+termindatei = "%s/%s" % (CONFIGPATH, icsdatei)
+termindatei_2 = "%s/%s" % (CONFIGPATH if isfile("%s/%s" % (CONFIGPATH, icsdatei2)) else "", icsdatei2)
+vcfdatei = "%s/PlanerFS.vcf" % CONFIGPATH
 ERRORLOG = "/tmp/PlanerFS-Errors.txt"
 lt = localtime()
 
@@ -127,7 +127,7 @@ class PlanerFS7(Screen, HelpableScreen):
 		global color_list
 		global categories1
 		global cal_bg, color_inactiv, rot, weiss
-		skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PlanerFS.xml" % ("fHD" if DWide > 1300 else "HD")
+		skindatei = join(PLUGINPATH, "skin/%s/PlanerFS.xml" % ("fHD" if DWide > 1300 else "HD"))
 		with open(skindatei) as tmpskin:
 			self.skin = tmpskin.read()
 		configparser = ConfigParser()
@@ -302,8 +302,7 @@ class PlanerFS7(Screen, HelpableScreen):
 
 	def vcards(self):
 		if not exists(vcfdatei):
-			datei = open(vcfdatei, "wb")
-			datei.close()
+			open(vcfdatei, "wb").close()
 		if self["event_list"].getCurrent() is not None:
 			name_x = self["event_list"].getCurrent()[3][1]
 			geb = self["event_list"].getCurrent()[3][3]
@@ -312,8 +311,7 @@ class PlanerFS7(Screen, HelpableScreen):
 
 	def vcards_list(self):
 		if not exists(vcfdatei):
-			datei = open(vcfdatei, "wb")
-			datei.close()
+			open(vcfdatei, "wb").close()
 		if exists(vcfdatei):
 			if self.cards_on:
 				self.close(None)
@@ -364,9 +362,8 @@ class PlanerFS7(Screen, HelpableScreen):
 				text = ""
 		if exists(ERRORLOG):
 			if getsize(ERRORLOG) > 60:
-				fp = open(ERRORLOG)
-				text = fp.read()
-				fp.close()
+				with open(ERRORLOG) as fp:
+					text = fp.read()
 			else:
 				text = "Congratulation! no errors found"
 		else:
@@ -431,10 +428,10 @@ class PlanerFS7(Screen, HelpableScreen):
 	def cal_filesList(self):
 		cal_files = []
 		self.schichtfile = None
-		if exists(cal_files_path):
-			for cal_file in listdir(cal_files_path):
+		if exists(CONFIGPATH):
+			for cal_file in listdir(CONFIGPATH):
 				if cal_file.endswith(".ics"):  # and cal_file != icsdatei2 and cal_file != icsdatei:
-					cal_files.append("%s/%s" % (cal_files_path, cal_file))
+					cal_files.append("%s/%s" % (CONFIGPATH, cal_file))
 		for cal_file in listdir(conf["cals_dir"]):
 			if cal_file.endswith(".ics"):
 				cal_files.append(conf["cals_dir"] + cal_file)
@@ -471,10 +468,9 @@ class PlanerFS7(Screen, HelpableScreen):
 					else:
 						modu2 = True
 				if modu2:
-					tempFile = open(file, 'r')
-					dataLines.append("filename: %s" % file)
-					dataLines.extend(tempFile.readlines())
-					tempFile.close()
+					with open(file, 'r') as tempFile:
+						dataLines.append("filename: %s" % file)
+						dataLines.extend(tempFile.readlines())
 			if ica:
 				self.readEvents1(ica, 1)
 				if len(ica2):
@@ -1314,10 +1310,9 @@ class PlanerFS7(Screen, HelpableScreen):
 
 
 class PanerFS_menu7(Screen):
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFSmenulist.xml" % ("fHD" if getDesktop(0).size().width() > 1300 else "HD")
-	tmpskin = open(skindatei)
-	skin = tmpskin.read()
-	tmpskin.close()
+	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if getDesktop(0).size().width() > 1300 else "HD"))
+	with open(skindatei) as tmpskin:
+		skin = tmpskin.read()
 
 	def __init__(self, session, extern):
 		Screen.__init__(self, session)

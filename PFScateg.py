@@ -1,6 +1,6 @@
 # PYTHON IMPORTS
 from configparser import ConfigParser
-from os.path import exists
+from os.path import exists, join
 
 # ENIGMA IMPORTS
 from enigma import getDesktop
@@ -16,7 +16,7 @@ from Screens.InputBox import InputBox
 from Screens.MessageBox import MessageBox
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGFILE, PLUGINPATH, _ # for localized messages
 
 pfscolor_list = ("#006400", "#BDB76B", "#556B2F", "#CAFF70", "#BCEE68", "#A2CD5A", "#6E8B3D", "#8FBC8F", "#C1FFC1",
 "#B4EEB4", "#9BCD9B", "#698B69", "#228B22", "#ADFF2F", "#7CFC00", "#90EE90", "#20B2AA", "#32CD32", "#3CB371", "#00FA9A", "#F5FFFA", "#6B8E23", "#C0FF3E", "#B3EE3A", "#9ACD32",
@@ -57,7 +57,7 @@ DWide = getDesktop(0).size().width()
 
 
 class color_select(Screen):
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFScatset.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/PFScatset.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -110,7 +110,7 @@ class color_select(Screen):
 
 
 class PFS_categorie_conf7(Screen, HelpableScreen):
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFScatset.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/PFScatset.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -126,9 +126,9 @@ class PFS_categorie_conf7(Screen, HelpableScreen):
 		self.z_liste = ["0", "1", "0", "1", "1", "0", "0", "0", "0", "0"]
 		categories = ""  # ",".join((_("None"),_("None"),_("None"),_("None"),_("None"),_("None"),_("None"),_("None"),_("None"),_("None"), _("calendar days"),_("calendar holiday"),_("calendar day background"),_("calendar day event"),_("list inactive"),_("list anniversaries"),_("list txt"),_("calendar today background")))
 		mcolor_list = ()  # ("#00008B","#D2691E","#006400","#696969","#FFD700","#000000","#B22222","#8B8878","#CD0000","#00868B","#FF0000","#FFFFFF","#e5b243","#FFFFFF","#20343c4f","#FF0000","#FFFFFF","#228B22")
-		if exists('/etc/ConfFS/PlanerFS.conf'):
+		if exists(CONFIGFILE):
 			configparser = ConfigParser()
-			configparser.read("/etc/ConfFS/PlanerFS.conf")
+			configparser.read(CONFIGFILE)
 			if configparser.has_section("settings"):
 				l1 = configparser.items("settings")
 				for k, v in l1:
@@ -266,16 +266,16 @@ class PFS_categorie_conf7(Screen, HelpableScreen):
 
 	def save(self):
 		self.configparser2 = ConfigParser()
-		self.configparser2.read("/etc/ConfFS/PlanerFS.conf")
+		self.configparser2.read(CONFIGFILE)
 		cat = self.categories[0:10]
 		self.catego = ",".join(cat)
 		self.col = ",".join(self.color_list)
 		zz = ",".join(self.z_liste)
-		if exists('/etc/ConfFS/PlanerFS.conf'):
+		if exists(CONFIGFILE):
 			self.configparser2.set("settings", "categories", self.catego.decode("utf-8"))
 			self.configparser2.set("settings", "cat_color_list", self.col)
 			self.configparser2.set("settings", "z_liste", zz)
-			fp = open("/etc/ConfFS/PlanerFS.conf", "w")
+			fp = open(CONFIGFILE, "w")
 			self.configparser2.write(fp)
 		#self.close(1)
 		#if self.col != self.color_list or zz
@@ -302,7 +302,7 @@ class schicht_conf(Screen, HelpableScreen):
 		L4l = True
 	except Exception:
 		L4l = None
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFScatset.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/PFScatset.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -311,7 +311,7 @@ class schicht_conf(Screen, HelpableScreen):
 		l4l_sets = ("Off", "1", "1", "0", "80", "500", "100", "10", "On,Idle")
 		schicht = ("0", "0", "0")
 		configparser = ConfigParser()
-		configparser.read("/etc/ConfFS/PlanerFS.conf")
+		configparser.read(CONFIGFILE)
 
 		if configparser.has_section("settings"):
 
@@ -488,14 +488,14 @@ class schicht_conf(Screen, HelpableScreen):
 
 	def save(self):
 		configparser2 = ConfigParser()
-		configparser2.read("/etc/ConfFS/PlanerFS.conf")
+		configparser2.read(CONFIGFILE)
 		if not configparser2.has_section("settings"):
 			configparser2.add_section("settings")
 		configparser2.set("settings", "schicht_col", str(self.schicht_colors))
 
 		if L4l:
 			configparser2.set("settings", "l4l_sets", ':'.join(map(str, self.lcl_sets2)))
-		fp = open("/etc/ConfFS/PlanerFS.conf", "w")
+		fp = open(CONFIGFILE, "w")
 		configparser2.write(fp)
 #        if L4l:
 #            from .PFSpaint import mspFS_paint

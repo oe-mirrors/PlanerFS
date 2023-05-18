@@ -1,29 +1,1126 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: planerfs\n"
-"POT-Creation-Date: \n"
+"POT-Creation-Date: 2023-05-18 16:06+0200\n"
 "PO-Revision-Date: \n"
-"Last-Translator: shadowrider <plugins@fselbig.de>\n"
+"Last-Translator: Mr.Servo <mrservo via GitHub.com>\n"
 "Language-Team: shadowrider <shadowrider@unknown.de>\n"
 "Language: de\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
-"X-Generator: Poedit 1.8.10\n"
+"X-Generator: Poedit 3.3.1\n"
 
-msgid "2. File for Startscreen"
-msgstr "2. Datei für Startanzeige"
+#: ..\PFSCards.py:63 ..\PFSCards.py:518
+msgid "New Card"
+msgstr "Neue Karte"
 
-msgid "Activated"
-msgstr "aktiviert"
+#: ..\PFSCards.py:64
+msgid "Close"
+msgstr "Schließen"
 
-msgid "Add new event"
-msgstr "Neuen Termin hinzufügen"
+#: ..\PFSCards.py:65 ..\PFSCards.py:520
+msgid "Edit"
+msgstr "Ändern"
 
+#: ..\PFSCards.py:95 ..\PFSCards.py:544
+msgid "business card"
+msgstr "Visitenkarte"
+
+#: ..\PFSCards.py:133 ..\PFSCards.py:173 ..\PFSCards.py:176 ..\PFSCards.py:315
+#: ..\PFSEdit.py:386 ..\PFSanzeige.py:174 ..\PFScateg.py:151 ..\PFShmexp.py:25
+#: ..\PFSl4l.py:20 ..\PlanerFS.py:106 ..\termin.py:14
+msgid "Birthday"
+msgstr "Geburtstag"
+
+#: ..\PFSCards.py:161
+msgid "No entry found in business cards"
+msgstr "Kein Eintrag in den Visitenkarten gefunden"
+
+#: ..\PFSCards.py:197 ..\PFSCards.py:367
+msgid "Call Number"
+msgstr "Rufnummer"
+
+#: ..\PFSCards.py:253 ..\PFSCards.py:318 ..\PFSCards.py:324 ..\PFSCards.py:325
+#: ..\PFSCards.py:326 ..\PFSCards.py:327 ..\PFSCards.py:328
+#: ..\routines_vc.py:123
+msgid "WORK"
+msgstr "GESCHÄFTLICH"
+
+#: ..\PFSCards.py:255 ..\PFSCards.py:316 ..\routines_vc.py:119
+msgid "HOME"
+msgstr "ZUHAUSE"
+
+#: ..\PFSCards.py:257 ..\PFSCards.py:317 ..\routines_vc.py:121
+msgid "MOBIL"
+msgstr "MOBIL"
+
+#: ..\PFSCards.py:281
+msgid "save"
+msgstr "speichern"
+
+#: ..\PFSCards.py:282
+msgid "cancel"
+msgstr "abbrechen"
+
+#: ..\PFSCards.py:283 ..\PFSCards.py:342
+msgid "extended"
+msgstr "erweitert"
+
+#: ..\PFSCards.py:285 ..\PFSCards.py:372
+msgid "Press 'OK' for Virtual Keyboard"
+msgstr "Drücke 'Ok' für die virtuelle Tastatur"
+
+#: ..\PFSCards.py:297
+msgid "PlanerFS: "
+msgstr "PlanerFS: "
+
+#: ..\PFSCards.py:297
+msgid "vCard - Edit"
+msgstr "vCard - bearbeiten"
+
+#: ..\PFSCards.py:308
+msgid "Name"
+msgstr "Name"
+
+#: ..\PFSCards.py:309
+msgid "Designation"
+msgstr "Bezeichnung"
+
+#: ..\PFSCards.py:310 ..\PFSCards.py:325
+msgid "Street"
+msgstr "Straße"
+
+#: ..\PFSCards.py:311 ..\PFSCards.py:326
+msgid "City"
+msgstr "Stadt"
+
+#: ..\PFSCards.py:312 ..\PFSCards.py:327
+msgid "zip code"
+msgstr "Postleitzahl"
+
+#: ..\PFSCards.py:313
+msgid "Country"
+msgstr "Land"
+
+#: ..\PFSCards.py:314
+msgid "Email"
+msgstr "Email"
+
+#: ..\PFSCards.py:322
+msgid "Tel.4 "
+msgstr "Tel.4 "
+
+#: ..\PFSCards.py:323
+msgid "Tel.5 "
+msgstr "Tel..5 "
+
+#: ..\PFSCards.py:328
+msgid "land"
+msgstr "Land"
+
+#: ..\PFSCards.py:340
+msgid "reduced"
+msgstr "reduziert"
+
+#: ..\PFSCards.py:368
+msgid ""
+"or\n"
+" call the Number with blue Key"
+msgstr ""
+"oder\n"
+" blaue Taste zum Anrufen drücken"
+
+#: ..\PFSCards.py:368 ..\PFSCards.py:370
+msgid "Edit Call-Number"
+msgstr "Telefonnummer bearbeiten"
+
+#: ..\PFSCards.py:386
+msgid "vCard- edit Text"
+msgstr "vCard - Text bearbeiten"
+
+#: ..\PFSCards.py:388
+msgid "vCard- edit Number"
+msgstr "vCard - Nummer bearbeiten"
+
+#: ..\PFSCards.py:391 ..\PFSCards.py:549
+msgid "Selected card delete?"
+msgstr "Ausgewählte Karte wirklich löschen?"
+
+#: ..\PFSCards.py:513 ..\PFSCards.py:608
+msgid "All"
+msgstr "Alle"
+
+#: ..\PFSCards.py:519
+msgid "Delete"
+msgstr "Löschen"
+
+#: ..\PFSCards.py:521 ..\PFSanzeige.py:202 ..\PlanerFS.py:402
+#: ..\PlanerFS.py:958
+msgid "Calendar"
+msgstr "Kalender"
+
+#: ..\PFSCards.py:529
+msgid "Delete  buisness card of selected Name"
+msgstr "Lösche Datensatz von ausgewählten Namen"
+
+#: ..\PFSCards.py:530
+msgid "Make new buisness card"
+msgstr "Neuen Datensatz anlegen"
+
+#: ..\PFSCards.py:531
+msgid "Edit data of selected name"
+msgstr "Bearbeite Datensatz von ausgewählten Namen"
+
+#: ..\PFSCards.py:532
+msgid "Open Calendar"
+msgstr "Kalender anzeigen"
+
+#: ..\PFSCards.py:536
+msgid "Close adress book"
+msgstr "Adressbuch schließen"
+
+#: ..\PFSCards.py:537
+msgid "Show  buisness card of selected Name"
+msgstr "Zeige Datensatz von ausgewählten Namen"
+
+#: ..\PFSCards.py:541
+msgid "Filter - Letter up"
+msgstr "Filter -> voriger Buchstabe"
+
+#: ..\PFSCards.py:542
+msgid "Filter - Letter down"
+msgstr "Filter -> nächster Buchstabe"
+
+#: ..\PFSCards.py:712
+msgid "could not be deleted"
+msgstr "kann nicht gelöscht werden"
+
+#: ..\PFSEdit.py:29 ..\PFSEdit.py:388 ..\PFScateg.py:151 ..\PFSconfig.py:153
+#: ..\PlanerFS.py:106 ..\PlanerFS.py:932
+msgid "None"
+msgstr "Keine"
+
+#: ..\PFSEdit.py:50
+msgid "Event by Rules"
+msgstr "Termin nach Regeln"
+
+#: ..\PFSEdit.py:50
+msgid "Simple event"
+msgstr "Einfacher Termin"
+
+#: ..\PFSEdit.py:50
+msgid "Timer by Rules"
+msgstr "Timer mit Regeln"
+
+#: ..\PFSEdit.py:50 ..\PlanerFS.py:223 ..\PlanerFS.py:962 ..\PlanerFS.py:967
+msgid "Timer"
+msgstr "Timer"
+
+#: ..\PFSEdit.py:51
+msgid "DAILY"
+msgstr "TÄGLICH"
+
+#: ..\PFSEdit.py:51
+msgid "MONTHLY"
+msgstr "MONATLICH"
+
+#: ..\PFSEdit.py:51
+msgid "WEEKLY"
+msgstr "wöchentlich"
+
+#: ..\PFSEdit.py:51
+msgid "YEARLY"
+msgstr "jährlich"
+
+#: ..\PFSEdit.py:51
+msgid "monthly backward"
+msgstr "monatlich rückwärts"
+
+#: ..\PFSEdit.py:52
+msgid "after count"
+msgstr "nach Anzahl"
+
+#: ..\PFSEdit.py:52
+msgid "by date"
+msgstr "an Datum"
+
+#: ..\PFSEdit.py:52
+msgid "never"
+msgstr "Nie"
+
+#: ..\PFSEdit.py:63 ..\PFSEdit.py:238 ..\PFSEdit.py:245
+msgid "Event-text"
+msgstr "Termin-Text"
+
+#: ..\PFSEdit.py:65 ..\PFSEdit.py:248
+msgid "Description"
+msgstr "Beschreibung"
+
+#: ..\PFSEdit.py:69
+msgid "repeat"
+msgstr "Wiederholung"
+
+#: ..\PFSEdit.py:69
+msgid "unique"
+msgstr "einmalig"
+
+#: ..\PFSEdit.py:70 ..\PFSEdit.py:71 ..\PFSEdit.py:82 ..\PFSEdit.py:84
+#: ..\PFSEdit.py:86 ..\PFSEdit.py:95 ..\PFSEdit.py:96 ..\PFSconfig.py:145
+#: ..\PFSconfig.py:158 ..\PFSconfig.py:159 ..\PFSconfig.py:168
+#: ..\PFSconfig.py:171 ..\PFSconfig.py:175 ..\PFSconfig.py:178
+#: ..\PFSconfig.py:183 ..\PFSconfig.py:185 ..\PFSconfig.py:186
+#: ..\PFSconfig.py:188 ..\PFSconfig.py:189 ..\PFSconfig.py:190
+msgid "No"
+msgstr "Nein"
+
+#: ..\PFSEdit.py:70 ..\PFSEdit.py:71 ..\PFSEdit.py:82 ..\PFSEdit.py:95
+#: ..\PFSEdit.py:96 ..\PFSconfig.py:145 ..\PFSconfig.py:158 ..\PFSconfig.py:159
+#: ..\PFSconfig.py:168 ..\PFSconfig.py:171 ..\PFSconfig.py:175
+#: ..\PFSconfig.py:178 ..\PFSconfig.py:183 ..\PFSconfig.py:185
+#: ..\PFSconfig.py:186 ..\PFSconfig.py:189 ..\PFSconfig.py:190
+msgid "Yes"
+msgstr "Ja"
+
+#: ..\PFSEdit.py:84
+msgid "on, standby(Idle) and deepstandby"
+msgstr "eingeschaltet, Standby und Deep-Standby"
+
+#: ..\PFSEdit.py:84 ..\PFSEdit.py:86
+msgid "on and standby(Idle)"
+msgstr "eingeschaltet und Standby"
+
+#: ..\PFSEdit.py:84 ..\PFSEdit.py:86
+msgid "when on"
+msgstr "wenn eingeschaltet"
+
+#: ..\PFSEdit.py:87
+msgid "File"
+msgstr "Datei"
+
+#: ..\PFSEdit.py:87 ..\PFSconfig.py:146 ..\PFSconfig.py:164 ..\PFSconfig.py:170
+#: ..\PFSconfig.py:173 ..\PFSconfig.py:395
+msgid "Off"
+msgstr "Aus"
+
+#: ..\PFSEdit.py:87 ..\PFSconfig.py:153
+msgid "radio"
+msgstr "Radio"
+
+#: ..\PFSEdit.py:98
+msgid "Days"
+msgstr "Tage"
+
+#: ..\PFSEdit.py:98
+msgid "Hours"
+msgstr "Stunden"
+
+#: ..\PFSEdit.py:98
+msgid "Minutes"
+msgstr "Minuten"
+
+#: ..\PFSEdit.py:106
 msgid "Add new event or timer"
 msgstr "Neuen Termin oder Timer hinzufügen"
 
+#: ..\PFSEdit.py:108 ..\PFScateg.py:358 ..\PFSonl.py:78
+msgid "delete"
+msgstr "löschen"
+
+#: ..\PFSEdit.py:113 ..\PFScateg.py:161 ..\PFScateg.py:356 ..\PFSconfig.py:196
+#: ..\PFSonl.py:77
+msgid "Save"
+msgstr "Speichern"
+
+#: ..\PFSEdit.py:114 ..\PFScateg.py:162 ..\PFScateg.py:168 ..\PFScateg.py:175
+#: ..\PFScateg.py:357 ..\PFScateg.py:363 ..\PFScateg.py:370 ..\PFSconfig.py:195
+#: ..\PFSonl.py:76 ..\PFSwe.py:44
+msgid "Cancel"
+msgstr "Abbruch"
+
+#: ..\PFSEdit.py:116 ..\PFSEdit.py:313
+msgid "select from the list: Event by Date, Event by Rules, Timer"
+msgstr ""
+"wähle aus Liste: Termin an Datum (einfache Eingabe), Termin nach Regeln "
+"(ausführlich Einstellmöglichkeit), Timer"
+
+#: ..\PFSEdit.py:231
+msgid "Edit Event"
+msgstr "Termin bearbeiten"
+
+#: ..\PFSEdit.py:236
+msgid "Text"
+msgstr "Text"
+
+#: ..\PFSEdit.py:239 ..\PFSEdit.py:244 ..\PFSanzeige.py:109
+msgid "radio alarm Clock"
+msgstr "Radio-Wecker"
+
+#: ..\PFSEdit.py:240
+msgid "start volume"
+msgstr "Start- Lautstärke"
+
+#: ..\PFSEdit.py:240 ..\PFSwe.py:38 ..\PFSwe.py:57
+msgid "max volume"
+msgstr "maximale Lautstärke"
+
+#: ..\PFSEdit.py:242
+msgid "Stream-URL"
+msgstr "Stream-URL"
+
+#: ..\PFSEdit.py:247 ..\PFSEdit.py:487 ..\PlanerFS.py:1221
+msgid "Description-text"
+msgstr "Beschreibungs-Text"
+
+#: ..\PFSEdit.py:249
+msgid "Location"
+msgstr "Ort"
+
+#: ..\PFSEdit.py:249 ..\PFScateg.py:202
+msgid "Category"
+msgstr "Kategorie"
+
+#: ..\PFSEdit.py:250
+msgid "Start-Date"
+msgstr "Start-Datum"
+
+#: ..\PFSEdit.py:251
+msgid "daylong"
+msgstr "ganztägig"
+
+#: ..\PFSEdit.py:253 ..\PFSconfig.py:309
+msgid "Start-Time"
+msgstr "Start-Zeit"
+
+#: ..\PFSEdit.py:254
+msgid "End-Time"
+msgstr "Ende-Zeit"
+
+#: ..\PFSEdit.py:256 ..\PFSEdit.py:268
+msgid "End-Date"
+msgstr "End-Datum"
+
+#: ..\PFSEdit.py:257
+msgid "Use rules"
+msgstr "Regeln verwenden"
+
+#: ..\PFSEdit.py:260
+msgid "Frequency"
+msgstr "Frequenz"
+
+#: ..\PFSEdit.py:261
+msgid "Interval"
+msgstr "Intervall"
+
+#: ..\PFSEdit.py:262
+msgid "Month"
+msgstr "Monat"
+
+#: ..\PFSEdit.py:263
+msgid "Monthday"
+msgstr "Tag im Monat"
+
+#: ..\PFSEdit.py:264
+msgid "WeekDays"
+msgstr "Wochentage"
+
+#: ..\PFSEdit.py:266
+msgid "Event end"
+msgstr "Termin endet"
+
+#: ..\PFSEdit.py:271
+msgid "Count"
+msgstr "Anzahl"
+
+#: ..\PFSEdit.py:274
+msgid "Display on Start"
+msgstr "Im Startscreen anzeigen"
+
+#: ..\PFSEdit.py:277
+msgid "Alert on Display"
+msgstr "Wecker anzeigen"
+
+#: ..\PFSEdit.py:281
+msgid "Alert-description"
+msgstr "Weckbeschreibung"
+
+#: ..\PFSEdit.py:282
+msgid "Alert by date-time"
+msgstr "Wecken nach Datum & Zeit"
+
+#: ..\PFSEdit.py:284
+msgid "Alert date"
+msgstr "Weckdatum"
+
+#: ..\PFSEdit.py:285
+msgid "Alert time"
+msgstr "Weckzeitpunkt"
+
+#: ..\PFSEdit.py:287
+msgid "Alert reminder beforehand"
+msgstr "Weckhinweis im Vorfeld"
+
+#: ..\PFSEdit.py:288
+msgid "Unit of time"
+msgstr "Zeiteinheit"
+
+#: ..\PFSEdit.py:313 ..\PFSEdit.py:315 ..\PFSEdit.py:317 ..\PFSEdit.py:319
+msgid "Press 'OK' for list"
+msgstr "Drücke 'OK' für die Auswahlliste"
+
+#: ..\PFSEdit.py:315
+msgid "select from the list: repeat, repeat until, none"
+msgstr "Wiederholen, Wiederholen bis zu einem Datum, nicht wiederholen"
+
+#: ..\PFSEdit.py:319
+msgid "monthly backward = for Day of Month backward (last Day...)"
+msgstr "monatlich rückwärts = Tage vom Monatsende, letzter im Monat usw."
+
+#: ..\PFSEdit.py:321
+msgid "sample: you will MO,TH,SA,SU then type: 1467"
+msgstr "Beispiel: für Mo,Do,Sa und So eingeben: 1467"
+
+#: ..\PFSEdit.py:323
+msgid "Next timer earliest in 5 minutes or 5 minutes after standby"
+msgstr "Nächster Timer wird frühestens in 5min oder 5min nach Standby aktiv"
+
+#: ..\PFSEdit.py:325
+msgid "text for List, press ok for edit"
+msgstr "Kurztext für die Listenanzeige, OK drücken zum bearbeiten"
+
+#: ..\PFSEdit.py:328
+msgid ""
+"set mp3-URL for radio-Stream: http:\\....\n"
+" (mp3,ogg, aac - not pls,m3u,wmp,flash....)"
+msgstr ""
+"Eingabe für Stream-URL: http:\\....\n"
+"(mp3,ogg, aac - kein pls,m3u,wmp,flash....)"
+
+#: ..\PFSEdit.py:330
+msgid "Long-Text, press ok for edit"
+msgstr "Langtext, drücke OK zum Bearbeiten"
+
+#: ..\PFSEdit.py:358
+msgid "Set/edit Text:"
+msgstr "Setze / bearbeite Text:"
+
+#: ..\PFSEdit.py:386
+msgid "no category"
+msgstr "keine Kategorie"
+
+#: ..\PFSEdit.py:386 ..\PFSanzeige.py:174 ..\PFScateg.py:151 ..\PFShmexp.py:25
+#: ..\PFSl4l.py:20 ..\PlanerFS.py:106 ..\termin.py:14
+msgid "Anniversary"
+msgstr "Jahrestag"
+
+#: ..\PFSEdit.py:386 ..\PFSanzeige.py:174 ..\PFScateg.py:151 ..\PFShmexp.py:25
+#: ..\PFSl4l.py:20 ..\PlanerFS.py:106 ..\termin.py:14
+msgid "Wedding day"
+msgstr "Hochzeitstag"
+
+#: ..\PFSEdit.py:386 ..\PFSanzeige.py:245 ..\PFSanzeige.py:250
+#: ..\PFScateg.py:151 ..\PFSl4l.py:73 ..\PlanerFS.py:106 ..\PlanerFS.py:671
+#: ..\PlanerFS.py:672 ..\routines.py:46 ..\routines.py:50 ..\routines.py:54
+#: ..\routines.py:58 ..\routines.py:62 ..\routines.py:66 ..\routines.py:70
+#: ..\routines.py:85 ..\routines.py:89 ..\routines.py:93 ..\routines.py:97
+#: ..\routines.py:101 ..\routines.py:105 ..\routines.py:109
+msgid "Holiday"
+msgstr "Ferien"
+
+#: ..\PFSEdit.py:392
+msgid "Select categorie"
+msgstr "Kategorien auswählen"
+
+#: ..\PFSanzeige.py:46
+msgid "Break execution"
+msgstr "Programm abgebrochen"
+
+#: ..\PFSanzeige.py:76
+msgid "Event is due!"
+msgstr "Termin ist fällig!"
+
+#: ..\PFSanzeige.py:96
+msgid "Timers message!"
+msgstr "Timer-Meldung!"
+
+#: ..\PFSanzeige.py:199
+msgid "Upcoming calendar events"
+msgstr "Bevorstehende Termine"
+
+#: ..\PFSanzeige.py:217
+msgid "Date display"
+msgstr "Termin-Anzeige"
+
+#: ..\PFSanzeige.py:315
+msgid "Events for today"
+msgstr "Termine heute"
+
+#: ..\PFSanzeige.py:319 ..\PFSl4l.py:163
+msgid "No Events registered for today"
+msgstr "Heute keine Termine"
+
+#: ..\PFSanzeige.py:321 ..\PFSl4l.py:165
+msgid "Anniversaries today:"
+msgstr "Jahrestage heute:"
+
+#: ..\PFSanzeige.py:324 ..\PFSl4l.py:168
+msgid "No anniversary registered for today"
+msgstr "Heute ist kein Jahrestag vorhanden"
+
+#: ..\PFSanzeige.py:325 ..\PFSl4l.py:169
+msgid "Next events:"
+msgstr "Nächste Termine:"
+
+#: ..\PFScateg.py:86 ..\PFScateg.py:152 ..\PFScateg.py:210
+msgid "calendar days"
+msgstr "Kalender Tage"
+
+#: ..\PFScateg.py:86 ..\PFScateg.py:152 ..\PFScateg.py:217
+msgid "calendar holiday"
+msgstr "Kalender Feiertag"
+
+#: ..\PFScateg.py:89
+msgid "Select Color for: "
+msgstr "Wähle Farbe für: "
+
+#: ..\PFScateg.py:152
+msgid "calendar background"
+msgstr "PlanerFS Hintergrund"
+
+#: ..\PFScateg.py:152
+msgid "calendar event"
+msgstr "Kalender Termin"
+
+#: ..\PFScateg.py:152
+msgid "calendar today background"
+msgstr "Hintergrundfarbe für heute"
+
+#: ..\PFScateg.py:152 ..\PFScateg.py:213
+msgid "startscreen background"
+msgstr "Startscreen Hintergrund"
+
+#: ..\PFScateg.py:152 ..\PFScateg.py:213
+msgid "startscreen text"
+msgstr "Startscreen Text"
+
+#: ..\PFScateg.py:152 ..\PFScateg.py:220
+msgid "list anniversaries"
+msgstr "Listen Jubiläen"
+
+#: ..\PFScateg.py:152 ..\PFScateg.py:220
+msgid "list heading"
+msgstr "Listen Überschriften"
+
+#: ..\PFScateg.py:152 ..\PFScateg.py:220
+msgid "list inactive"
+msgstr "Listen inaktiv"
+
+#: ..\PFScateg.py:152 ..\PFScateg.py:220
+msgid "list text"
+msgstr "Listen Text"
+
+#: ..\PFScateg.py:157
+msgid "Edit colors and categories"
+msgstr "Farben und Kategorien bearbeiten"
+
+#: ..\PFScateg.py:163
+msgid "Years"
+msgstr "Jahre"
+
+#: ..\PFScateg.py:164
+msgid "Color"
+msgstr "Farbe"
+
+#: ..\PFScateg.py:169
+msgid "Edit text for categorie"
+msgstr "Text der Kategorie bearbeiten"
+
+#: ..\PFScateg.py:174 ..\PFScateg.py:369
+msgid "Save and exit"
+msgstr "Abspeichern und beenden"
+
+#: ..\PFScateg.py:176
+msgid "Toggle number of years"
+msgstr "Umschalten Anzahl der Jahre"
+
+#: ..\PFScateg.py:177
+msgid "Open color list"
+msgstr "Farbenliste öffnen"
+
+#: ..\PFScateg.py:198
+msgid "Not number of years"
+msgstr "Keine Anzahl der Jahre"
+
+#: ..\PFScateg.py:201
+msgid "Number of years"
+msgstr "Anzahl der Jahre"
+
+#: ..\PFScateg.py:249
+msgid "Edit text for category"
+msgstr "Text der Kategorie bearbeiten"
+
+#: ..\PFScateg.py:287 ..\PFSconfig.py:465
+msgid ""
+"Restart PlanerFS for new settings\n"
+"Please wait a moment"
+msgstr ""
+"PlanerFS wird zur Aktivierung der Änderungen neu gestartet\n"
+"Bitte einen Moment Geduld"
+
+#: ..\PFScateg.py:334 ..\PFScateg.py:335 ..\routines.py:669 ..\routines.py:670
+#: ..\routines.py:692 ..\routines.py:772 ..\routines.py:780
+msgid "without text"
+msgstr "ohne Text"
+
+#: ..\PFScateg.py:336 ..\PFScateg.py:337 ..\PFScateg.py:338 ..\PFScateg.py:339
+#: ..\routines.py:671 ..\routines.py:672 ..\routines.py:698
+msgid "If description"
+msgstr "Wenn Beschreibung"
+
+#: ..\PFScateg.py:340 ..\PFScateg.py:341
+msgid "unlisted"
+msgstr "nicht in Liste"
+
+#: ..\PFScateg.py:345 ..\PlanerFS.py:1341
+msgid "Setting shifts"
+msgstr "Schicht Einstellung"
+
+#: ..\PFScateg.py:359
+msgid "New"
+msgstr "Neu"
+
+#: ..\PFScateg.py:364
+msgid "Edit selected option"
+msgstr "Bearbeite gewählte Option"
+
+#: ..\PFScateg.py:371
+msgid "delete shift entry"
+msgstr "lösche Schichteintrag"
+
+#: ..\PFScateg.py:372
+msgid "Make new entry"
+msgstr "Neuen Datensatz anlegen"
+
+#: ..\PFScateg.py:398
+msgid "Shift colors:"
+msgstr "Schicht-Farben:"
+
+#: ..\PFScateg.py:408
+msgid " >> l4l-Grafik:"
+msgstr " >> L4l-Grafik:"
+
+#: ..\PFScateg.py:409 ..\PFScateg.py:441
+msgid "Show in LCD"
+msgstr "Im LCD anzeigen"
+
+#: ..\PFScateg.py:410 ..\PFScateg.py:443
+msgid "LCD"
+msgstr "LCD"
+
+#: ..\PFScateg.py:411 ..\PFScateg.py:445
+msgid "Screen"
+msgstr "Haupt-Anzeige"
+
+#: ..\PFScateg.py:412 ..\PFScateg.py:447
+msgid "Mode"
+msgstr "Modus"
+
+#: ..\PFScateg.py:413 ..\PFScateg.py:449
+msgid "Widht total"
+msgstr "Breite gesamt"
+
+#: ..\PFScateg.py:414 ..\PFScateg.py:451
+msgid "High total"
+msgstr "Höhe gesamt"
+
+#: ..\PFScateg.py:415 ..\PFScateg.py:455
+msgid "Distance from top (pixel)"
+msgstr "Abstand von oben (Pixel):"
+
+#: ..\PFScateg.py:416 ..\PFScateg.py:453
+msgid "Distance from left (%)"
+msgstr "Abstand von links (%):"
+
+#: ..\PFScateg.py:417 ..\PFScateg.py:457
+msgid "Size for a single"
+msgstr "Größe für Einzelelement"
+
+#: ..\PFScateg.py:418 ..\PFScateg.py:459
+msgid "distance between"
+msgstr "Abstand dazwischen"
+
+#: ..\PFScateg.py:442
+msgid "Show on LCD"
+msgstr "Im LCD anzeigen"
+
+#: ..\PFScateg.py:442
+msgid "activate"
+msgstr "aktivieren"
+
+#: ..\PFScateg.py:442
+msgid "deactivate"
+msgstr "deaktivieren"
+
+#: ..\PFScateg.py:444
+msgid "Select the LCD"
+msgstr "LCD auswählen"
+
+#: ..\PFScateg.py:446
+msgid "Set number for screen"
+msgstr "Setze Nummer für Schirm"
+
+#: ..\PFScateg.py:448
+msgid "Select the Mode(s)"
+msgstr "Wähle Modus"
+
+#: ..\PFScateg.py:450
+msgid "Set Widht total"
+msgstr "Setze Gesamtbreite"
+
+#: ..\PFScateg.py:452
+msgid "Set High total"
+msgstr "Setze Gesamthöhe"
+
+#: ..\PFScateg.py:454
+msgid "Set Distance from left (%)"
+msgstr "Setze Abstand von links (%):"
+
+#: ..\PFScateg.py:456
+msgid "Set Distance from top in pixel"
+msgstr "Setze Abstand von oben (Pixel)"
+
+#: ..\PFScateg.py:458
+msgid "Set Size for a single"
+msgstr "Setze Größe für Einzelelement"
+
+#: ..\PFScateg.py:460
+msgid "Set distance between"
+msgstr "Setze Abstand zwischen"
+
+#: ..\PFScateg.py:479
+msgid "New entry"
+msgstr "Neuer Eintrag"
+
+#: ..\PFSconfig.py:135 ..\PFSfiles.py:423 ..\plugin.py:167
+msgid "none"
+msgstr "keine"
+
+#: ..\PFSconfig.py:146 ..\PFSconfig.py:173
+msgid "On"
+msgstr "An"
+
+#: ..\PFSconfig.py:147
+msgid "Big screen"
+msgstr "Vollbild"
+
+#: ..\PFSconfig.py:147
+msgid "Split screen"
+msgstr "Geteilte Anzeige"
+
+#: ..\PFSconfig.py:153
+msgid "Audio-file"
+msgstr "Audio-Datei"
+
+#: ..\PFSconfig.py:157 ..\PFSconfig.py:160
+msgid "Extensionsmenu"
+msgstr "Erweiterungsmenü"
+
+#: ..\PFSconfig.py:157 ..\PFSconfig.py:160
+msgid "Main Menu"
+msgstr "Hauptmenü"
+
+#: ..\PFSconfig.py:157 ..\PFSconfig.py:160
+msgid "not extra"
+msgstr "nicht extra"
+
+#: ..\PFSconfig.py:164
+msgid "at Wakeup from Deep-Standby"
+msgstr "bei Systemstart"
+
+#: ..\PFSconfig.py:164
+msgid "at Wakeup from Deep-Standby and Standby(Idle)"
+msgstr "bei Systemstart und nach Standby(Idle)"
+
+#: ..\PFSconfig.py:164
+msgid "at Wakeup from Deep-Standby and time"
+msgstr "bei Systemstart und Uhrzeit"
+
+#: ..\PFSconfig.py:164
+msgid "at Wakeup from Standby(Idle)"
+msgstr "nach Standby(Idle)"
+
+#: ..\PFSconfig.py:164
+msgid "at Wakeup from Standby(Idle) and time"
+msgstr "nach Standby(Idle) und bei Uhrzeit"
+
+#: ..\PFSconfig.py:164
+msgid "at time"
+msgstr "bei Uhrzeit"
+
+#: ..\PFSconfig.py:170
+msgid "Gregorian"
+msgstr "Gregorianisch"
+
+#: ..\PFSconfig.py:170
+msgid "Julian"
+msgstr "Julianisch"
+
+#: ..\PFSconfig.py:177
+msgid "Lines"
+msgstr "Linien"
+
+#: ..\PFSconfig.py:177
+msgid "no lines"
+msgstr "keine Linien"
+
+#: ..\PFSconfig.py:188
+msgid "In Calendar"
+msgstr "Im Kalender"
+
+#: ..\PFSconfig.py:198
+msgid "Defaults"
+msgstr "Standardeinstellungen"
+
+#: ..\PFSconfig.py:201
+msgid "Press 'help' for explanation and 'ok' for virtual keyboard"
+msgstr ""
+"Drücken Sie \"help\" für eine Erklärung und \"ok\" für die virtuelle Tastatur"
+
+#: ..\PFSconfig.py:214
+msgid "Settings-Menu"
+msgstr "Einstellungen"
+
+#: ..\PFSconfig.py:262
+msgid "URL for radio"
+msgstr "Stream-URL für Radio"
+
+#: ..\PFSconfig.py:270
+msgid "Designation-text in calendar"
+msgstr "Bezeichnungstext im Kalender"
+
+#: ..\PFSconfig.py:273
+msgid "Text for countdown display"
+msgstr "Text für Countdown-Anzeige"
+
+#: ..\PFSconfig.py:276
+msgid "Date for countdown display"
+msgstr "Datum für Countdown-Anzeige"
+
+#: ..\PFSconfig.py:298
+msgid "No placeholder 'pd' for count of days in text!"
+msgstr "Kein Platzhalter 'pd' für die Anzahl der Tage im Text!"
+
+#: ..\PFSconfig.py:304
+msgid "Setting Start"
+msgstr "Starteinstellungen"
+
+#: ..\PFSconfig.py:305
+msgid "Another directory for data files"
+msgstr "Anderes Verzeichnis für Datendateien"
+
+#: ..\PFSconfig.py:312
+msgid "When standby(Idle) display later"
+msgstr "Verzögere Anzeige nach Deepstandby"
+
+#: ..\PFSconfig.py:316
+msgid "Months for events preview"
+msgstr "Vorschau für Termine (Monate)"
+
+#: ..\PFSconfig.py:317
+msgid "Holidays in Startscreen"
+msgstr "Feiertage in Startanzeige"
+
+#: ..\PFSconfig.py:318
+msgid "2. File for Startscreen"
+msgstr "2. Datei für Startanzeige"
+
+#: ..\PFSconfig.py:319
+msgid "Start Display AutoHide (0=Off)"
+msgstr "Startanzeige autom. ausblenden (0=nein)"
+
+#: ..\PFSconfig.py:320
+msgid "Startscreen lines"
+msgstr "Startscreen Linien"
+
+#: ..\PFSconfig.py:323
+msgid "update every ? minutes,0=Off"
+msgstr "aktualisiere alle ? Minuten, 0=aus"
+
+#: ..\PFSconfig.py:324
+msgid "delete old events"
+msgstr "Lösche alte Termine"
+
+#: ..\PFSconfig.py:327
+msgid "delete older than (days)"
+msgstr "lösche älter als (Tage)"
+
+#: ..\PFSconfig.py:330
+msgid "Timer / Reminder"
+msgstr "Timer/Erinnerungen"
+
+#: ..\PFSconfig.py:331
+msgid "Timer on"
+msgstr "Timermeldungen an/aus"
+
+#: ..\PFSconfig.py:332
+msgid "Timer display time (0=endless)"
+msgstr "Anzeigedauer Timer (0=endlos)"
+
+#: ..\PFSconfig.py:333
+msgid "Timer sound"
+msgstr "Timerton"
+
+#: ..\PFSconfig.py:334
+msgid "Timer start volume"
+msgstr "Start- Lautstärke"
+
+#: ..\PFSconfig.py:335
+msgid "Timer max volume"
+msgstr "Maximale Timerlautstärke"
+
+#: ..\PFSconfig.py:338
+msgid "radio url"
+msgstr "Radio URL"
+
+#: ..\PFSconfig.py:341
+msgid "extern dats"
+msgstr "externe Daten"
+
+#: ..\PFSconfig.py:342
+msgid "floating holidays"
+msgstr "bewegl. Feiertage"
+
+#: ..\PFSconfig.py:344
+msgid "download on Start"
+msgstr "Download akt. Daten bei Start automatisch"
+
+#: ..\PFSconfig.py:345
+msgid "extern events color in calendar"
+msgstr "externe Termine im Kalender farbig"
+
+#: ..\PFSconfig.py:346
+msgid "Show external reminders"
+msgstr "Zeige externe Erinnerungen an"
+
+#: ..\PFSconfig.py:347
+msgid "Use shift plan"
+msgstr "Schichtplanfunktion verwenden"
+
+#: ..\PFSconfig.py:349
+msgid "Settings in Menu->Shift Setting..."
+msgstr "Einstellen in Menü->Schicht-Einstellung..."
+
+#: ..\PFSconfig.py:350
+msgid "Identifier text in calendar"
+msgstr "Anzeige-Text im Kalender"
+
+#: ..\PFSconfig.py:351
+msgid "Show shift on startscreen"
+msgstr "Zeige Schichten in Startscreen"
+
+#: ..\PFSconfig.py:352
+msgid "Differentiate between: with/without description"
+msgstr "Unterscheide mit/ohne Beschreibung"
+
+#: ..\PFSconfig.py:355
+msgid "Show repetitions in lists"
+msgstr "Zeige Wiederholungen in Listen"
+
+#: ..\PFSconfig.py:362
+msgid "lcd on/off"
+msgstr "LCD-Ausgabe An/Aus"
+
+#: ..\PFSconfig.py:363
+msgid "lcd-nr"
+msgstr "LCD-Nr"
+
+#: ..\PFSconfig.py:364
+msgid "lcd screen-nr"
+msgstr "LCD Schirm-Nr"
+
+#: ..\PFSconfig.py:365
+msgid "lcd list fontsize"
+msgstr "Schriftgröße für LCD-Liste"
+
+#: ..\PFSconfig.py:366
+msgid "lcd timer fontsize"
+msgstr "Schriftgröße Timermeldung"
+
+#: ..\PFSconfig.py:367
+msgid "write text file"
+msgstr "schreibe Textdatei"
+
+#: ..\PFSconfig.py:368
+msgid "maximum characters per line"
+msgstr "wieviele Zeichen maximal anzeigen pro Zeile"
+
+#: ..\PFSconfig.py:372
+msgid "calendar in Menu:"
+msgstr "PlanerFS in Menüs anzeigen:"
+
+#: ..\PFSconfig.py:373
+msgid "address book in Menu:"
+msgstr "Adressbuch in Menüs anzeigen:"
+
+#: ..\PFSconfig.py:374
+msgid "Overview in Menu:"
+msgstr "Startscreen im Menü:"
+
+#: ..\PFSconfig.py:375
+msgid "Background from skin"
+msgstr "Hintergrund vom Skin"
+
+#: ..\PFSconfig.py:377
+msgid "Placeholder in text for number of days = pd"
+msgstr "Platzhalter im Text für Anzahl Tage = pd"
+
+#: ..\PFSconfig.py:378
+msgid "Countdown-Text:"
+msgstr "Countdown-Text:"
+
+#: ..\PFSconfig.py:381
+msgid "Countdown-Dat:"
+msgstr "Countdown-Datum:"
+
+#: ..\PFSconfig.py:397
+msgid "PlanerFS - Holidays"
+msgstr "PlanerFS - Ferien"
+
+#: ..\PFSconfig.py:415 ..\PFSonl.py:215
+msgid "Really close without saving settings?"
+msgstr "Wirklich beenden ohne zu speichern?"
+
+#: ..\PFSconfig.py:479
+msgid "When is the start screen displayed?"
+msgstr "Wann soll der Startscreen angezeigt werden?"
+
+#: ..\PFSconfig.py:485
+msgid "Show same named appointment with all dates?"
+msgstr "Wiederholende, gleichnamige Termine in Listen anzeigen?"
+
+#: ..\PFSconfig.py:487
+msgid "View Holidays in Lists?"
+msgstr "Ferien in Listen anzeigen?"
+
+#: ..\PFSconfig.py:489
+msgid ""
+"How many months in advance, the dates are displayed in the startup screen?"
+msgstr ""
+"Für wieviele Monate im voraus sollen die Termine in der Startanzeige "
+"angezeigt werden?"
+
+#: ..\PFSconfig.py:491
+msgid "Holidays are to be displayed in the startup screen?"
+msgstr "Sollen Feiertage in der Startanzeige angezeigt werden?"
+
+#: ..\PFSconfig.py:493
+msgid "For timer: off = the feature timer is off, there are no timer processed"
+msgstr ""
+"Für Timer: Aus = die Funktion für Timer ist aus, es werden keine Timer "
+"abgearbeitet"
+
+#: ..\PFSconfig.py:495
 msgid ""
 "After how many seconds to the startup screen will disappear automatically? "
 "(0 = not Auto-hide)"
@@ -31,301 +1128,7 @@ msgstr ""
 "Nach wievielen Sekunden soll die Startanzeige automatisch ausgeblendet "
 "werden? (0 = nicht automatisch ausblenden)"
 
-msgid "Alarm-Sound"
-msgstr "Timer-Sound"
-
-msgid "Alert by date-time"
-msgstr "Alarm bei Datum+Zeit"
-
-msgid "Alert date"
-msgstr "Alarm-Datum"
-
-msgid "Alert on Display"
-msgstr "Erinnerung anzeigen"
-
-msgid "Alert reminder beforehand"
-msgstr "Alarm vor Termin"
-
-msgid "Alert time"
-msgstr "Alarm-Zeit"
-
-msgid "Alert-description"
-msgstr "Alarm-Text"
-
-msgid "All"
-msgstr "Alle"
-
-msgid "Anniversaries"
-msgstr "Jahrestage"
-
-msgid "Anniversaries today:"
-msgstr "Jahrestage heute:"
-
-msgid "Anniversary"
-msgstr "Jahrestag"
-
-msgid "Another directory for data files"
-msgstr "Anderes Verzeichnis für Datendateien"
-
-msgid "April"
-msgstr "April"
-
-msgid "Ascension"
-msgstr "Himmelfahrt"
-
-msgid "August"
-msgstr "August"
-
-msgid "Backup ConfFS..."
-msgstr "Sicherung von ConfFS..."
-
-msgid "Backup Files and Settings..."
-msgstr "sichere Daten und Einstellungen ..."
-
-msgid "Big screen"
-msgstr "Kalender im Vollbild"
-
-msgid "Birthday"
-msgstr "Geburtstag"
-
-msgid "Break execution"
-msgstr "Programm abgebrochen"
-
-msgid "By how many seconds to the start can be delayed?"
-msgstr "Um wieviel Sekunden soll der Start verzögert werden?"
-
-msgid "Calendar"
-msgstr "Kalender"
-
-msgid "Call Number"
-msgstr "anrufen"
-
-msgid "Cancel"
-msgstr "Abbruch"
-
-msgid "Categories"
-msgstr "Kategorien"
-
-msgid "Category"
-msgstr "Kategorie"
-
-msgid "Caution, this is a recurring appointment! Delete recurring appointment?"
-msgstr "Vorsicht, das ist ein Serientermin! Terminserie löschen?"
-
-msgid "Change calendar file"
-msgstr "zeige nächste/vorige Kalender-Datei"
-
-msgid "City"
-msgstr "Ort"
-
-msgid "Close PlanerFS"
-msgstr "PlanerFS beenden"
-
-msgid "Close adress book"
-msgstr "Adressbuch schließen"
-
-msgid "Color"
-msgstr "Farbe"
-
-msgid "Color an category setting"
-msgstr "Einstellung Farben und Kategorien"
-
-msgid "Copy ics-File of PlanerFS path"
-msgstr "Kopiere eine  ics-Datei aus dem PlanerFS -Verzeichnis"
-
-msgid "Copy ics-File to PlanerFS path"
-msgstr "Kopiere eine ics-Datei in das PlanerFS-Verzeichnis"
-
-msgid "Corpus Christi"
-msgstr "Fronleichnam"
-
-msgid "Count"
-msgstr "Anzahl"
-
-msgid ""
-"Countdown for the start display and LCD screen, insert in the text 'pd' for "
-"the number of days"
-msgstr ""
-"Einen Countdown im Startdisplay und/oder LCD-Screen anzeigen, für 'pd' im "
-"Text wird dann die Anzahl Tage angezeigt"
-
-msgid "Countdown-Dat:"
-msgstr "Countdown-Datum:"
-
-msgid "Countdown-Text:"
-msgstr "Countdown-Text:"
-
-msgid "DAILY"
-msgstr "täglich"
-
-msgid "DESCRIPTION"
-msgstr "ausführlicher Text"
-
-msgid "Date Error"
-msgstr "Datum-Fehler!"
-
-msgid "Date display"
-msgstr "Termin-Anzeige"
-
-msgid "Day"
-msgstr "Tag"
-
-msgid "December"
-msgstr "Dezember"
-
-msgid "Defaults"
-msgstr "Standard-einstellungen"
-
-msgid "Delay on event announcement (sec)"
-msgstr "Terminanzeige autom. ausblenden (sek)"
-
-msgid "Delete  buisness card of selected Name"
-msgstr "lösche Datensatz von ausgewählten Namen"
-
-msgid "Delete selected  entry"
-msgstr "gewählten Eintrag löschen"
-
-msgid "Design"
-msgstr "Gestaltung/Aussehen des Planers"
-
-msgid "Designation"
-msgstr "Bezeichnung"
-
-msgid "Differentiate between: with/without description"
-msgstr "unterscheide mit/ohne Beschreibung"
-
-msgid "Display on Start"
-msgstr "Im Startscreen anzeigen"
-
-msgid "Distance from left (%)"
-msgstr "Abstand von links (%):"
-
-msgid "Distance from top (pixel)"
-msgstr "Abstand von oben (Pixel):"
-
-msgid "Do you really want to delete this entry?"
-msgstr "Diesen Eintrag wirklich löschen?"
-
-msgid "Do you really want to delete this file?"
-msgstr "Diese Datei wirklich löschen?"
-
-msgid "Download"
-msgstr "Download"
-
-msgid "Download completed successfully"
-msgstr ""
-"Download erfolgreich abgeschlossen,\n"
-"wechsle in den Kalender"
-
-msgid "Duration of sound at timer (sec)"
-msgstr "Dauer Alarm-Sound bei Timermeldung"
-
-msgid "Easter Monday"
-msgstr "Ostermontag"
-
-msgid "Easter Sunday"
-msgstr "Ostersonntag"
-
-msgid "Edit Call-Number"
-msgstr "Telefonnummer bearbeiten"
-
-msgid "Edit Event"
-msgstr "Termin bearbeiten"
-
-msgid "Edit Timer"
-msgstr "Timer bearbeiten"
-
-msgid "Edit categories"
-msgstr "Kategorien bearbeiten"
-
-msgid "Edit colors and categories"
-msgstr "Farben und Kategorien bearbeiten"
-
-msgid "Edit data of selected name"
-msgstr "Bearbeite Datensatz von ausgewählten Namen"
-
-msgid "Edit online calendar list"
-msgstr "Liste der Online-Kalender"
-
-msgid "Edit selected Termin"
-msgstr "gewählten Eintrag bearbeiten"
-
-msgid "Edit text for categorie"
-msgstr "Text der Kategorie bearbeiten"
-
-msgid "Edit text for category"
-msgstr "Text der Kategorie bearbeiten"
-
-msgid "End-Date"
-msgstr "End-Datum"
-
-msgid "End-Time"
-msgstr "Ende-Zeit"
-
-msgid "Enter Text"
-msgstr "Text eingeben/ändern"
-
-msgid "Enter the name that describes the shift plan in PlannerFS_online.txt"
-msgstr "Name aus PlanerFS_online.txt eintragen"
-
-msgid "Entry can only be copied from external to internal (*...)"
-msgstr "Eintrag kann nur von extern (*...) nach intern kopiert werden"
-
-msgid "Error: at least one external file could not be loaded!"
-msgstr ""
-"Fehler: eine oder mehrere extrene Datei(en) konnten nicht geladen werden!"
-
-msgid "Event"
-msgstr "Termin"
-
-msgid "Event by Date"
-msgstr "Termin an Datum"
-
-msgid "Event by Rules"
-msgstr "Termin mit Regeln"
-
-msgid "Event end"
-msgstr "Termin endet"
-
-msgid "Event is due!"
-msgstr "Timer-Meldung!"
-
-msgid "Event or Timer"
-msgstr "Termin oder Timer"
-
-msgid "Event-List"
-msgstr "Termin-Liste"
-
-msgid "Event-text"
-msgstr "Termin-Text"
-
-msgid "Events"
-msgstr "Termine"
-
-msgid "Events for today"
-msgstr "Termine heute"
-
-msgid "Extensionsmenu"
-msgstr "Erweiterungsmenü"
-
-msgid "February"
-msgstr "Februar"
-
-msgid "File %s nonexistent."
-msgstr "Datei %s existiert nicht."
-
-msgid "File containing only shift data"
-msgstr "Datei welche nur Schicht enthält"
-
-msgid "Files Handling"
-msgstr "Datei-Verwaltung"
-
-msgid "Filter - Letter down"
-msgstr "Filter -> nächster Buchstabe"
-
-msgid "Filter - Letter up"
-msgstr "Filter -> voriger Buchstabe"
-
+#: ..\PFSconfig.py:497
 msgid ""
 "Floating holidays to Gregorian or Julian calendar to calculate or calculate "
 "off"
@@ -333,65 +1136,7 @@ msgstr ""
 "Bewegliche Feiertage nach gregorianischem oder julianischem Kalendet "
 "berechnen oder Berechnung abschalten"
 
-msgid ""
-"For example: if you enter here 365, with end-dates earlier date 365 days "
-"will be deleted."
-msgstr ""
-"zum Beispiel: wenn hier 365 eingegeben wird, werden Termine mit End-Datum "
-"älter 365 Tage gelöscht."
-
-msgid "For timer: off = the feature timer is off, there are no timer processed"
-msgstr ""
-"Für Timer: Aus = die Funktion für Timer ist aus, es werden keine Timer "
-"abgearbeitet"
-
-msgid "Frequency"
-msgstr "Frequenz"
-
-msgid "Fri"
-msgstr "Fr"
-
-msgid "Friday"
-msgstr "Freitag"
-
-msgid ""
-"Full http or ftp Enter address to display for an iCal file from which data "
-"in the current calendar PlanerFS (PressOK for Virtual Keyboard)"
-msgstr ""
-"Vollständige http oder ftp Adresse eingeben, von welcher aktuelle "
-"Kalenderdaten im Kalender angezeigt werden sollen (OK drücken für Virtuelle "
-"Tastatur)"
-
-msgid "Good Friday"
-msgstr "Karfreitag"
-
-msgid "HOLIDAY"
-msgstr "Feiertag"
-
-msgid "HOME"
-msgstr "privat"
-
-msgid "High total"
-msgstr "Höhe gesamt"
-
-msgid "Holidays are to be displayed in the startup screen?"
-msgstr "Sollen Feiertage in der Startanzeige angezeigt werden?"
-
-msgid "Holidays in Startscreen"
-msgstr "Feiertage in Startanzeige"
-
-msgid "Hours"
-msgstr "Stunden"
-
-msgid ""
-"How many months in advance, the dates are displayed in the startup screen?"
-msgstr ""
-"Für wieviele Monate im voraus sollen die Termine in der Startanzeige "
-"angezeigt werden?"
-
-msgid "Identifier text in calendar"
-msgstr "Anzeige-Text im Kalender"
-
+#: ..\PFSconfig.py:499
 msgid ""
 "If a date is copied, deleted or created, appointments can be older than they "
 "should automatically be deleted (default for days in the next step). Events "
@@ -403,589 +1148,19 @@ msgstr ""
 "nächsten Schritt) . Termine ohne Regeln, welche ein ein Ende-Datum kleiner "
 "als Heute minus Vorgabe-Tage haben, werden ohne Nachfrage gelöscht!"
 
-msgid "If description"
-msgstr "Wenn Beschreibung"
-
-msgid "Import"
-msgstr "Importieren"
-
-msgid "Import all Data of ics-File"
-msgstr "Importiere alle Termine aus einer ics-Datei"
-
-msgid "Import all cards from an vcf file"
-msgstr "Importiere alle Daten aus einer vCard-Datei"
-
-msgid "Import all events from an ics file"
-msgstr "Importiere alle Termine aus einer ics-Datei"
-
-msgid "Import completed successfully"
-msgstr ""
-"Import erfolgreich abgeschlossen,\n"
-"wechsle in den Kalender"
-
-msgid "Import ics-File"
-msgstr "Importiere alle Termine aus einer ics-Datei"
-
-msgid "Import selected  entry"
-msgstr "ausgewählten Termin importieren"
-
-msgid "In Calendar"
-msgstr "in Kalender"
-
-msgid "Insert new event / timer"
-msgstr "neuen Termin oder Timer erstellen"
-
-msgid "Internal calculated holiday, import not possible"
-msgstr "Intern berechneter Feiertag, Import nicht möglich"
-
-msgid "Interval"
-msgstr "Intervall"
-
-msgid "January"
-msgstr "Januar"
-
-msgid "July"
-msgstr "Juli"
-
-msgid "June"
-msgstr "Juni"
-
-msgid "LCD4Linux-Settings"
-msgstr "LCD4Linux-Einstellungen"
-
+#: ..\PFSconfig.py:501
 msgid ""
-"Length of the alarm sound in seconds (will be played again and again). For "
-"the alarm sound, the file 'PFSsound.mp3' with any same mp3 file in the "
-"plugin directory will be replaced."
+"For example: if you enter here 365, with end-dates earlier date 365 days "
+"will be deleted."
 msgstr ""
-"Länge des Alarm-Sound in Sekunden (wird immer wieder abgespielt). Für den "
-"Alarm-Sound kann die Datei 'PFSsound.mp3' mit einer  beliebigen "
-"gleichnamigen mp3-Datei im Pluginverzeichnis ersetzt werden werden."
+"Zum Beispiel: wenn hier 365 eingegeben wird, werden Termine mit End-Datum "
+"älter 365 Tage gelöscht."
 
-msgid "Limit line length"
-msgstr "maximale Länge (Anzahl Zeichen)"
+#: ..\PFSconfig.py:503
+msgid "pick up the latest data automatically at startup?"
+msgstr "abholen der aktuellen Daten automatisch bei Programmstart?"
 
-msgid "Lines"
-msgstr "Linien"
-
-msgid "Location"
-msgstr "wo (Location) "
-
-msgid "Long-Text for the event announcement"
-msgstr "ausführlicher Text"
-
-msgid "Long-Text, press ok for edit"
-msgstr "ausführlicher Text, OK drücken zum bearbeiten"
-
-msgid "MOBIL"
-msgstr "Handy"
-
-msgid "MONTHLY"
-msgstr "monatlich"
-
-msgid "Main Menu"
-msgstr "Hauptmenü"
-
-msgid "Make new buisness card"
-msgstr "Neuen Datensatz anlegen"
-
-msgid "March"
-msgstr "März"
-
-msgid "May"
-msgstr "Mai"
-
-msgid "Menu"
-msgstr "Menü"
-
-msgid "Minutes"
-msgstr "Minuten"
-
-msgid "Missing / Mismatch in the event file"
-msgstr "Termin-Datei fehlt oder fehlerhaft"
-
-msgid "Missing event file"
-msgstr "Termin-Datei fehlt"
-
-msgid "Mon"
-msgstr "Mo"
-
-msgid "Monday"
-msgstr "Montag"
-
-msgid "Month"
-msgstr "Monat"
-
-msgid "Monthday"
-msgstr "Tag im Monat"
-
-msgid "Months for events preview"
-msgstr "Vorschau für Termine (Monate)"
-
-msgid "Name already exists or not allowed"
-msgstr "Name bereits vorhanden oder ungültig"
-
-msgid "Name for download file"
-msgstr "Speicher-Name für Download-Datei"
-
-msgid "New Card"
-msgstr "neue Karte"
-
-msgid "Next events:"
-msgstr "nächste Termine:"
-
-msgid "Next timer earliest in 5 minutes or 5 minutes after standby"
-msgstr "Timer wird frühestens in 5min bzw 5min nach standby aktiv !"
-
-msgid "No"
-msgstr "Nein"
-
-msgid "No Events"
-msgstr "keine Termine"
-
-msgid "No Events registered for today"
-msgstr "heute kein Termin"
-
-msgid "No anniversary"
-msgstr "keine Jahrestage"
-
-msgid "No anniversary registered for today"
-msgstr "heute kein Jahrestag"
-
-msgid "No entry found in business cards"
-msgstr "Kein Eintrag in den Visitenkarten gefunden"
-
-msgid "No extern ics-File exist!"
-msgstr "keine zusätzliche ics-Datei vorhanden"
-
-msgid "No ics-File in this Path exist!"
-msgstr "keine ics-Datei in diesem Verzeichnis gefunden"
-
-msgid "No placeholder 'pd' for count of days in text!"
-msgstr "kein Platzhalter 'pd' für Anzahl Tage im Text!"
-
-msgid "Not number of years"
-msgstr "keine Anzahl Jahre"
-
-msgid "November"
-msgstr "November"
-
-msgid "Number of years"
-msgstr "zeige Anzahl Jahre"
-
-msgid "OK"
-msgstr "OK"
-
-msgid "October"
-msgstr "Oktober"
-
-msgid "Off"
-msgstr "Aus"
-
-msgid "On"
-msgstr "An"
-
-msgid "Open Calendar"
-msgstr "Kalender anzeigen"
-
-msgid "Open adress book"
-msgstr "Adressbuch öffnen"
-
-msgid "Open color list"
-msgstr "Farbenliste öffnen"
-
-msgid "Overview in Menu:"
-msgstr "Startscreen im Menü:"
-
-msgid "Overwrite existing Backup?"
-msgstr "vorhandene Sicherung überschreiben?"
-
-msgid "Overwrite existing Settings and Files?"
-msgstr "Daten und Einstellungen überschreiben?"
-
-msgid "Page not available:"
-msgstr "URL micht erreichbar"
-
-msgid "Pentecost Sunday"
-msgstr "Pfingstsonntag"
-
-msgid "Placeholder in text for number of days = pd"
-msgstr "Platzhalter im Text für Anzahl Tage = pd"
-
-msgid "PlanerFS address book"
-msgstr "PlanerFS Adressbuch"
-
-msgid "PlanerFS overview"
-msgstr "PlanerFS Übersicht"
-
-msgid "Please select source path..."
-msgstr "Bitte Quell-Verzeichnis wählen..."
-
-msgid "Please select the backup path..."
-msgstr "Bitte Sicherungspfad auswählen"
-
-msgid "Please select the restore path..."
-msgstr "von wo soll die Sicherung wiederhergestellt werden?"
-
-msgid "Please select the target path..."
-msgstr "Bitte Ziel-Verzeichnis wählen..."
-
-msgid "Press 'OK' for Virtual Keyboard"
-msgstr "  'Ok'  drücken für virtuelle Tastatur"
-
-msgid "Press 'OK' for list"
-msgstr " Auswahlliste anzuzeigen = 'Ok'  drücken"
-
-msgid "Press 'help' for explanation and 'ok' for virtual keyboard"
-msgstr ""
-"nutze die Hilfe-Taste für Erläuterungen und   'Ok'  für virtuelle Tastatur"
-
-msgid "Press 'ok' for standard-list or write"
-msgstr "auswählen aus Standard_Liste mit  'Ok'  oder schreiben"
-
-msgid "Press OK for Edit, Press 1 for aktivate/deaktivate"
-msgstr "Taste 'OK' zum bearbeiten, Taste'1' zum (de)aktivieren"
-
-msgid "Really close without saving settings?"
-msgstr "wirklich beenden ohne zu speichern?"
-
-msgid ""
-"Restart PlanerFS for new settings\n"
-"Please wait a moment"
-msgstr ""
-"PlanerFS wird zur Aktivierung der Änderungen neu gestartet\n"
-"Bitte einen Moment Geduld"
-
-msgid "Restore Files and Settings..."
-msgstr "stelle Daten und Einstellungen wieder her...."
-
-msgid "Sat"
-msgstr "Sa"
-
-msgid "Saturday"
-msgstr "Samstag"
-
-msgid "Save"
-msgstr "speichern"
-
-msgid "Save and exit"
-msgstr "speichern und beenden"
-
-msgid "Save-Name of File for download, no extension"
-msgstr ""
-"Unter welchem Namen soll die download-Datei auf der Box gespeichert werden? "
-"(keine Endung eingeben)"
-
-msgid "Schedule appointments, view events"
-msgstr "Termine planen, Erinnerungen anzeigen"
-
-msgid "Screen"
-msgstr "Haupt-Anzeige"
-
-msgid "Select categorie"
-msgstr "Kategorien auswählen"
-
-msgid "Select for edit or new"
-msgstr "auswählen zum Bearbeiten oder neu"
-
-msgid "Select standard categorie"
-msgstr "Standard-Kategorie auswählen"
-
-msgid "Selected card delete?"
-msgstr "ausgewählte Karte wirklich löschen?"
-
-msgid "September"
-msgstr "September"
-
-msgid "Setting Start"
-msgstr "wie starten"
-
-msgid "Setting shifts"
-msgstr "Schicht Einstellung"
-
-msgid "Settings in Menu->Shift Setting..."
-msgstr "einstellen in Menü->Schicht-Einstellung"
-
-msgid "Settings-Menu"
-msgstr "Einstellungen"
-
-msgid "Shift colors:"
-msgstr "Schicht-Farben:"
-
-msgid "Show  buisness card of selected Name"
-msgstr "Zeige Datensatz von ausgewählten Namen"
-
-msgid "Show buisness card of selected name"
-msgstr "Zeige Visitenkarte von ausgewählten Namen"
-
-msgid "Show current month"
-msgstr "aktuellen Monat anzeigen"
-
-msgid "Show external reminders"
-msgstr "externe Erinnerungen anzeigen"
-
-msgid "Show in LCD"
-msgstr "Im LCD anzeigen"
-
-msgid "Show more Options in Menu"
-msgstr "Menü anzeigen (weitere Funktionen)"
-
-msgid "Show repetitions in lists"
-msgstr "Zeige Wiederholungen in Listen"
-
-msgid "Show same named appointment with all dates?"
-msgstr "Wiederholende, gleichnamige Termine in Listen anzeigen?"
-
-msgid "Show shift on startscreen"
-msgstr "Zeige Schichten in Startscreen"
-
-msgid "Show start screen with overview"
-msgstr "Startscreen mit Übersicht anzeigen"
-
-msgid "Show timer"
-msgstr "wechsle Liste Timer<->Termine"
-
-msgid "Simple event"
-msgstr "einfacher Termin"
-
-msgid "Size for a single"
-msgstr "Größe für Einzelelement"
-
-msgid "Split screen"
-msgstr "geteilte Anzeige"
-
-msgid "Start Display AutoHide (0=Off)"
-msgstr "Startanzeige autom. ausblenden (0=nein)"
-
-msgid "Start delay"
-msgstr "Start-Verzögerung (sek)"
-
-msgid "Start-Date"
-msgstr "Start-Datum"
-
-msgid "Start-Time"
-msgstr "Start-Zeit"
-
-msgid "Startscreen lines"
-msgstr "Startscreen Linien"
-
-msgid "Street"
-msgstr "Straße"
-
-msgid "Su"
-msgstr "So"
-
-msgid "Successfully loaded data"
-msgstr "Daten erfolgreich geladen"
-
-msgid "Sunday"
-msgstr "Sonntag"
-
-msgid "Termin from downloaded file"
-msgstr "Termin von externer Datei"
-
-msgid "Terminlist"
-msgstr "Terminliste"
-
-msgid "Text"
-msgstr "Text"
-
-msgid "Thu"
-msgstr "Do"
-
-msgid "Thursday"
-msgstr "Donnerstag"
-
-msgid "Time"
-msgstr "Uhrzeit"
-
-msgid "Timer"
-msgstr "Timer"
-
-msgid "Timer / Reminder"
-msgstr "Timer/Erinnerungen"
-
-msgid "Timer by Rules"
-msgstr "Timer mit Regeln"
-
-msgid "Timer display time (0=endless)"
-msgstr "Anzeigedauer (0=endlos)"
-
-msgid "Timer max volume"
-msgstr "maximale Lautstärke"
-
-msgid "Timer on"
-msgstr "Timermeldungen an/aus"
-
-msgid "Timer sound"
-msgstr "Timer Sound"
-
-msgid "Timer start volume"
-msgstr "Start- Lautstärke"
-
-msgid "Timer-List"
-msgstr "Timer-Liste"
-
-msgid "Timers message!"
-msgstr "Timer-Meldung!"
-
-msgid ""
-"To enable the setting, a restart is necessary to \n"
-"restart Enigma?"
-msgstr ""
-"Um die neuen Einstellung zu aktivieren, ist ein Neustart nötig. \n"
-"System jetzt neu starten?"
-
-msgid "Toggle Calender/Terminlist"
-msgstr "wechsel Kalender/Terminliste"
-
-msgid "Toggle number of years"
-msgstr "umschalten Anzahl Jahre zeigen"
-
-msgid "Toggle screen big/split"
-msgstr "Anzeige Vollbild/geteilt umschalten"
-
-msgid "Tue"
-msgstr "Di"
-
-msgid "Tuesday"
-msgstr "Dienstag"
-
-msgid "Unit of time"
-msgstr "Zeiteinheit"
-
-msgid "Upcoming calendar events"
-msgstr "bevorstehende Termine"
-
-msgid "Update data"
-msgstr "Akualisieren"
-
-msgid "Use rules"
-msgstr "Regeln verwenden"
-
-msgid "Use shift plan"
-msgstr "Schichtplanfunktion verwenden"
-
-msgid "WEEKLY"
-msgstr "wöchentlich"
-
-msgid "WN"
-msgstr "KW."
-
-msgid "WORK"
-msgstr "geschäftlich"
-
-msgid "Wed"
-msgstr "Mi"
-
-msgid "Wedding day"
-msgstr "Hochzeitstag"
-
-msgid "Wednesday"
-msgstr "Mittwoch"
-
-msgid "WeekDays"
-msgstr "Wochentage"
-
-msgid "When is the start screen displayed?"
-msgstr "Wann soll der Startscreen angezeigt werden?"
-
-msgid "When standby display later"
-msgstr "zeige verpasste Termine nach Standby"
-
-msgid "When standby(Idle) display later"
-msgstr "Verzögere Anzeige nach Deepstandby"
-
-msgid "Whit Monday"
-msgstr "Pfingstmontag"
-
-msgid "Widht total"
-msgstr "Breite gesamt"
-
-msgid "YEARLY"
-msgstr "jährlich"
-
-msgid "Years"
-msgstr "Jahre"
-
-msgid "Yes"
-msgstr "Ja"
-
-msgid "address book in Menu:"
-msgstr "Adressbuch in Menüs anzeigen:"
-
-msgid "addresses and phone numbers search, find, manage, and more"
-msgstr "Adressen und Telefonnummern finden, suchen, verwalten und mehr..."
-
-msgid "after count"
-msgstr "nach Anzahl"
-
-msgid "alarm time"
-msgstr "Weck - Zeit"
-
-msgid "alarm-clock"
-msgstr "Wecker"
-
-msgid "at Wakeup from Deep-Standby"
-msgstr "bei Systemstart"
-
-msgid "at Wakeup from Deep-Standby and Standby(Idle)"
-msgstr "bei Systemstart und nach Standby(Idle)"
-
-msgid "at Wakeup from Deep-Standby and time"
-msgstr "bei Systemstart und Uhrzeit"
-
-msgid "at Wakeup from Standby(Idle)"
-msgstr "nach Standby(Idle)"
-
-msgid "at Wakeup from Standby(Idle) and time"
-msgstr "nach Standby(Idle) und bei Uhrzeit"
-
-msgid "at time"
-msgstr "bei Uhrzeit"
-
-msgid "backup files and settings"
-msgstr "Daten und Einstellungen sichern"
-
-msgid "business card"
-msgstr "Visitenkarte"
-
-msgid "by date"
-msgstr "an Datum"
-
-msgid "cal.1"
-msgstr "Kal.1"
-
-msgid "cal.2"
-msgstr "Kal.2"
-
-msgid "calculated"
-msgstr "berechnet"
-
-msgid "calendar 1"
-msgstr "Kalender 1"
-
-msgid "calendar 2"
-msgstr "Kalender 2"
-
-msgid "calendar background"
-msgstr "PlanerFS Hintergrund"
-
-msgid "calendar days"
-msgstr "Kalender Tage"
-
-msgid "calendar event"
-msgstr "Kalender Termin"
-
-msgid "calendar holiday"
-msgstr "Kalender Feiertag"
-
-msgid "calendar in Menu:"
-msgstr "PlanerFS in Menüs anzeigen:"
-
-msgid "calendar today background"
-msgstr "Hintergrundfarbe für heute"
-
+#: ..\PFSconfig.py:507
 msgid ""
 "colored date on the calendar for events from additional calendar files or "
 "online calendar"
@@ -993,210 +1168,67 @@ msgstr ""
 "Termine aus zusätzlichen ics oder Online-Kalendern farbig im Kalender "
 "markieren"
 
-msgid "cur. month"
-msgstr "Akt. Monat"
+#: ..\PFSconfig.py:509
+msgid "write /tmp/plfs_ges for 'see text file' in LCD4Linux"
+msgstr "schreibe Datei /tmp/plfs_ges für 'zeige Textdatei' in LCD4Linux"
 
-msgid "daylong"
-msgstr "ganztägig"
+#: ..\PFSconfig.py:511
+msgid "Limit line length"
+msgstr "Zeichenlänge ist begrenzt"
 
-msgid "days"
-msgstr "Tage"
+#: ..\PFSconfig.py:513
+msgid "Show on start big or split screen"
+msgstr "Zeige große beim Starten oder geteilten Schirm"
 
-msgid "delete extern ics-File"
-msgstr "zusätzliche ics-Datei löschen"
-
-msgid "delete old events"
-msgstr "alte Termine automatisch löschen?"
-
-msgid "delete older than (days)"
-msgstr "lösche älter als (Tage)"
-
-msgid "distance between"
-msgstr "Abstand dazwischen"
-
-msgid "double name!"
-msgstr "doppelter Name!"
-
-msgid "download address for data update"
-msgstr "Download-Adresse für Datenaktualisierung"
-
-msgid "download for data update"
-msgstr "aktuelle Daten downloaden"
-
-msgid "download on Start"
-msgstr "Download akt. Daten bei Start automatisch"
-
-msgid "edit file: /etc/ConfFS/PlanerFS_online.txt"
-msgstr "bearbeite Datei: /etc/ConfFS/PlanerFS_online.txt"
-
-msgid "edit selected  entry"
-msgstr "gewählten Eintrag bearbeiten"
-
-msgid "extended"
-msgstr "erweitert"
-
-msgid "extern dats"
-msgstr "externe Daten"
-
-msgid "extern events color in calendar"
-msgstr "externe Termine im Kalender farbig"
-
-msgid "external file can not be edited, Import this event?"
-msgstr ""
-"externe Datei kann nicht bearbeitet werden, den ausgewählten Termin "
-"importieren?"
-
-msgid "file is deleted"
-msgstr "Datei erfolgreich gelöscht."
-
-msgid "floating holidays"
-msgstr "bewegl. Feiertage"
-
-msgid "fontsize in list"
-msgstr "Schriftgröße in Terminliste"
-
-msgid "fontsize_list"
-msgstr "Schriftgröße in Terminliste"
-
-msgid "for countdown in start display (pd days to christmas)"
-msgstr ""
-"Für Countdown in Startanzeige, zB 'pd Tage bis Weihnacht' oder 'noch pd Tage "
-"bis Urlaub'"
-
-msgid "for font size smaller or larger decrease or increase the number"
-msgstr "für Schriftgröße kleiner oder größer die Zahl verringern oder erhöhen"
-
-msgid "from a separate file"
-msgstr "von extra Datei"
-
-msgid "from extern file: "
-msgstr "aus externer Datei: "
-
-msgid "from list of names"
-msgstr "Liste von Namen"
-
-msgid "gregorianisch"
-msgstr "Alle"
-
-msgid "incorrect entry in"
-msgstr "fehlerhafter Eintrag"
-
-msgid "info, no ical-module"
-msgstr "Information, fehlendes ical-Modul"
-
-msgid "julianisch"
-msgstr "Termine für Heute"
-
-msgid "last Backup Path"
-msgstr "letztes Backup Verzeichnis"
-
-msgid "lcd list fontsize"
-msgstr "Schriftgröße für LCD-Liste"
-
-msgid "lcd on/off"
-msgstr "LCD-Ausgabe An/Aus"
-
-msgid "lcd screen-nr"
-msgstr "LCD Schirm-Nr"
-
-msgid "lcd timer fontsize"
-msgstr "Schriftgröße Timermeldung"
-
-msgid "lcd-nr"
-msgstr "LCD-Nr"
-
-msgid "list anniversaries"
-msgstr "Listen Jubiläen"
-
-msgid "list heading"
-msgstr "Listen Überschriften"
-
-msgid "list inactive"
-msgstr "Listen inaktiv"
-
-msgid "list text"
-msgstr "Listen Text"
-
-msgid "make second calendar"
-msgstr "zweite Kalender-Datei erstellen"
-
-msgid "max volume"
-msgstr "maximale Lautstärke"
-
-msgid "maximum characters per line"
-msgstr "wieviele Zeichen maximal anzeigen pro Zeile"
-
-msgid "monthly backward"
-msgstr "monatlich rückwärts"
-
-msgid "monthly backward = for Day of Month backward (last Day...)"
-msgstr "monatlich rückwärts = Tage vom Monatsende, letzter im Monat usw."
-
-msgid "never"
-msgstr "Nie"
-
-msgid "next Month"
-msgstr "nächster Monat"
-
-msgid "no category"
-msgstr " keine Kategorie"
-
+#: ..\PFSconfig.py:515
 msgid ""
-"no icalendar import from system possible\n"
-"please ask in the forum to the image how it can be installed"
+"Countdown for the start display and LCD screen, insert in the text 'pd' for "
+"the number of days"
 msgstr ""
-"kein Import von icalendar möglich\n"
-"bitte im Forum zum Image nachfragen, wie das Modul installiert werden kann"
+"Countdown für die Startanzeige und den LCD-Bildschirm, Einfügen des Textes "
+"'pd' für die Anzahl der Tage"
 
-msgid "no lines"
-msgstr "keine Linien"
+#: ..\PFSfiles.py:61 ..\PFSfiles.py:406
+msgid "Show list of all iCal-Files"
+msgstr "Zeige Liste aller iCal-Dateien"
 
-msgid "not"
-msgstr "nicht markieren"
+#: ..\PFSfiles.py:62
+msgid "backup files and settings"
+msgstr "Daten und Einstellungen sichern"
 
-msgid "not a valid URL!"
-msgstr "keine gültige URL!"
-
-msgid "not extra"
-msgstr "nein"
-
-msgid "on and standby"
-msgstr "wenn eingeschaltet und aus Standby"
-
-msgid "on, standby and deepstandby"
-msgstr "eingeschaltet, Standby, Deepstandby"
-
-msgid "online-calendars"
-msgstr "Online-Kalender"
-
-msgid ""
-"or\n"
-" call the Number with blue Key"
-msgstr ""
-"oder\n"
-"blaue Taste drücken zum anrufen der markierten Nummer"
-
-msgid "parameters setting"
-msgstr "Einstellungen"
-
-msgid "pick up the latest data automatically at startup?"
-msgstr "abholen der aktuellen Daten automatisch bei Programmstart?"
-
-msgid "previous month"
-msgstr "voriger Monat"
-
-msgid "radio alarm Clock"
-msgstr "Radio-Wecker"
-
-msgid "repeat"
-msgstr "Wiederholung"
-
+#: ..\PFSfiles.py:63
 msgid "restore files and settings"
 msgstr "Daten und Einstellungen  wiederherstellen"
 
-msgid "sample: you will MO,TH,SA,SU then type: 1467"
-msgstr "Beispiel: für Mo,Do,Sa und So eingeben: 1467"
+#: ..\PFSfiles.py:64 ..\PFSfiles.py:274
+msgid "delete extern ics-File"
+msgstr "zusätzliche ics-Datei löschen"
 
+#: ..\PFSfiles.py:65 ..\PFSfiles.py:276
+msgid "Copy ics-File to PlanerFS path"
+msgstr "Kopiere ics-Datei ins PlanerFS-Verzeichnis"
+
+#: ..\PFSfiles.py:66 ..\PFSfiles.py:278
+msgid "Copy ics-File of PlanerFS path"
+msgstr "Kopiere ics-Datei aus dem PlanerFS -Verzeichnis"
+
+#: ..\PFSfiles.py:67
+msgid "Import all events from an ics file"
+msgstr "Importiere alle Termine aus einer ics-Datei"
+
+#: ..\PFSfiles.py:68
+msgid "Import all cards from an vcf file"
+msgstr "Importiere alle Daten aus einer vCard-Datei"
+
+#: ..\PFSfiles.py:70
+msgid "make second calendar"
+msgstr "zweite Kalender-Datei erstellen"
+
+#: ..\PFSfiles.py:71 ..\PlanerFS.py:1336
+msgid "Files Handling"
+msgstr "Datei-Verwaltung"
+
+#: ..\PFSfiles.py:128
 msgid ""
 "second calendar was created successfully, to see push-button Bouquet on the "
 "calendar"
@@ -1204,84 +1236,696 @@ msgstr ""
 "zweite Datei wurde erfolgreich erstellt, im Kalender Bouquet-Taste drücken "
 "zum anzeigen"
 
-msgid "selceted File is:"
-msgstr "ausgewählte Datei:"
+#: ..\PFSfiles.py:133 ..\PFSfiles.py:148
+msgid "Please select source path..."
+msgstr "Bitte Quell-Verzeichnis wählen..."
 
-msgid "select from the list: Event by Date, Event by Rules, Timer"
+#: ..\PFSfiles.py:162 ..\PFSfiles.py:198
+msgid "No ics-File in this Path exist!"
+msgstr "In diesem Verzeichnis existiert keine ics-Datei!"
+
+#: ..\PFSfiles.py:174
+msgid "No vcf-File in this Path exist!"
+msgstr "In diesem Pfad existiert keine vcf-Datei!"
+
+#: ..\PFSfiles.py:186
+msgid "No extern ics-File exist!"
+msgstr "Keine externe ics-Datei vorhanden!"
+
+#: ..\PFSfiles.py:201
+msgid "Please select the backup path..."
+msgstr "Bitte Sicherungspfad auswählen..."
+
+#: ..\PFSfiles.py:219
+msgid "Overwrite existing Backup?"
+msgstr "Vorhandene Sicherung überschreiben?"
+
+#: ..\PFSfiles.py:222
+msgid "Backup ConfFS..."
+msgstr "Sicherung von ConfFS..."
+
+#: ..\PFSfiles.py:224
+msgid "Directory %s nonexistent."
+msgstr "Verzeichnis %s existiert nicht."
+
+#: ..\PFSfiles.py:231
+msgid "Backup Files and Settings..."
+msgstr "Sichere Daten und Einstellungen..."
+
+#: ..\PFSfiles.py:234
+msgid "Please select the restore path..."
+msgstr "Bitte Widerherstellungspfad auswählen..."
+
+#: ..\PFSfiles.py:240
+msgid "Overwrite existing Settings and Files?"
+msgstr "Daten und Einstellungen überschreiben?"
+
+#: ..\PFSfiles.py:242
+msgid "File %s nonexistent."
+msgstr "Datei %s existiert nicht."
+
+#: ..\PFSfiles.py:249
+msgid "Restore Files and Settings..."
+msgstr "Widerherstellung von Daten und Einstellungen..."
+
+#: ..\PFSfiles.py:280
+msgid "Import all Data of ics-File"
+msgstr "Importiere alle Termine aus einer ics-Datei"
+
+#: ..\PFSfiles.py:282
+msgid "Import all Data of vcf-File"
+msgstr "Importiere alle Termine aus einer vcf-Datei"
+
+#: ..\PFSfiles.py:325 ..\PFSfiles.py:338
+msgid "Import completed successfully"
 msgstr ""
-"wähle aus Liste: Termin an Datum (einfache Eingabe), Termin nach Regeln "
-"(ausführlich Einstellmöglichkeit), Timer"
+"Import erfolgreich abgeschlossen,\n"
+"wechsle in den Kalender"
 
-msgid "select from the list: repeat, repeat until, none"
-msgstr "Wiederholen, Wiederholen bis zu einem Datum, nicht wiederholen"
-
-msgid ""
-"set mp3-URL for radio-Stream: http:\\....\n"
-" (mp3,ogg, aac - not pls,m3u,wmp,flash....)"
-msgstr ""
-"Eingabe für Stream-URL: http:\\....\n"
-"(mp3,ogg, aac - kein pls,m3u,wmp,flash....)"
-
-msgid ""
-"show events from additional calendar files or online calendar in calendar 1 "
-"or calendar 2"
-msgstr ""
-"Termine aus zusätzlichen ics oder Online Kalender in Kalender 1 oder "
-"Kalender 2 anzeigen"
-
-msgid "show extern events in calendar"
-msgstr "in welchem Kalender externe Termine zeigen"
-
-msgid "start volume"
-msgstr "Start- Lautstärke"
-
-msgid "startscreen background"
-msgstr "Startscreen Hintergrund"
-
-msgid "startscreen text"
-msgstr "Startscreen Text"
-
-msgid "text for List, press ok for edit"
-msgstr "Kurztext für die Listenanzeige, OK drücken zum bearbeiten"
-
-msgid ""
-"to activate a new / changed timer is unfortunately still necessary to restart"
-msgstr ""
-"um einen neuen/geänderten Timer zu aktivieren ist leider noch ein Neustart "
-"nötig"
-
-msgid "today"
-msgstr "Heute"
-
-msgid "unique"
-msgstr "einmalig"
-
+#: ..\PFSfiles.py:328 ..\PFSfiles.py:341 ..\PFSfiles.py:388
 msgid "unknown error"
 msgstr "unbekannter Fehler"
 
-msgid "unlisted"
-msgstr "nicht in Liste"
+#: ..\PFSfiles.py:355
+msgid "Please select the target path..."
+msgstr "Bitte Ziel-Verzeichnis wählen..."
 
-msgid "until repeat"
-msgstr "Wiederholung bis"
+#: ..\PFSfiles.py:372
+msgid "selceted File is:"
+msgstr "ausgewählte Datei:"
 
-msgid "update every ? minutes,0=Off"
-msgstr "aktualisiere alle ? Minuten, 0=aus"
+#: ..\PFSfiles.py:373
+msgid "Do you really want to delete this file?"
+msgstr "Diese Datei wirklich löschen?"
 
-msgid "vCard- edit Text"
-msgstr "vCard - Text bearbeiten"
+#: ..\PFSfiles.py:379
+msgid "file is deleted"
+msgstr "Datei wurde gelöscht"
 
-msgid "when on"
-msgstr "wenn Box eingeschaltet"
+#: ..\PFSonl.py:79
+msgid "new"
+msgstr "neu"
 
-msgid "without text"
-msgstr "kein Text"
+#: ..\PFSonl.py:100
+msgid "online-calendars"
+msgstr "Online-Kalender"
 
-msgid "write /tmp/plfs_ges for 'see text file' in LCD4Linux"
-msgstr "schreibe Datei /tmp/plfs_ges für 'zeige Textdatei' in LCD4Linux"
+#: ..\PFSonl.py:145
+msgid "Enter Text"
+msgstr "Text eingeben/ändern"
 
-msgid "write text file"
-msgstr "schreibe Textdatei"
+#: ..\PFSonl.py:173
+msgid "Name already exists or not allowed"
+msgstr "Name bereits vorhanden oder ungültig"
 
-msgid "zip code"
-msgstr "Postleitzahl"
+#: ..\PFSonl.py:205
+msgid "not a valid URL!"
+msgstr "keine gültige URL!"
+
+#: ..\PFSonl.py:207
+msgid "Press OK for Edit, Press 1 for aktivate/deaktivate"
+msgstr "Taste 'OK' zum bearbeiten, Taste'1' zum (de)aktivieren"
+
+#: ..\PFSwe.py:38 ..\PFSwe.py:57
+msgid "alarm time"
+msgstr "Weckzeit"
+
+#: ..\PFSwe.py:40 ..\PFSwe.py:94
+msgid "alarm-clock"
+msgstr "Wecker"
+
+#: ..\PFSwe.py:43
+msgid "Start"
+msgstr "Start"
+
+#: ..\PFSwe.py:114
+msgid "alert-clock is running - press ESC for abort"
+msgstr "Wecker läuft - zum Abbrechen drücke ESC"
+
+#: ..\PlanerFS.py:185
+msgid "Fri"
+msgstr "Fr"
+
+#: ..\PlanerFS.py:185
+msgid "Mon"
+msgstr "Mo"
+
+#: ..\PlanerFS.py:185
+msgid "Sat"
+msgstr "Sa"
+
+#: ..\PlanerFS.py:185
+msgid "Su"
+msgstr "So"
+
+#: ..\PlanerFS.py:185
+msgid "Thu"
+msgstr "Do"
+
+#: ..\PlanerFS.py:185
+msgid "Tue"
+msgstr "Di"
+
+#: ..\PlanerFS.py:185
+msgid "WN"
+msgstr "KW"
+
+#: ..\PlanerFS.py:185
+msgid "Wed"
+msgstr "Mi"
+
+#: ..\PlanerFS.py:221 ..\PlanerFS.py:392
+msgid "cal.1"
+msgstr "Kal.1"
+
+#: ..\PlanerFS.py:224 ..\PlanerFS.py:237
+msgid "Update data"
+msgstr "Akualisieren"
+
+#: ..\PlanerFS.py:225 ..\PlanerFS.py:227 ..\PlanerFS.py:413 ..\PlanerFS.py:968
+msgid "Terminlist"
+msgstr "Terminliste"
+
+#: ..\PlanerFS.py:226
+msgid "Today"
+msgstr "Heute"
+
+#: ..\PlanerFS.py:230
+msgid "Close PlanerFS"
+msgstr "PlanerFS beenden"
+
+#: ..\PlanerFS.py:231
+msgid "Edit selected Termin"
+msgstr "Bearbeite gewählten Termin"
+
+#: ..\PlanerFS.py:235
+msgid "Show timer"
+msgstr "Zeige Timer"
+
+#: ..\PlanerFS.py:236
+msgid "Toggle Calender/Terminlist"
+msgstr "Umschalten Kalender/Terminliste"
+
+#: ..\PlanerFS.py:238
+msgid "Show current month"
+msgstr "Zeige aktuellen Monat an"
+
+#: ..\PlanerFS.py:249 ..\PlanerFS.py:250
+msgid "Change calendar file"
+msgstr "Ändere Kalender-Datei"
+
+#: ..\PlanerFS.py:251
+msgid "Show buisness card of selected name"
+msgstr "Zeige Visitenkarte von ausgewählten Namen"
+
+#: ..\PlanerFS.py:252
+msgid "Show more Options in Menu"
+msgstr "Menü anzeigen (weitere Funktionen)"
+
+#: ..\PlanerFS.py:257
+msgid "PlanerFSMenu"
+msgstr "PlanerFS Übersicht"
+
+#: ..\PlanerFS.py:262 ..\PlanerFS.py:269
+msgid "previous month"
+msgstr "voriger Monat"
+
+#: ..\PlanerFS.py:263 ..\PlanerFS.py:268
+msgid "next Month"
+msgstr "nächster Monat"
+
+#: ..\PlanerFS.py:264 ..\PlanerFS.py:1338
+msgid "Open adress book"
+msgstr "Adressbuch öffnen"
+
+#: ..\PlanerFS.py:300
+msgid ""
+"no icalendar import from system possible\n"
+"please ask in the forum of your image how it can be installed"
+msgstr ""
+"kein Import von icalendar möglich\n"
+"bitte im Forum zum Image nachfragen, wie das Modul installiert werden kann"
+
+#: ..\PlanerFS.py:389
+msgid "cal.2"
+msgstr "Kal.2"
+
+#: ..\PlanerFS.py:397 ..\PlanerFS.py:403
+msgid " (active)"
+msgstr " (aktiv)"
+
+#: ..\PlanerFS.py:421 ..\plugin.py:163
+msgid "Error: at least one external file could not be loaded!"
+msgstr ""
+"Fehler: mindestens eine externe Datei(en) konnten nicht geladen werden!"
+
+#: ..\PlanerFS.py:424
+msgid "Successfully loaded data"
+msgstr "Daten erfolgreich geladen"
+
+#: ..\PlanerFS.py:632
+msgid "April"
+msgstr "April"
+
+#: ..\PlanerFS.py:632
+msgid "August"
+msgstr "August"
+
+#: ..\PlanerFS.py:632
+msgid "December"
+msgstr "Dezember"
+
+#: ..\PlanerFS.py:632
+msgid "February"
+msgstr "Februar"
+
+#: ..\PlanerFS.py:632
+msgid "January"
+msgstr "Januar"
+
+#: ..\PlanerFS.py:632
+msgid "July"
+msgstr "Juli"
+
+#: ..\PlanerFS.py:632
+msgid "June"
+msgstr "Juni"
+
+#: ..\PlanerFS.py:632
+msgid "March"
+msgstr "März"
+
+#: ..\PlanerFS.py:632
+msgid "May"
+msgstr "Mai"
+
+#: ..\PlanerFS.py:632
+msgid "November"
+msgstr "November"
+
+#: ..\PlanerFS.py:632
+msgid "October"
+msgstr "Oktober"
+
+#: ..\PlanerFS.py:632
+msgid "September"
+msgstr "September"
+
+#: ..\PlanerFS.py:706
+msgid "Date Error"
+msgstr "Fehler im Datum"
+
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
+msgid "Friday"
+msgstr "Freitag"
+
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
+msgid "Monday"
+msgstr "Montag"
+
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
+msgid "Saturday"
+msgstr "Samstag"
+
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
+msgid "Sunday"
+msgstr "Sonntag"
+
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
+msgid "Thursday"
+msgstr "Donnerstag"
+
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
+msgid "Tuesday"
+msgstr "Dienstag"
+
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+#: ..\PlanerFS.py:961
+msgid "Events"
+msgstr "Termine"
+
+#: ..\PlanerFS.py:1056
+msgid "Add new event"
+msgstr "Neuen Termin hinzufügen"
+
+#: ..\PlanerFS.py:1153
+msgid "Internal calculated holiday, import not possible"
+msgstr "Intern berechneter Feiertag, Import nicht möglich"
+
+#: ..\PlanerFS.py:1160 ..\PlanerFS.py:1174
+msgid "external file can not be edited, Import this event?"
+msgstr ""
+"externe Datei kann nicht bearbeitet werden, den ausgewählten Termin "
+"importieren?"
+
+#: ..\PlanerFS.py:1160 ..\PlanerFS.py:1174 ..\PlanerFS.py:1182
+msgid "Termin from downloaded file"
+msgstr "Termin von externer Datei"
+
+#: ..\PlanerFS.py:1163
+msgid "Select for edit or new"
+msgstr "Auswählen zum Bearbeiten oder Neuerstellen"
+
+#: ..\PlanerFS.py:1182
+msgid "Entry can only be copied from external to internal (*...)"
+msgstr "Eintrag kann nur von extern (*...) nach intern kopiert werden"
+
+#: ..\PlanerFS.py:1293
+msgid "Caution, this is a recurring appointment! Delete recurring appointment?"
+msgstr "Vorsicht, das ist ein Serientermin! Serientermin löschen?"
+
+#: ..\PlanerFS.py:1295
+msgid "Do you really want to delete this entry?"
+msgstr "Diesen Eintrag wirklich löschen?"
+
+#: ..\PlanerFS.py:1324
+msgid "Insert new event / timer"
+msgstr "Füge neuen Termin / Timer ein"
+
+#: ..\PlanerFS.py:1326
+msgid "edit selected  entry"
+msgstr "gewählten Eintrag bearbeiten"
+
+#: ..\PlanerFS.py:1327
+msgid "Delete selected  entry"
+msgstr "Lösche gewählten Eintrag"
+
+#: ..\PlanerFS.py:1331
+msgid "Import selected  entry"
+msgstr "Importiere gewählten Eintrag"
+
+#: ..\PlanerFS.py:1334
+msgid "parameters setting"
+msgstr "Einstellungen"
+
+#: ..\PlanerFS.py:1335
+msgid "Color an category setting"
+msgstr "Einstellung Farben und Kategorien"
+
+#: ..\PlanerFS.py:1337
+msgid "Edit online calendar list"
+msgstr "Liste der Online-Kalender"
+
+#: ..\PlanerFS.py:1343
+msgid "Show errors"
+msgstr "Zeige Fehler"
+
+#: ..\PlanerFS.py:1344
+msgid "About"
+msgstr "Über"
+
+#: ..\PlanerFS.py:1345
+msgid "Menu"
+msgstr "Menü"
+
+#: ..\plugin.py:375 ..\plugin.py:416
+msgid "PlanerFS address book"
+msgstr "PlanerFS Adressbuch"
+
+#: ..\plugin.py:398
+msgid "PlanerFS"
+msgstr "PlanerFS"
+
+#: ..\plugin.py:415
+msgid "Schedule appointments, view events"
+msgstr "Termine planen, Erinnerungen anzeigen"
+
+#: ..\plugin.py:416
+msgid "addresses and phone numbers search, find, manage, and more"
+msgstr "Adressen und Telefonnummern finden, suchen, verwalten und mehr"
+
+#: ..\plugin.py:418
+msgid "PlanerFS overview"
+msgstr "PlanerFS Übersicht"
+
+#: ..\plugin.py:418
+msgid "Show start screen with overview"
+msgstr "Startscreen mit Übersicht anzeigen"
+
+#: ..\routines.py:46 ..\routines.py:85
+msgid "Easter Sunday"
+msgstr "Ostersonntag"
+
+#: ..\routines.py:50 ..\routines.py:89
+msgid "Easter Monday"
+msgstr "Ostermontag"
+
+#: ..\routines.py:54 ..\routines.py:93
+msgid "Good Friday"
+msgstr "Karfreitag"
+
+#: ..\routines.py:58 ..\routines.py:97
+msgid "Ascension"
+msgstr "Himmelfahrt"
+
+#: ..\routines.py:62 ..\routines.py:101
+msgid "Whit Monday"
+msgstr "Pfingstmontag"
+
+#: ..\routines.py:66 ..\routines.py:105
+msgid "Pentecost Sunday"
+msgstr "Pfingstsonntag"
+
+#: ..\routines.py:70 ..\routines.py:109
+msgid "Corpus Christi"
+msgstr "Fronleichnam"
+
+#: ..\timer.py:118
+msgid "Timer message"
+msgstr "Timer-Meldung"
+
+#~ msgid "double name!"
+#~ msgstr "doppelter Name!"
+
+#~ msgid "DESCRIPTION"
+#~ msgstr "BESCHREIBUNG"
+
+#~ msgid "HOLIDAY"
+#~ msgstr "FEIERTAG"
+
+#, fuzzy
+#~| msgid "Timer sound"
+#~ msgid "Timermeldung"
+#~ msgstr "Timerton"
+
+#~ msgid "for countdown in start display (pd days to christmas)"
+#~ msgstr ""
+#~ "Für Countdown in Startanzeige, zB 'pd Tage bis Weihnacht' oder 'noch pd "
+#~ "Tage bis Urlaub'"
+
+#~ msgid "Alarm-Sound"
+#~ msgstr "Weckton"
+
+#~ msgid "Anniversaries"
+#~ msgstr "Jahrestage"
+
+#~ msgid "By how many seconds to the start can be delayed?"
+#~ msgstr "Um wieviel Sekunden soll der Start verzögert werden?"
+
+#~ msgid "Categories"
+#~ msgstr "Kategorien"
+
+#~ msgid "Day"
+#~ msgstr "Tag"
+
+#~ msgid "Delay on event announcement (sec)"
+#~ msgstr "Verzögerung bei Terminankündigung (sec)"
+
+#~ msgid "Design"
+#~ msgstr "Aussehen des Planers"
+
+#~ msgid "Download"
+#~ msgstr "Download"
+
+#~ msgid "Download completed successfully"
+#~ msgstr ""
+#~ "Download erfolgreich abgeschlossen,\n"
+#~ "wechsle in den Kalender"
+
+#~ msgid "Duration of sound at timer (sec)"
+#~ msgstr "Dauer Alarmton bei Timermeldung"
+
+#~ msgid "Edit Timer"
+#~ msgstr "Timer bearbeiten"
+
+#~ msgid "Edit categories"
+#~ msgstr "Kategorien bearbeiten"
+
+#~ msgid "Enter the name that describes the shift plan in PlannerFS_online.txt"
+#~ msgstr "Name aus PlanerFS_online.txt eintragen"
+
+#~ msgid "Event"
+#~ msgstr "Termin"
+
+#~ msgid "Event by Date"
+#~ msgstr "Termin nach Datum"
+
+#~ msgid "Event or Timer"
+#~ msgstr "Termin oder Timer"
+
+#~ msgid "Event-List"
+#~ msgstr "Termin-Liste"
+
+#~ msgid "File containing only shift data"
+#~ msgstr "Datei welche nur Schicht enthält"
+
+#~ msgid ""
+#~ "Full http or ftp Enter address to display for an iCal file from which "
+#~ "data in the current calendar PlanerFS (PressOK for Virtual Keyboard)"
+#~ msgstr ""
+#~ "Vollständige http oder ftp Adresse eingeben, von welcher aktuelle "
+#~ "Kalenderdaten im Kalender angezeigt werden sollen (OK drücken für "
+#~ "Virtuelle Tastatur)"
+
+#~ msgid "Import"
+#~ msgstr "Importieren"
+
+#~ msgid "Import ics-File"
+#~ msgstr "Importiere alle Termine aus einer ics-Datei"
+
+#~ msgid "LCD4Linux-Settings"
+#~ msgstr "LCD4Linux-Einstellungen"
+
+#~ msgid ""
+#~ "Length of the alarm sound in seconds (will be played again and again). "
+#~ "For the alarm sound, the file 'PFSsound.mp3' with any same mp3 file in "
+#~ "the plugin directory will be replaced."
+#~ msgstr ""
+#~ "Länge des Alarmton in Sekunden (wird immer wieder abgespielt). Für den "
+#~ "Alarm-Sound kann die Datei 'PFSsound.mp3' mit einer  beliebigen "
+#~ "gleichnamigen mp3-Datei im Pluginverzeichnis ersetzt werden werden."
+
+#~ msgid "Long-Text for the event announcement"
+#~ msgstr "Langtext für die Terminankündigung"
+
+#~ msgid "Missing / Mismatch in the event file"
+#~ msgstr "Termin-Datei fehlt oder fehlerhaft"
+
+#~ msgid "Missing event file"
+#~ msgstr "Termin-Datei fehlt"
+
+#~ msgid "Name for download file"
+#~ msgstr "Speicher-Name für Download-Datei"
+
+#~ msgid "No Events"
+#~ msgstr "Keine Termine"
+
+#~ msgid "No anniversary"
+#~ msgstr "Keine Jahrestage"
+
+#~ msgid "OK"
+#~ msgstr "OK"
+
+#~ msgid "Page not available:"
+#~ msgstr "Seite nicht erreichbar:"
+
+#~ msgid "Press 'ok' for standard-list or write"
+#~ msgstr "Drücken Sie 'ok' für die Standard-Liste oder Schreiben"
+
+#~ msgid "Save-Name of File for download, no extension"
+#~ msgstr ""
+#~ "Unter welchem Namen soll die download-Datei auf der Box gespeichert "
+#~ "werden? (keine Endung eingeben)"
+
+#~ msgid "Select standard categorie"
+#~ msgstr "Standard-Kategorie auswählen"
+
+#~ msgid "Start delay"
+#~ msgstr "Start-Verzögerung (sek)"
+
+#~ msgid "Time"
+#~ msgstr "Uhrzeit"
+
+#~ msgid "Timer-List"
+#~ msgstr "Timer-Liste"
+
+#~ msgid ""
+#~ "To enable the setting, a restart is necessary to \n"
+#~ "restart Enigma?"
+#~ msgstr ""
+#~ "Um die neuen Einstellung zu aktivieren, ist ein Neustart nötig. \n"
+#~ "System jetzt neu starten?"
+
+#~ msgid "Toggle screen big/split"
+#~ msgstr "Anzeige Vollbild/geteilt umschalten"
+
+#~ msgid "When standby display later"
+#~ msgstr "Bei Standby erst später anzeigen"
+
+#~ msgid "calculated"
+#~ msgstr "berechnet"
+
+#~ msgid "calendar 1"
+#~ msgstr "Kalender 1"
+
+#~ msgid "calendar 2"
+#~ msgstr "Kalender 2"
+
+#~ msgid "cur. month"
+#~ msgstr "Akt. Monat"
+
+#~ msgid "days"
+#~ msgstr "Tage"
+
+#~ msgid "download address for data update"
+#~ msgstr "Download-Adresse für Datenaktualisierung"
+
+#~ msgid "download for data update"
+#~ msgstr "aktuelle Daten downloaden"
+
+#~ msgid "edit file: /etc/ConfFS/PlanerFS_online.txt"
+#~ msgstr "bearbeite Datei: /etc/ConfFS/PlanerFS_online.txt"
+
+#~ msgid "fontsize in list"
+#~ msgstr "Schriftgröße in Terminliste"
+
+#~ msgid "fontsize_list"
+#~ msgstr "Schriftgröße in Terminliste"
+
+#~ msgid "for font size smaller or larger decrease or increase the number"
+#~ msgstr ""
+#~ "für Schriftgröße kleiner oder größer die Zahl verringern oder erhöhen"
+
+#~ msgid "from a separate file"
+#~ msgstr "von extra Datei"
+
+#~ msgid "from extern file: "
+#~ msgstr "aus externer Datei: "
+
+#~ msgid "from list of names"
+#~ msgstr "Liste von Namen"
+
+#~ msgid "incorrect entry in"
+#~ msgstr "fehlerhafter Eintrag"
+
+#~ msgid "info, no ical-module"
+#~ msgstr "Information, fehlendes ical-Modul"
+
+#~ msgid "last Backup Path"
+#~ msgstr "letztes Backup Verzeichnis"
+
+#~ msgid "not"
+#~ msgstr "nicht markieren"
+
+#~ msgid ""
+#~ "show events from additional calendar files or online calendar in calendar "
+#~ "1 or calendar 2"
+#~ msgstr ""
+#~ "Termine aus zusätzlichen ics oder Online Kalender in Kalender 1 oder "
+#~ "Kalender 2 anzeigen"
+
+#~ msgid "show extern events in calendar"
+#~ msgstr "in welchem Kalender externe Termine zeigen"
+
+#~ msgid ""
+#~ "to activate a new / changed timer is unfortunately still necessary to "
+#~ "restart"
+#~ msgstr ""
+#~ "um einen neuen/geänderten Timer zu aktivieren ist leider noch ein "
+#~ "Neustart nötig"
+
+#~ msgid "until repeat"
+#~ msgstr "Wiederholung bis"

@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
-from Components.Language import language
-from Tools.Directories import resolveFilename, SCOPE_PLUGINS
 from gettext import bindtextdomain, dgettext, gettext
+from os.path import join
+from Components.Language import language
+from Tools.Directories import resolveFilename, SCOPE_PLUGINS, SCOPE_SYSETC
+
+# PLUGIN-GLOBALS
+CONFIGPATH = resolveFilename(SCOPE_SYSETC, "ConfFS/")
+CONFIGFILE = join(CONFIGPATH, "PlanerFS.conf")
+PLUGINPATH = resolveFilename(SCOPE_PLUGINS, "Extensions/PlanerFS/")
 
 def localeInit():
-    bindtextdomain("PlanerFS", resolveFilename(SCOPE_PLUGINS, "Extensions/PlanerFS/locale"))
+    bindtextdomain("PlanerFS", join(PLUGINPATH, "locale"))
 
 def _(txt):
     t = dgettext("PlanerFS", txt)

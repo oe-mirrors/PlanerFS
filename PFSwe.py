@@ -1,4 +1,5 @@
 # PYTHON IMPORTS
+from os.path import join
 from time import localtime, mktime
 
 # ENIGMA IMPORTS
@@ -12,7 +13,7 @@ from Screens.MessageBox import MessageBox
 from Screens.Screen import Screen
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import PLUGINPATH, _ # for localized messages
 
 class PFS_show_we(Screen, ConfigListScreen):
 	skin = """
@@ -25,29 +26,19 @@ class PFS_show_we(Screen, ConfigListScreen):
 		</screen>"""
 
 	def __init__(self, session):
-
 		self.wecker = 0
 		self.al_vol_max = 40
-		self.now = [x for x in localtime()]
-		self.alarm_time = NoSave(ConfigClock(default=mktime(self.now)))
+		self.alarm_time = NoSave(ConfigClock(default=mktime(localtime())))
 		self.alarm_volume = NoSave(ConfigInteger(default=30, limits=(0, 99)))
-
 		self.sound_on = False
-
 		self.list1 = []
-		self.list1.extend((
-						getConfigListEntry(_("alarm time"), self.alarm_time),
-						getConfigListEntry(_("max volume"), self.alarm_volume),
-						))
+		self.list1.extend((getConfigListEntry(_("alarm time"), self.alarm_time), getConfigListEntry(_("max volume"), self.alarm_volume),))
 		Screen.__init__(self, session)
-
 		self.setTitle(_("alarm-clock") + "   - PlanerFS ")
-
 		#self.loadList()
 		ConfigListScreen.__init__(self, self.list1)
 		self["key_green"] = Label(_("Start"))
 		self["key_red"] = Label(_("Cancel"))
-
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions", "DirectionActions", "MenuActions", "InfobarChannelSelection"],
 			{
 			 "ok": self.wecker_timer,
@@ -55,18 +46,12 @@ class PFS_show_we(Screen, ConfigListScreen):
 			 "red": self.close,
 			 "cancel": self.close,
 			 }, -1)
-		self.musicfile = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/PFSsound.mp3"
+		self.musicfile = join(PLUGINPATH, "PFSsound.mp3")
 		self["config"].setList(self.list1)
-
-	def nix(self):
-		pass
 
 	def loadList(self):
 		self.list1 = []
-		self.list1.extend((
-				getConfigListEntry(_("alarm time"), self.alarm_time),
-				getConfigListEntry(_("max volume"), self.alarm_volume),
-				))
+		self.list1.extend((getConfigListEntry(_("alarm time"), self.alarm_time), getConfigListEntry(_("max volume"), self.alarm_volume),))
 
 	def wecker_timer(self):
 		if self.wecker == 0:
@@ -78,10 +63,8 @@ class PFS_show_we(Screen, ConfigListScreen):
 				zeitdiff = 86400 - minuszeit
 			else:
 				zeitdiff = meldezeit - jetzt
-
 			self.session.openWithCallback(self.back, PFS_alarm_clock, self.alarm_volume.value, zeitdiff, None)
 			#self.close()
-
 		else:
 			pass
 			#self.we_timer.stop()
@@ -89,9 +72,6 @@ class PFS_show_we(Screen, ConfigListScreen):
 	def back(self, result):
 		if result == 0:
 			self.close()
-		else:
-			pass
-
 
 class PFS_alarm_clock(Screen):
 	skin = """
@@ -100,24 +80,18 @@ class PFS_alarm_clock(Screen):
 		</screen>"""
 
 	def __init__(self, session, max_vol=40, zeitdiff=1, DPKG=None):
-
 		self.al_vol_max = max_vol
 		self.zeitdiff = zeitdiff
 		self.timer1_instanz = False
 		self.timer1 = eTimer()
 		self.timer1.timeout.get().append(self.klang)
-
 		self.sound_on = False
 		self.volctrl = eDVBVolumecontrol.getInstance()
-
 		Screen.__init__(self, session)
 		self.setTitle(_("alarm-clock") + "   - PlanerFS ")
 		self["time"] = Label(" ")
 		self["time"].hide()
-		self.__event_tracker = ServiceEventTracker(screen=self, eventmap={
-								iPlayableService.evEOF: self.__schleife,
-						})
-
+		ServiceEventTracker(screen=self, eventmap={iPlayableService.evEOF: self.__schleife,})
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions", "DirectionActions", "MenuActions", "InfobarChannelSelection"],
 			{
 			 "red": self.exit,
@@ -128,9 +102,8 @@ class PFS_alarm_clock(Screen):
 			 "right": self.info,
 			 "up": self.info,
 			 "down": self.info,
-
 			 }, -1)
-		self.musicfile = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/PFSsound.mp3"
+		self.musicfile = join(PLUGINPATH, "PFSsound.mp3")
 		self.oldService = self.session.nav.getCurrentlyPlayingServiceReference()
 		self.onLayoutFinish.append(self.start_timer)
 
