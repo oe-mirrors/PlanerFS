@@ -17,7 +17,7 @@ from Screens.ChoiceBox import ChoiceBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGFILE, _ # for localized messages
 
 class PFS_edit_Termin(ConfigListScreen, Screen):
 
@@ -27,9 +27,9 @@ class PFS_edit_Termin(ConfigListScreen, Screen):
 		if eigen_num == 3:
 			self.fname = "PlanerFS2.ics"
 		categor = (_("None"))
-		if exists('/etc/ConfFS/PlanerFS.conf'):
+		if exists(CONFIGFILE):
 			configparser = ConfigParser()
-			configparser.read("/etc/ConfFS/PlanerFS.conf")
+			configparser.read(CONFIGFILE)
 			if configparser.has_option("settings", "categories"):
 				categor = configparser.get("settings", "categories")
 		self.categor = categor.split(",")

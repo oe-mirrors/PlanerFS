@@ -6,15 +6,15 @@ from re import compile
 from time import localtime, mktime
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGFILE, _ # for localized messages
 from .routines import Feiertage, Rules, Next_Termin
 
 schicht_start = 0
 conf = {"kalender_art": "Gregorian", "vorschaum": 1, "altloesch": 365, "erinn_ext": "1", "m_sound": "No", "m_vol_min": 10, "m_vol_max": 100, "m_sound_art": "file", "m_dauer": 0, "m_sound_volume": (10, 100), "categories": "", "schicht_art": "0,0,0", "schicht_col": {}}
 categories1 = (_('Birthday'), _('Anniversary'), _('Wedding day'), 'Birthday', 'Anniversary', 'Wedding day')
-if exists('/etc/ConfFS/PlanerFS.conf'):
+if exists(CONFIGFILE):
 	configparser = ConfigParser()
-	configparser.read("/etc/ConfFS/PlanerFS.conf")
+	configparser.read(CONFIGFILE)
 	if configparser.has_section("settings"):
 		l1 = configparser.items("settings")
 		for k, v in l1:

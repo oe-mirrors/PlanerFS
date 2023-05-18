@@ -12,17 +12,17 @@ from Screens.MessageBox import MessageBox
 from Tools import Notifications
 
 # PLUGIN IMPORTS
+from . import CONFIGFILE
 from .PFSanzeige import Timermeldung
 
-timerdatei = "/etc/ConfFS/TimerFS.ics"
 try:
 	from Plugins.Extensions.LCD4linux.module import L4Lelement
 	MyElements = L4Lelement()
 	conf = {"l4lm_font": 60, "l4l_screen": 4, "l4l_lcd": 1, "l4l_on": "Yes", "m_dauer": 0}
 	l4l = None
-	if exists('/etc/ConfFS/PlanerFS.conf'):
+	if exists(CONFIGFILE):
 		configparser = ConfigParser()
-		configparser.read("/etc/ConfFS/PlanerFS.conf")
+		configparser.read(CONFIGFILE)
 		if configparser.has_section("settings"):
 			l1 = configparser.items("settings")
 			for k, v in l1:

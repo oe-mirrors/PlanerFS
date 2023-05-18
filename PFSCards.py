@@ -2,7 +2,7 @@
 import base64
 from configparser import ConfigParser
 from os import remove
-from os.path import exists, isfile
+from os.path import exists, isfile, join
 from re import compile
 
 # ENIGMA IMPORTS
@@ -23,7 +23,7 @@ from Screens.InfoBarGenerics import InfoBarNotifications
 from skin import parseColor
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGFILE, PLUGINPATH, _ # for localized messages
 from .routines_vc import Cards_parse
 
 try:
@@ -33,11 +33,10 @@ except ImportError:
 	fbf = None
 
 DWide = getDesktop(0).size().width()
-cardfile = "/etc/ConfFS/PlanerFS.vcf"
 color_list = []
-if exists('/etc/ConfFS/PlanerFS.conf'):
+if exists(CONFIGFILE):
 	configparser = ConfigParser()
-	configparser.read("/etc/ConfFS/PlanerFS.conf")
+	configparser.read(CONFIGFILE)
 	if configparser.has_option("settings", "cat_color_list"):
 		color_list = configparser.get("settings", "cat_color_list")
 		color_list = color_list.split(",")
@@ -48,7 +47,7 @@ cal_background = color_list[12]
 
 class PFS_show_card7(Screen, InfoBarNotifications):
 	ALLOW_SUSPEND = True
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFScard.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/PFScard.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -215,7 +214,7 @@ class PFS_show_card7(Screen, InfoBarNotifications):
 
 class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 	ALLOW_SUSPEND = True
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFSconf.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/PFSconf.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -461,9 +460,8 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 				zus_list = zus_list + pic
 			detailliste = on + anzeige_name + name + adr1 + adr2 + mail + geburtstag + tel_x + zus_list + off
 			cards2.append(str(detailliste))
-		f2 = open(cardfile, "w")
-		f2.writelines(cards2)
-		f2.close()
+		with open(CONFIGFILE, "w") as f2:
+			f2.writelines(cards2)
 		self.close(self.name.value, None, self.index)
 
 	def cancel1(self):
@@ -474,10 +472,9 @@ class PFS_read_vcards:
 	def __init__(self):
 		dataLines = []
 		self.cards1 = []
-		if isfile(cardfile):
-			tempFile = open(cardfile, 'r')
-			dataLines.extend(tempFile.readlines())
-			tempFile.close()
+		if isfile(CONFIGFILE):
+			with open(CONFIGFILE, 'r') as tempFile:
+				dataLines.extend(tempFile.readlines())
 		if dataLines:
 			mask = {}
 			mask['BEGIN'] = compile(r"^BEGIN:VCARD")
@@ -500,7 +497,7 @@ class PFS_read_vcards:
 
 
 class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFScard_list.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/PFScard_list.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -708,7 +705,7 @@ class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
 						zus_list = zus_list + pic
 					detailliste = on + anzeige_name + name + adr1 + adr2 + mail + geburtstag + tel_x + zus_list + off
 					cards2.append(str(detailliste))
-				with open(cardfile, "w") as f2:
+				with open(CONFIGFILE, "w") as f2:
 					f2.writelines(cards2)
 				self.read()
 			except Exception:

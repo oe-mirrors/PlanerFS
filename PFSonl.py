@@ -1,7 +1,7 @@
 # PYTHON IMPORTS
 from configparser import ConfigParser
 from os import remove
-from os.path import exists
+from os.path import exists, join
 
 # ENIGMA IMPORTS
 from enigma import getDesktop
@@ -14,19 +14,19 @@ from Screens.Screen import Screen
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH,_ # for localized messages
 
 class PlanerFSonline_files(Screen, ConfigListScreen):
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFSconf.xml" % ("fHD" if getDesktop(0).size().width() > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/PFSconf.xml" % ("fHD" if getDesktop(0).size().width() > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
 	def __init__(self, session):
-		self.path = '/etc/ConfFS/PlanerFS_online.txt'
+		self.path = join(CONFIGPATH, "PlanerFS_online.txt")
 		self.cals_dir = "/tmp/"
 		configparser = ConfigParser()
-		if exists('/etc/ConfFS/PlanerFS.conf'):
-			configparser.read("/etc/ConfFS/PlanerFS.conf")
+		if exists(CONFIGFILE):
+			configparser.read(CONFIGFILE)
 			if configparser.has_section("settings"):
 				if configparser.has_option("settings", "cals_dir"):
 					self.cals_dir = str(configparser.get("settings", "cals_dir"))

@@ -5,200 +5,200 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-05-08 19:02+0200\n"
+"POT-Creation-Date: 2023-05-18 16:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Last-Translator: Mr.Servo <mrservo via GitHub.com>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=cp1252\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: pygettext.py 1.5\n"
 
-#: ..\PFSCards.py:64 ..\PFSCards.py:521
+#: ..\PFSCards.py:63 ..\PFSCards.py:518
 msgid "New Card"
 msgstr ""
 
-#: ..\PFSCards.py:65
+#: ..\PFSCards.py:64
 msgid "Close"
 msgstr ""
 
-#: ..\PFSCards.py:66 ..\PFSCards.py:523
+#: ..\PFSCards.py:65 ..\PFSCards.py:520
 msgid "Edit"
 msgstr ""
 
-#: ..\PFSCards.py:96 ..\PFSCards.py:547
+#: ..\PFSCards.py:95 ..\PFSCards.py:544
 msgid "business card"
 msgstr ""
 
-#: ..\PFSCards.py:134 ..\PFSCards.py:174 ..\PFSCards.py:177 ..\PFSCards.py:316
-#: ..\PFSEdit.py:386 ..\PFSanzeige.py:175 ..\PFScateg.py:166 ..\PFShmexp.py:25
+#: ..\PFSCards.py:133 ..\PFSCards.py:173 ..\PFSCards.py:176 ..\PFSCards.py:315
+#: ..\PFSEdit.py:386 ..\PFSanzeige.py:174 ..\PFScateg.py:151 ..\PFShmexp.py:25
 #: ..\PFSl4l.py:20 ..\PlanerFS.py:106 ..\termin.py:14
 msgid "Birthday"
 msgstr ""
 
-#: ..\PFSCards.py:162
+#: ..\PFSCards.py:161
 msgid "No entry found in business cards"
 msgstr ""
 
-#: ..\PFSCards.py:198 ..\PFSCards.py:368
+#: ..\PFSCards.py:197 ..\PFSCards.py:367
 msgid "Call Number"
 msgstr ""
 
-#: ..\PFSCards.py:254 ..\PFSCards.py:319 ..\PFSCards.py:325 ..\PFSCards.py:326
-#: ..\PFSCards.py:327 ..\PFSCards.py:328 ..\PFSCards.py:329
+#: ..\PFSCards.py:253 ..\PFSCards.py:318 ..\PFSCards.py:324 ..\PFSCards.py:325
+#: ..\PFSCards.py:326 ..\PFSCards.py:327 ..\PFSCards.py:328
 #: ..\routines_vc.py:123
 msgid "WORK"
 msgstr ""
 
-#: ..\PFSCards.py:256 ..\PFSCards.py:317 ..\routines_vc.py:119
+#: ..\PFSCards.py:255 ..\PFSCards.py:316 ..\routines_vc.py:119
 msgid "HOME"
 msgstr ""
 
-#: ..\PFSCards.py:258 ..\PFSCards.py:318 ..\routines_vc.py:121
+#: ..\PFSCards.py:257 ..\PFSCards.py:317 ..\routines_vc.py:121
 msgid "MOBIL"
 msgstr ""
 
-#: ..\PFSCards.py:282
+#: ..\PFSCards.py:281
 msgid "save"
 msgstr ""
 
-#: ..\PFSCards.py:283
+#: ..\PFSCards.py:282
 msgid "cancel"
 msgstr ""
 
-#: ..\PFSCards.py:284 ..\PFSCards.py:343
+#: ..\PFSCards.py:283 ..\PFSCards.py:342
 msgid "extended"
 msgstr ""
 
-#: ..\PFSCards.py:286 ..\PFSCards.py:373
+#: ..\PFSCards.py:285 ..\PFSCards.py:372
 msgid "Press 'OK' for Virtual Keyboard"
 msgstr ""
 
-#: ..\PFSCards.py:298
+#: ..\PFSCards.py:297
 msgid "PlanerFS: "
 msgstr ""
 
-#: ..\PFSCards.py:298
+#: ..\PFSCards.py:297
 msgid "vCard - Edit"
 msgstr ""
 
-#: ..\PFSCards.py:309
+#: ..\PFSCards.py:308
 msgid "Name"
 msgstr ""
 
-#: ..\PFSCards.py:310
+#: ..\PFSCards.py:309
 msgid "Designation"
 msgstr ""
 
-#: ..\PFSCards.py:311 ..\PFSCards.py:326
+#: ..\PFSCards.py:310 ..\PFSCards.py:325
 msgid "Street"
 msgstr ""
 
-#: ..\PFSCards.py:312 ..\PFSCards.py:327
+#: ..\PFSCards.py:311 ..\PFSCards.py:326
 msgid "City"
 msgstr ""
 
-#: ..\PFSCards.py:313 ..\PFSCards.py:328
+#: ..\PFSCards.py:312 ..\PFSCards.py:327
 msgid "zip code"
 msgstr ""
 
-#: ..\PFSCards.py:314
+#: ..\PFSCards.py:313
 msgid "Country"
 msgstr ""
 
-#: ..\PFSCards.py:315
+#: ..\PFSCards.py:314
 msgid "Email"
 msgstr ""
 
-#: ..\PFSCards.py:323
+#: ..\PFSCards.py:322
 msgid "Tel.4 "
 msgstr ""
 
-#: ..\PFSCards.py:324
+#: ..\PFSCards.py:323
 msgid "Tel.5 "
 msgstr ""
 
-#: ..\PFSCards.py:329
+#: ..\PFSCards.py:328
 msgid "land"
 msgstr ""
 
-#: ..\PFSCards.py:341
+#: ..\PFSCards.py:340
 msgid "reduced"
 msgstr ""
 
-#: ..\PFSCards.py:369
+#: ..\PFSCards.py:368
 msgid ""
 "or\n"
 " call the Number with blue Key"
 msgstr ""
 
-#: ..\PFSCards.py:369 ..\PFSCards.py:371
+#: ..\PFSCards.py:368 ..\PFSCards.py:370
 msgid "Edit Call-Number"
 msgstr ""
 
-#: ..\PFSCards.py:387
+#: ..\PFSCards.py:386
 msgid "vCard- edit Text"
 msgstr ""
 
-#: ..\PFSCards.py:389
+#: ..\PFSCards.py:388
 msgid "vCard- edit Number"
 msgstr ""
 
-#: ..\PFSCards.py:392 ..\PFSCards.py:552
+#: ..\PFSCards.py:391 ..\PFSCards.py:549
 msgid "Selected card delete?"
 msgstr ""
 
-#: ..\PFSCards.py:516 ..\PFSCards.py:611
+#: ..\PFSCards.py:513 ..\PFSCards.py:608
 msgid "All"
 msgstr ""
 
-#: ..\PFSCards.py:522
+#: ..\PFSCards.py:519
 msgid "Delete"
 msgstr ""
 
-#: ..\PFSCards.py:524 ..\PFSanzeige.py:203 ..\PlanerFS.py:405
-#: ..\PlanerFS.py:961
+#: ..\PFSCards.py:521 ..\PFSanzeige.py:202 ..\PlanerFS.py:402
+#: ..\PlanerFS.py:958
 msgid "Calendar"
 msgstr ""
 
-#: ..\PFSCards.py:532
+#: ..\PFSCards.py:529
 msgid "Delete  buisness card of selected Name"
 msgstr ""
 
-#: ..\PFSCards.py:533
+#: ..\PFSCards.py:530
 msgid "Make new buisness card"
 msgstr ""
 
-#: ..\PFSCards.py:534
+#: ..\PFSCards.py:531
 msgid "Edit data of selected name"
 msgstr ""
 
-#: ..\PFSCards.py:535
+#: ..\PFSCards.py:532
 msgid "Open Calendar"
 msgstr ""
 
-#: ..\PFSCards.py:539
+#: ..\PFSCards.py:536
 msgid "Close adress book"
 msgstr ""
 
-#: ..\PFSCards.py:540
+#: ..\PFSCards.py:537
 msgid "Show  buisness card of selected Name"
 msgstr ""
 
-#: ..\PFSCards.py:544
+#: ..\PFSCards.py:541
 msgid "Filter - Letter up"
 msgstr ""
 
-#: ..\PFSCards.py:545
+#: ..\PFSCards.py:542
 msgid "Filter - Letter down"
 msgstr ""
 
-#: ..\PFSCards.py:715
+#: ..\PFSCards.py:712
 msgid "could not be deleted"
 msgstr ""
 
-#: ..\PFSEdit.py:29 ..\PFSEdit.py:388 ..\PFScateg.py:166 ..\PFSconfig.py:164
-#: ..\PlanerFS.py:106 ..\PlanerFS.py:935
+#: ..\PFSEdit.py:29 ..\PFSEdit.py:388 ..\PFScateg.py:151 ..\PFSconfig.py:153
+#: ..\PlanerFS.py:106 ..\PlanerFS.py:932
 msgid "None"
 msgstr ""
 
@@ -214,7 +214,7 @@ msgstr ""
 msgid "Timer by Rules"
 msgstr ""
 
-#: ..\PFSEdit.py:50 ..\PlanerFS.py:224 ..\PlanerFS.py:965 ..\PlanerFS.py:970
+#: ..\PFSEdit.py:50 ..\PlanerFS.py:223 ..\PlanerFS.py:962 ..\PlanerFS.py:967
 msgid "Timer"
 msgstr ""
 
@@ -267,20 +267,20 @@ msgid "unique"
 msgstr ""
 
 #: ..\PFSEdit.py:70 ..\PFSEdit.py:71 ..\PFSEdit.py:82 ..\PFSEdit.py:84
-#: ..\PFSEdit.py:86 ..\PFSEdit.py:95 ..\PFSEdit.py:96 ..\PFSconfig.py:156
-#: ..\PFSconfig.py:169 ..\PFSconfig.py:170 ..\PFSconfig.py:179
-#: ..\PFSconfig.py:182 ..\PFSconfig.py:186 ..\PFSconfig.py:189
-#: ..\PFSconfig.py:194 ..\PFSconfig.py:196 ..\PFSconfig.py:197
-#: ..\PFSconfig.py:199 ..\PFSconfig.py:200 ..\PFSconfig.py:201
+#: ..\PFSEdit.py:86 ..\PFSEdit.py:95 ..\PFSEdit.py:96 ..\PFSconfig.py:145
+#: ..\PFSconfig.py:158 ..\PFSconfig.py:159 ..\PFSconfig.py:168
+#: ..\PFSconfig.py:171 ..\PFSconfig.py:175 ..\PFSconfig.py:178
+#: ..\PFSconfig.py:183 ..\PFSconfig.py:185 ..\PFSconfig.py:186
+#: ..\PFSconfig.py:188 ..\PFSconfig.py:189 ..\PFSconfig.py:190
 msgid "No"
 msgstr ""
 
 #: ..\PFSEdit.py:70 ..\PFSEdit.py:71 ..\PFSEdit.py:82 ..\PFSEdit.py:95
-#: ..\PFSEdit.py:96 ..\PFSconfig.py:156 ..\PFSconfig.py:169
-#: ..\PFSconfig.py:170 ..\PFSconfig.py:179 ..\PFSconfig.py:182
-#: ..\PFSconfig.py:186 ..\PFSconfig.py:189 ..\PFSconfig.py:194
-#: ..\PFSconfig.py:196 ..\PFSconfig.py:197 ..\PFSconfig.py:200
-#: ..\PFSconfig.py:201
+#: ..\PFSEdit.py:96 ..\PFSconfig.py:145 ..\PFSconfig.py:158
+#: ..\PFSconfig.py:159 ..\PFSconfig.py:168 ..\PFSconfig.py:171
+#: ..\PFSconfig.py:175 ..\PFSconfig.py:178 ..\PFSconfig.py:183
+#: ..\PFSconfig.py:185 ..\PFSconfig.py:186 ..\PFSconfig.py:189
+#: ..\PFSconfig.py:190
 msgid "Yes"
 msgstr ""
 
@@ -300,12 +300,12 @@ msgstr ""
 msgid "File"
 msgstr ""
 
-#: ..\PFSEdit.py:87 ..\PFSconfig.py:157 ..\PFSconfig.py:175
-#: ..\PFSconfig.py:181 ..\PFSconfig.py:184 ..\PFSconfig.py:406
+#: ..\PFSEdit.py:87 ..\PFSconfig.py:146 ..\PFSconfig.py:164
+#: ..\PFSconfig.py:170 ..\PFSconfig.py:173 ..\PFSconfig.py:395
 msgid "Off"
 msgstr ""
 
-#: ..\PFSEdit.py:87 ..\PFSconfig.py:164
+#: ..\PFSEdit.py:87 ..\PFSconfig.py:153
 msgid "radio"
 msgstr ""
 
@@ -325,18 +325,18 @@ msgstr ""
 msgid "Add new event or timer"
 msgstr ""
 
-#: ..\PFSEdit.py:108 ..\PFScateg.py:382 ..\PFSonl.py:80
+#: ..\PFSEdit.py:108 ..\PFScateg.py:358 ..\PFSonl.py:78
 msgid "delete"
 msgstr ""
 
-#: ..\PFSEdit.py:113 ..\PFScateg.py:176 ..\PFScateg.py:380 ..\PFSconfig.py:207
-#: ..\PFSonl.py:79
+#: ..\PFSEdit.py:113 ..\PFScateg.py:161 ..\PFScateg.py:356 ..\PFSconfig.py:196
+#: ..\PFSonl.py:77
 msgid "Save"
 msgstr ""
 
-#: ..\PFSEdit.py:114 ..\PFScateg.py:177 ..\PFScateg.py:183 ..\PFScateg.py:190
-#: ..\PFScateg.py:381 ..\PFScateg.py:387 ..\PFScateg.py:394
-#: ..\PFSconfig.py:206 ..\PFSonl.py:78 ..\PFSwe.py:49
+#: ..\PFSEdit.py:114 ..\PFScateg.py:162 ..\PFScateg.py:168 ..\PFScateg.py:175
+#: ..\PFScateg.py:357 ..\PFScateg.py:363 ..\PFScateg.py:370
+#: ..\PFSconfig.py:195 ..\PFSonl.py:76 ..\PFSwe.py:44
 msgid "Cancel"
 msgstr ""
 
@@ -360,7 +360,7 @@ msgstr ""
 msgid "start volume"
 msgstr ""
 
-#: ..\PFSEdit.py:240 ..\PFSwe.py:40 ..\PFSwe.py:68
+#: ..\PFSEdit.py:240 ..\PFSwe.py:38 ..\PFSwe.py:57
 msgid "max volume"
 msgstr ""
 
@@ -368,7 +368,7 @@ msgstr ""
 msgid "Stream-URL"
 msgstr ""
 
-#: ..\PFSEdit.py:247 ..\PFSEdit.py:487 ..\PlanerFS.py:1227
+#: ..\PFSEdit.py:247 ..\PFSEdit.py:487 ..\PlanerFS.py:1221
 msgid "Description-text"
 msgstr ""
 
@@ -376,7 +376,7 @@ msgstr ""
 msgid "Location"
 msgstr ""
 
-#: ..\PFSEdit.py:249 ..\PFScateg.py:217
+#: ..\PFSEdit.py:249 ..\PFScateg.py:202
 msgid "Category"
 msgstr ""
 
@@ -388,7 +388,7 @@ msgstr ""
 msgid "daylong"
 msgstr ""
 
-#: ..\PFSEdit.py:253 ..\PFSconfig.py:320
+#: ..\PFSEdit.py:253 ..\PFSconfig.py:309
 msgid "Start-Time"
 msgstr ""
 
@@ -506,19 +506,19 @@ msgstr ""
 msgid "no category"
 msgstr ""
 
-#: ..\PFSEdit.py:386 ..\PFSanzeige.py:175 ..\PFScateg.py:166 ..\PFShmexp.py:25
+#: ..\PFSEdit.py:386 ..\PFSanzeige.py:174 ..\PFScateg.py:151 ..\PFShmexp.py:25
 #: ..\PFSl4l.py:20 ..\PlanerFS.py:106 ..\termin.py:14
 msgid "Anniversary"
 msgstr ""
 
-#: ..\PFSEdit.py:386 ..\PFSanzeige.py:175 ..\PFScateg.py:166 ..\PFShmexp.py:25
+#: ..\PFSEdit.py:386 ..\PFSanzeige.py:174 ..\PFScateg.py:151 ..\PFShmexp.py:25
 #: ..\PFSl4l.py:20 ..\PlanerFS.py:106 ..\termin.py:14
 msgid "Wedding day"
 msgstr ""
 
-#: ..\PFSEdit.py:386 ..\PFSanzeige.py:246 ..\PFSanzeige.py:251
-#: ..\PFScateg.py:166 ..\PFSl4l.py:75 ..\PlanerFS.py:106 ..\PlanerFS.py:674
-#: ..\PlanerFS.py:675 ..\routines.py:46 ..\routines.py:50 ..\routines.py:54
+#: ..\PFSEdit.py:386 ..\PFSanzeige.py:245 ..\PFSanzeige.py:250
+#: ..\PFScateg.py:151 ..\PFSl4l.py:73 ..\PlanerFS.py:106 ..\PlanerFS.py:671
+#: ..\PlanerFS.py:672 ..\routines.py:46 ..\routines.py:50 ..\routines.py:54
 #: ..\routines.py:58 ..\routines.py:62 ..\routines.py:66 ..\routines.py:70
 #: ..\routines.py:85 ..\routines.py:89 ..\routines.py:93 ..\routines.py:97
 #: ..\routines.py:101 ..\routines.py:105 ..\routines.py:109
@@ -529,7 +529,7 @@ msgstr ""
 msgid "Select categorie"
 msgstr ""
 
-#: ..\PFSanzeige.py:45
+#: ..\PFSanzeige.py:46
 msgid "Break execution"
 msgstr ""
 
@@ -541,1081 +541,1077 @@ msgstr ""
 msgid "Timers message!"
 msgstr ""
 
-#: ..\PFSanzeige.py:200
+#: ..\PFSanzeige.py:199
 msgid "Upcoming calendar events"
 msgstr ""
 
-#: ..\PFSanzeige.py:218
+#: ..\PFSanzeige.py:217
 msgid "Date display"
 msgstr ""
 
-#: ..\PFSanzeige.py:316
+#: ..\PFSanzeige.py:315
 msgid "Events for today"
 msgstr ""
 
-#: ..\PFSanzeige.py:320 ..\PFSl4l.py:165
+#: ..\PFSanzeige.py:319 ..\PFSl4l.py:163
 msgid "No Events registered for today"
 msgstr ""
 
-#: ..\PFSanzeige.py:323 ..\PFSl4l.py:167
+#: ..\PFSanzeige.py:321 ..\PFSl4l.py:165
 msgid "Anniversaries today:"
 msgstr ""
 
-#: ..\PFSanzeige.py:326 ..\PFSl4l.py:170
+#: ..\PFSanzeige.py:324 ..\PFSl4l.py:168
 msgid "No anniversary registered for today"
 msgstr ""
 
-#: ..\PFSanzeige.py:327 ..\PFSl4l.py:171
+#: ..\PFSanzeige.py:325 ..\PFSl4l.py:169
 msgid "Next events:"
 msgstr ""
 
-#: ..\PFScateg.py:93 ..\PFScateg.py:167 ..\PFScateg.py:225
+#: ..\PFScateg.py:86 ..\PFScateg.py:152 ..\PFScateg.py:210
 msgid "calendar days"
 msgstr ""
 
-#: ..\PFScateg.py:93 ..\PFScateg.py:167 ..\PFScateg.py:232
+#: ..\PFScateg.py:86 ..\PFScateg.py:152 ..\PFScateg.py:217
 msgid "calendar holiday"
 msgstr ""
 
-#: ..\PFScateg.py:96
+#: ..\PFScateg.py:89
 msgid "Select Color for: "
 msgstr ""
 
-#: ..\PFScateg.py:167
+#: ..\PFScateg.py:152
 msgid "calendar background"
 msgstr ""
 
-#: ..\PFScateg.py:167
+#: ..\PFScateg.py:152
 msgid "calendar event"
 msgstr ""
 
-#: ..\PFScateg.py:167
+#: ..\PFScateg.py:152
 msgid "calendar today background"
 msgstr ""
 
-#: ..\PFScateg.py:167 ..\PFScateg.py:228
+#: ..\PFScateg.py:152 ..\PFScateg.py:213
 msgid "startscreen background"
 msgstr ""
 
-#: ..\PFScateg.py:167 ..\PFScateg.py:228
+#: ..\PFScateg.py:152 ..\PFScateg.py:213
 msgid "startscreen text"
 msgstr ""
 
-#: ..\PFScateg.py:167 ..\PFScateg.py:235
+#: ..\PFScateg.py:152 ..\PFScateg.py:220
 msgid "list anniversaries"
 msgstr ""
 
-#: ..\PFScateg.py:167 ..\PFScateg.py:235
+#: ..\PFScateg.py:152 ..\PFScateg.py:220
 msgid "list heading"
 msgstr ""
 
-#: ..\PFScateg.py:167 ..\PFScateg.py:235
+#: ..\PFScateg.py:152 ..\PFScateg.py:220
 msgid "list inactive"
 msgstr ""
 
-#: ..\PFScateg.py:167 ..\PFScateg.py:235
+#: ..\PFScateg.py:152 ..\PFScateg.py:220
 msgid "list text"
 msgstr ""
 
-#: ..\PFScateg.py:172
+#: ..\PFScateg.py:157
 msgid "Edit colors and categories"
 msgstr ""
 
-#: ..\PFScateg.py:178
+#: ..\PFScateg.py:163
 msgid "Years"
 msgstr ""
 
-#: ..\PFScateg.py:179
+#: ..\PFScateg.py:164
 msgid "Color"
 msgstr ""
 
-#: ..\PFScateg.py:184
+#: ..\PFScateg.py:169
 msgid "Edit text for categorie"
 msgstr ""
 
-#: ..\PFScateg.py:189 ..\PFScateg.py:393
+#: ..\PFScateg.py:174 ..\PFScateg.py:369
 msgid "Save and exit"
 msgstr ""
 
-#: ..\PFScateg.py:191
+#: ..\PFScateg.py:176
 msgid "Toggle number of years"
 msgstr ""
 
-#: ..\PFScateg.py:192
+#: ..\PFScateg.py:177
 msgid "Open color list"
 msgstr ""
 
-#: ..\PFScateg.py:213
+#: ..\PFScateg.py:198
 msgid "Not number of years"
 msgstr ""
 
-#: ..\PFScateg.py:216
+#: ..\PFScateg.py:201
 msgid "Number of years"
 msgstr ""
 
-#: ..\PFScateg.py:264
+#: ..\PFScateg.py:249
 msgid "Edit text for category"
 msgstr ""
 
-#: ..\PFScateg.py:302 ..\PFSconfig.py:481
+#: ..\PFScateg.py:287 ..\PFSconfig.py:465
 msgid ""
 "Restart PlanerFS for new settings\n"
 "Please wait a moment"
 msgstr ""
 
-#: ..\PFScateg.py:358 ..\PFScateg.py:359 ..\routines.py:671 ..\routines.py:672
-#: ..\routines.py:694 ..\routines.py:774 ..\routines.py:782
+#: ..\PFScateg.py:334 ..\PFScateg.py:335 ..\routines.py:669 ..\routines.py:670
+#: ..\routines.py:692 ..\routines.py:772 ..\routines.py:780
 msgid "without text"
 msgstr ""
 
-#: ..\PFScateg.py:360 ..\PFScateg.py:361 ..\PFScateg.py:362 ..\PFScateg.py:363
-#: ..\routines.py:673 ..\routines.py:674 ..\routines.py:700
+#: ..\PFScateg.py:336 ..\PFScateg.py:337 ..\PFScateg.py:338 ..\PFScateg.py:339
+#: ..\routines.py:671 ..\routines.py:672 ..\routines.py:698
 msgid "If description"
 msgstr ""
 
-#: ..\PFScateg.py:364 ..\PFScateg.py:365
+#: ..\PFScateg.py:340 ..\PFScateg.py:341
 msgid "unlisted"
 msgstr ""
 
-#: ..\PFScateg.py:369 ..\PlanerFS.py:1349
+#: ..\PFScateg.py:345 ..\PlanerFS.py:1341
 msgid "Setting shifts"
 msgstr ""
 
-#: ..\PFScateg.py:383
+#: ..\PFScateg.py:359
 msgid "New"
 msgstr ""
 
-#: ..\PFScateg.py:388
+#: ..\PFScateg.py:364
 msgid "Edit selected option"
 msgstr ""
 
-#: ..\PFScateg.py:395
+#: ..\PFScateg.py:371
 msgid "delete shift entry"
 msgstr ""
 
-#: ..\PFScateg.py:396
+#: ..\PFScateg.py:372
 msgid "Make new entry"
 msgstr ""
 
-#: ..\PFScateg.py:422
+#: ..\PFScateg.py:398
 msgid "Shift colors:"
 msgstr ""
 
-#: ..\PFScateg.py:432
+#: ..\PFScateg.py:408
 msgid " >> l4l-Grafik:"
 msgstr ""
 
-#: ..\PFScateg.py:433 ..\PFScateg.py:465
+#: ..\PFScateg.py:409 ..\PFScateg.py:441
 msgid "Show in LCD"
 msgstr ""
 
-#: ..\PFScateg.py:434 ..\PFScateg.py:467
+#: ..\PFScateg.py:410 ..\PFScateg.py:443
 msgid "LCD"
 msgstr ""
 
-#: ..\PFScateg.py:435 ..\PFScateg.py:469
+#: ..\PFScateg.py:411 ..\PFScateg.py:445
 msgid "Screen"
 msgstr ""
 
-#: ..\PFScateg.py:436 ..\PFScateg.py:471
+#: ..\PFScateg.py:412 ..\PFScateg.py:447
 msgid "Mode"
 msgstr ""
 
-#: ..\PFScateg.py:437 ..\PFScateg.py:473
+#: ..\PFScateg.py:413 ..\PFScateg.py:449
 msgid "Widht total"
 msgstr ""
 
-#: ..\PFScateg.py:438 ..\PFScateg.py:475
+#: ..\PFScateg.py:414 ..\PFScateg.py:451
 msgid "High total"
 msgstr ""
 
-#: ..\PFScateg.py:439 ..\PFScateg.py:479
+#: ..\PFScateg.py:415 ..\PFScateg.py:455
 msgid "Distance from top (pixel)"
 msgstr ""
 
-#: ..\PFScateg.py:440 ..\PFScateg.py:477
+#: ..\PFScateg.py:416 ..\PFScateg.py:453
 msgid "Distance from left (%)"
 msgstr ""
 
-#: ..\PFScateg.py:441 ..\PFScateg.py:481
+#: ..\PFScateg.py:417 ..\PFScateg.py:457
 msgid "Size for a single"
 msgstr ""
 
-#: ..\PFScateg.py:442 ..\PFScateg.py:483
+#: ..\PFScateg.py:418 ..\PFScateg.py:459
 msgid "distance between"
 msgstr ""
 
-#: ..\PFScateg.py:466
+#: ..\PFScateg.py:442
 msgid "Show on LCD"
 msgstr ""
 
-#: ..\PFScateg.py:466
+#: ..\PFScateg.py:442
 msgid "activate"
 msgstr ""
 
-#: ..\PFScateg.py:466
+#: ..\PFScateg.py:442
 msgid "deactivate"
 msgstr ""
 
-#: ..\PFScateg.py:468
+#: ..\PFScateg.py:444
 msgid "Select the LCD"
 msgstr ""
 
-#: ..\PFScateg.py:470
+#: ..\PFScateg.py:446
 msgid "Set number for screen"
 msgstr ""
 
-#: ..\PFScateg.py:472
+#: ..\PFScateg.py:448
 msgid "Select the Mode(s)"
 msgstr ""
 
-#: ..\PFScateg.py:474
+#: ..\PFScateg.py:450
 msgid "Set Widht total"
 msgstr ""
 
-#: ..\PFScateg.py:476
+#: ..\PFScateg.py:452
 msgid "Set High total"
 msgstr ""
 
-#: ..\PFScateg.py:478
+#: ..\PFScateg.py:454
 msgid "Set Distance from left (%)"
 msgstr ""
 
-#: ..\PFScateg.py:480
+#: ..\PFScateg.py:456
 msgid "Set Distance from top in pixel"
 msgstr ""
 
-#: ..\PFScateg.py:482
+#: ..\PFScateg.py:458
 msgid "Set Size for a single"
 msgstr ""
 
-#: ..\PFScateg.py:484
+#: ..\PFScateg.py:460
 msgid "Set distance between"
 msgstr ""
 
-#: ..\PFScateg.py:503
+#: ..\PFScateg.py:479
 msgid "New entry"
 msgstr ""
 
-#: ..\PFSconfig.py:146 ..\PFSfiles.py:436 ..\plugin.py:178
+#: ..\PFSconfig.py:135 ..\PFSfiles.py:423 ..\plugin.py:167
 msgid "none"
 msgstr ""
 
-#: ..\PFSconfig.py:157 ..\PFSconfig.py:184
+#: ..\PFSconfig.py:146 ..\PFSconfig.py:173
 msgid "On"
 msgstr ""
 
-#: ..\PFSconfig.py:158
+#: ..\PFSconfig.py:147
 msgid "Big screen"
 msgstr ""
 
-#: ..\PFSconfig.py:158
+#: ..\PFSconfig.py:147
 msgid "Split screen"
 msgstr ""
 
-#: ..\PFSconfig.py:164
+#: ..\PFSconfig.py:153
 msgid "Audio-file"
 msgstr ""
 
-#: ..\PFSconfig.py:168 ..\PFSconfig.py:171
+#: ..\PFSconfig.py:157 ..\PFSconfig.py:160
 msgid "Extensionsmenu"
 msgstr ""
 
-#: ..\PFSconfig.py:168 ..\PFSconfig.py:171
+#: ..\PFSconfig.py:157 ..\PFSconfig.py:160
 msgid "Main Menu"
 msgstr ""
 
-#: ..\PFSconfig.py:168 ..\PFSconfig.py:171
+#: ..\PFSconfig.py:157 ..\PFSconfig.py:160
 msgid "not extra"
 msgstr ""
 
-#: ..\PFSconfig.py:175
+#: ..\PFSconfig.py:164
 msgid "at Wakeup from Deep-Standby"
 msgstr ""
 
-#: ..\PFSconfig.py:175
+#: ..\PFSconfig.py:164
 msgid "at Wakeup from Deep-Standby and Standby(Idle)"
 msgstr ""
 
-#: ..\PFSconfig.py:175
+#: ..\PFSconfig.py:164
 msgid "at Wakeup from Deep-Standby and time"
 msgstr ""
 
-#: ..\PFSconfig.py:175
+#: ..\PFSconfig.py:164
 msgid "at Wakeup from Standby(Idle)"
 msgstr ""
 
-#: ..\PFSconfig.py:175
+#: ..\PFSconfig.py:164
 msgid "at Wakeup from Standby(Idle) and time"
 msgstr ""
 
-#: ..\PFSconfig.py:175
+#: ..\PFSconfig.py:164
 msgid "at time"
 msgstr ""
 
-#: ..\PFSconfig.py:181
+#: ..\PFSconfig.py:170
 msgid "Gregorian"
 msgstr ""
 
-#: ..\PFSconfig.py:181
+#: ..\PFSconfig.py:170
 msgid "Julian"
 msgstr ""
 
-#: ..\PFSconfig.py:188
+#: ..\PFSconfig.py:177
 msgid "Lines"
 msgstr ""
 
-#: ..\PFSconfig.py:188
+#: ..\PFSconfig.py:177
 msgid "no lines"
 msgstr ""
 
-#: ..\PFSconfig.py:199
+#: ..\PFSconfig.py:188
 msgid "In Calendar"
 msgstr ""
 
-#: ..\PFSconfig.py:209
+#: ..\PFSconfig.py:198
 msgid "Defaults"
 msgstr ""
 
-#: ..\PFSconfig.py:212
+#: ..\PFSconfig.py:201
 msgid "Press 'help' for explanation and 'ok' for virtual keyboard"
 msgstr ""
 
-#: ..\PFSconfig.py:225
+#: ..\PFSconfig.py:214
 msgid "Settings-Menu"
 msgstr ""
 
-#: ..\PFSconfig.py:273
+#: ..\PFSconfig.py:262
 msgid "URL for radio"
 msgstr ""
 
-#: ..\PFSconfig.py:281
+#: ..\PFSconfig.py:270
 msgid "Designation-text in calendar"
 msgstr ""
 
-#: ..\PFSconfig.py:284
+#: ..\PFSconfig.py:273
 msgid "Text for countdown display"
 msgstr ""
 
-#: ..\PFSconfig.py:287
+#: ..\PFSconfig.py:276
 msgid "Date for countdown display"
 msgstr ""
 
-#: ..\PFSconfig.py:309
+#: ..\PFSconfig.py:298
 msgid "No placeholder 'pd' for count of days in text!"
 msgstr ""
 
-#: ..\PFSconfig.py:315
+#: ..\PFSconfig.py:304
 msgid "Setting Start"
 msgstr ""
 
-#: ..\PFSconfig.py:316
+#: ..\PFSconfig.py:305
 msgid "Another directory for data files"
 msgstr ""
 
-#: ..\PFSconfig.py:323
+#: ..\PFSconfig.py:312
 msgid "When standby(Idle) display later"
 msgstr ""
 
-#: ..\PFSconfig.py:327
+#: ..\PFSconfig.py:316
 msgid "Months for events preview"
 msgstr ""
 
-#: ..\PFSconfig.py:328
+#: ..\PFSconfig.py:317
 msgid "Holidays in Startscreen"
 msgstr ""
 
-#: ..\PFSconfig.py:329
+#: ..\PFSconfig.py:318
 msgid "2. File for Startscreen"
 msgstr ""
 
-#: ..\PFSconfig.py:330
+#: ..\PFSconfig.py:319
 msgid "Start Display AutoHide (0=Off)"
 msgstr ""
 
-#: ..\PFSconfig.py:331
+#: ..\PFSconfig.py:320
 msgid "Startscreen lines"
 msgstr ""
 
-#: ..\PFSconfig.py:334
+#: ..\PFSconfig.py:323
 msgid "update every ? minutes,0=Off"
 msgstr ""
 
-#: ..\PFSconfig.py:335
+#: ..\PFSconfig.py:324
 msgid "delete old events"
 msgstr ""
 
-#: ..\PFSconfig.py:338
+#: ..\PFSconfig.py:327
 msgid "delete older than (days)"
 msgstr ""
 
-#: ..\PFSconfig.py:341
+#: ..\PFSconfig.py:330
 msgid "Timer / Reminder"
 msgstr ""
 
-#: ..\PFSconfig.py:342
+#: ..\PFSconfig.py:331
 msgid "Timer on"
 msgstr ""
 
-#: ..\PFSconfig.py:343
+#: ..\PFSconfig.py:332
 msgid "Timer display time (0=endless)"
 msgstr ""
 
-#: ..\PFSconfig.py:344
+#: ..\PFSconfig.py:333
 msgid "Timer sound"
 msgstr ""
 
-#: ..\PFSconfig.py:345
+#: ..\PFSconfig.py:334
 msgid "Timer start volume"
 msgstr ""
 
-#: ..\PFSconfig.py:346
+#: ..\PFSconfig.py:335
 msgid "Timer max volume"
 msgstr ""
 
-#: ..\PFSconfig.py:349
+#: ..\PFSconfig.py:338
 msgid "radio url"
 msgstr ""
 
-#: ..\PFSconfig.py:352
+#: ..\PFSconfig.py:341
 msgid "extern dats"
 msgstr ""
 
-#: ..\PFSconfig.py:353
+#: ..\PFSconfig.py:342
 msgid "floating holidays"
 msgstr ""
 
-#: ..\PFSconfig.py:355
+#: ..\PFSconfig.py:344
 msgid "download on Start"
 msgstr ""
 
-#: ..\PFSconfig.py:356
+#: ..\PFSconfig.py:345
 msgid "extern events color in calendar"
 msgstr ""
 
-#: ..\PFSconfig.py:357
+#: ..\PFSconfig.py:346
 msgid "Show external reminders"
 msgstr ""
 
-#: ..\PFSconfig.py:358
+#: ..\PFSconfig.py:347
 msgid "Use shift plan"
 msgstr ""
 
-#: ..\PFSconfig.py:360
+#: ..\PFSconfig.py:349
 msgid "Settings in Menu->Shift Setting..."
 msgstr ""
 
-#: ..\PFSconfig.py:361
+#: ..\PFSconfig.py:350
 msgid "Identifier text in calendar"
 msgstr ""
 
-#: ..\PFSconfig.py:362
+#: ..\PFSconfig.py:351
 msgid "Show shift on startscreen"
 msgstr ""
 
-#: ..\PFSconfig.py:363
+#: ..\PFSconfig.py:352
 msgid "Differentiate between: with/without description"
 msgstr ""
 
-#: ..\PFSconfig.py:366
+#: ..\PFSconfig.py:355
 msgid "Show repetitions in lists"
 msgstr ""
 
-#: ..\PFSconfig.py:373
+#: ..\PFSconfig.py:362
 msgid "lcd on/off"
 msgstr ""
 
-#: ..\PFSconfig.py:374
+#: ..\PFSconfig.py:363
 msgid "lcd-nr"
 msgstr ""
 
-#: ..\PFSconfig.py:375
+#: ..\PFSconfig.py:364
 msgid "lcd screen-nr"
 msgstr ""
 
-#: ..\PFSconfig.py:376
+#: ..\PFSconfig.py:365
 msgid "lcd list fontsize"
 msgstr ""
 
-#: ..\PFSconfig.py:377
+#: ..\PFSconfig.py:366
 msgid "lcd timer fontsize"
 msgstr ""
 
-#: ..\PFSconfig.py:378
+#: ..\PFSconfig.py:367
 msgid "write text file"
 msgstr ""
 
-#: ..\PFSconfig.py:379
+#: ..\PFSconfig.py:368
 msgid "maximum characters per line"
 msgstr ""
 
-#: ..\PFSconfig.py:383
+#: ..\PFSconfig.py:372
 msgid "calendar in Menu:"
 msgstr ""
 
-#: ..\PFSconfig.py:384
+#: ..\PFSconfig.py:373
 msgid "address book in Menu:"
 msgstr ""
 
-#: ..\PFSconfig.py:385
+#: ..\PFSconfig.py:374
 msgid "Overview in Menu:"
 msgstr ""
 
-#: ..\PFSconfig.py:386
+#: ..\PFSconfig.py:375
 msgid "Background from skin"
 msgstr ""
 
-#: ..\PFSconfig.py:388
+#: ..\PFSconfig.py:377
 msgid "Placeholder in text for number of days = pd"
 msgstr ""
 
-#: ..\PFSconfig.py:389
+#: ..\PFSconfig.py:378
 msgid "Countdown-Text:"
 msgstr ""
 
-#: ..\PFSconfig.py:392
+#: ..\PFSconfig.py:381
 msgid "Countdown-Dat:"
 msgstr ""
 
-#: ..\PFSconfig.py:408
+#: ..\PFSconfig.py:397
 msgid "PlanerFS - Holidays"
 msgstr ""
 
-#: ..\PFSconfig.py:429 ..\PFSonl.py:230
+#: ..\PFSconfig.py:415 ..\PFSonl.py:215
 msgid "Really close without saving settings?"
 msgstr ""
 
-#: ..\PFSconfig.py:495
+#: ..\PFSconfig.py:479
 msgid "When is the start screen displayed?"
 msgstr ""
 
-#: ..\PFSconfig.py:501
+#: ..\PFSconfig.py:485
 msgid "Show same named appointment with all dates?"
 msgstr ""
 
-#: ..\PFSconfig.py:503
+#: ..\PFSconfig.py:487
 msgid "View Holidays in Lists?"
 msgstr ""
 
-#: ..\PFSconfig.py:505
+#: ..\PFSconfig.py:489
 msgid "How many months in advance, the dates are displayed in the startup screen?"
 msgstr ""
 
-#: ..\PFSconfig.py:507
+#: ..\PFSconfig.py:491
 msgid "Holidays are to be displayed in the startup screen?"
 msgstr ""
 
-#: ..\PFSconfig.py:509
+#: ..\PFSconfig.py:493
 msgid "For timer: off = the feature timer is off, there are no timer processed"
 msgstr ""
 
-#: ..\PFSconfig.py:511
+#: ..\PFSconfig.py:495
 msgid "After how many seconds to the startup screen will disappear automatically? (0 = not Auto-hide)"
 msgstr ""
 
-#: ..\PFSconfig.py:513
+#: ..\PFSconfig.py:497
 msgid "Floating holidays to Gregorian or Julian calendar to calculate or calculate off"
 msgstr ""
 
-#: ..\PFSconfig.py:515
+#: ..\PFSconfig.py:499
 msgid "If a date is copied, deleted or created, appointments can be older than they should automatically be deleted (default for days in the next step). Events with no rules that have an end-date have less than today minus default days are deleted without asking!"
 msgstr ""
 
-#: ..\PFSconfig.py:517
+#: ..\PFSconfig.py:501
 msgid "For example: if you enter here 365, with end-dates earlier date 365 days will be deleted."
 msgstr ""
 
-#: ..\PFSconfig.py:519
+#: ..\PFSconfig.py:503
 msgid "pick up the latest data automatically at startup?"
 msgstr ""
 
-#: ..\PFSconfig.py:523
+#: ..\PFSconfig.py:507
 msgid "colored date on the calendar for events from additional calendar files or online calendar"
 msgstr ""
 
-#: ..\PFSconfig.py:525
+#: ..\PFSconfig.py:509
 msgid "write /tmp/plfs_ges for 'see text file' in LCD4Linux"
 msgstr ""
 
-#: ..\PFSconfig.py:527
+#: ..\PFSconfig.py:511
 msgid "Limit line length"
 msgstr ""
 
-#: ..\PFSconfig.py:529
+#: ..\PFSconfig.py:513
 msgid "Show on start big or split screen"
 msgstr ""
 
-#: ..\PFSconfig.py:531
+#: ..\PFSconfig.py:515
 msgid "Countdown for the start display and LCD screen, insert in the text 'pd' for the number of days"
 msgstr ""
 
-#: ..\PFSfiles.py:65 ..\PFSfiles.py:419
+#: ..\PFSfiles.py:61 ..\PFSfiles.py:406
 msgid "Show list of all iCal-Files"
 msgstr ""
 
-#: ..\PFSfiles.py:66
+#: ..\PFSfiles.py:62
 msgid "backup files and settings"
 msgstr ""
 
-#: ..\PFSfiles.py:67
+#: ..\PFSfiles.py:63
 msgid "restore files and settings"
 msgstr ""
 
-#: ..\PFSfiles.py:68 ..\PFSfiles.py:284
+#: ..\PFSfiles.py:64 ..\PFSfiles.py:274
 msgid "delete extern ics-File"
 msgstr ""
 
-#: ..\PFSfiles.py:69 ..\PFSfiles.py:286
+#: ..\PFSfiles.py:65 ..\PFSfiles.py:276
 msgid "Copy ics-File to PlanerFS path"
 msgstr ""
 
-#: ..\PFSfiles.py:70 ..\PFSfiles.py:288
+#: ..\PFSfiles.py:66 ..\PFSfiles.py:278
 msgid "Copy ics-File of PlanerFS path"
 msgstr ""
 
-#: ..\PFSfiles.py:71
+#: ..\PFSfiles.py:67
 msgid "Import all events from an ics file"
 msgstr ""
 
-#: ..\PFSfiles.py:72
+#: ..\PFSfiles.py:68
 msgid "Import all cards from an vcf file"
 msgstr ""
 
-#: ..\PFSfiles.py:74
+#: ..\PFSfiles.py:70
 msgid "make second calendar"
 msgstr ""
 
-#: ..\PFSfiles.py:75 ..\PlanerFS.py:1344
+#: ..\PFSfiles.py:71 ..\PlanerFS.py:1336
 msgid "Files Handling"
 msgstr ""
 
-#: ..\PFSfiles.py:132
+#: ..\PFSfiles.py:128
 msgid "second calendar was created successfully, to see push-button Bouquet on the calendar"
 msgstr ""
 
-#: ..\PFSfiles.py:137 ..\PFSfiles.py:152
+#: ..\PFSfiles.py:133 ..\PFSfiles.py:148
 msgid "Please select source path..."
 msgstr ""
 
-#: ..\PFSfiles.py:166 ..\PFSfiles.py:202
+#: ..\PFSfiles.py:162 ..\PFSfiles.py:198
 msgid "No ics-File in this Path exist!"
 msgstr ""
 
-#: ..\PFSfiles.py:178
+#: ..\PFSfiles.py:174
 msgid "No vcf-File in this Path exist!"
 msgstr ""
 
-#: ..\PFSfiles.py:190
+#: ..\PFSfiles.py:186
 msgid "No extern ics-File exist!"
 msgstr ""
 
-#: ..\PFSfiles.py:205
+#: ..\PFSfiles.py:201
 msgid "Please select the backup path..."
 msgstr ""
 
-#: ..\PFSfiles.py:224
+#: ..\PFSfiles.py:219
 msgid "Overwrite existing Backup?"
 msgstr ""
 
-#: ..\PFSfiles.py:227
+#: ..\PFSfiles.py:222
 msgid "Backup ConfFS..."
 msgstr ""
 
-#: ..\PFSfiles.py:229
+#: ..\PFSfiles.py:224
 msgid "Directory %s nonexistent."
 msgstr ""
 
-#: ..\PFSfiles.py:236
+#: ..\PFSfiles.py:231
 msgid "Backup Files and Settings..."
 msgstr ""
 
-#: ..\PFSfiles.py:239
+#: ..\PFSfiles.py:234
 msgid "Please select the restore path..."
 msgstr ""
 
-#: ..\PFSfiles.py:245
+#: ..\PFSfiles.py:240
 msgid "Overwrite existing Settings and Files?"
 msgstr ""
 
-#: ..\PFSfiles.py:247
+#: ..\PFSfiles.py:242
 msgid "File %s nonexistent."
 msgstr ""
 
-#: ..\PFSfiles.py:254
+#: ..\PFSfiles.py:249
 msgid "Restore Files and Settings..."
 msgstr ""
 
-#: ..\PFSfiles.py:290
+#: ..\PFSfiles.py:280
 msgid "Import all Data of ics-File"
 msgstr ""
 
-#: ..\PFSfiles.py:292
+#: ..\PFSfiles.py:282
 msgid "Import all Data of vcf-File"
 msgstr ""
 
-#: ..\PFSfiles.py:335 ..\PFSfiles.py:348
+#: ..\PFSfiles.py:325 ..\PFSfiles.py:338
 msgid "Import completed successfully"
 msgstr ""
 
-#: ..\PFSfiles.py:338 ..\PFSfiles.py:351 ..\PFSfiles.py:396
+#: ..\PFSfiles.py:328 ..\PFSfiles.py:341 ..\PFSfiles.py:388
 msgid "unknown error"
 msgstr ""
 
-#: ..\PFSfiles.py:364
+#: ..\PFSfiles.py:355
 msgid "Please select the target path..."
 msgstr ""
 
-#: ..\PFSfiles.py:380
+#: ..\PFSfiles.py:372
 msgid "selceted File is:"
 msgstr ""
 
-#: ..\PFSfiles.py:381
+#: ..\PFSfiles.py:373
 msgid "Do you really want to delete this file?"
 msgstr ""
 
-#: ..\PFSfiles.py:386
+#: ..\PFSfiles.py:379
 msgid "file is deleted"
 msgstr ""
 
-#: ..\PFSonl.py:81
+#: ..\PFSonl.py:79
 msgid "new"
 msgstr ""
 
-#: ..\PFSonl.py:102
+#: ..\PFSonl.py:100
 msgid "online-calendars"
 msgstr ""
 
-#: ..\PFSonl.py:150
+#: ..\PFSonl.py:145
 msgid "Enter Text"
 msgstr ""
 
-#: ..\PFSonl.py:178
+#: ..\PFSonl.py:173
 msgid "Name already exists or not allowed"
 msgstr ""
 
-#: ..\PFSonl.py:199
-msgid "double name!"
-msgstr ""
-
-#: ..\PFSonl.py:218
+#: ..\PFSonl.py:205
 msgid "not a valid URL!"
 msgstr ""
 
-#: ..\PFSonl.py:220
+#: ..\PFSonl.py:207
 msgid "Press OK for Edit, Press 1 for aktivate/deaktivate"
 msgstr ""
 
-#: ..\PFSwe.py:39 ..\PFSwe.py:67
+#: ..\PFSwe.py:38 ..\PFSwe.py:57
 msgid "alarm time"
 msgstr ""
 
-#: ..\PFSwe.py:44 ..\PFSwe.py:115
+#: ..\PFSwe.py:40 ..\PFSwe.py:94
 msgid "alarm-clock"
 msgstr ""
 
-#: ..\PFSwe.py:48
+#: ..\PFSwe.py:43
 msgid "Start"
 msgstr ""
 
-#: ..\PFSwe.py:139
+#: ..\PFSwe.py:114
 msgid "alert-clock is running - press ESC for abort"
 msgstr ""
 
-#: ..\PlanerFS.py:186
+#: ..\PlanerFS.py:185
 msgid "Fri"
 msgstr ""
 
-#: ..\PlanerFS.py:186
+#: ..\PlanerFS.py:185
 msgid "Mon"
 msgstr ""
 
-#: ..\PlanerFS.py:186
+#: ..\PlanerFS.py:185
 msgid "Sat"
 msgstr ""
 
-#: ..\PlanerFS.py:186
+#: ..\PlanerFS.py:185
 msgid "Su"
 msgstr ""
 
-#: ..\PlanerFS.py:186
+#: ..\PlanerFS.py:185
 msgid "Thu"
 msgstr ""
 
-#: ..\PlanerFS.py:186
+#: ..\PlanerFS.py:185
 msgid "Tue"
 msgstr ""
 
-#: ..\PlanerFS.py:186
+#: ..\PlanerFS.py:185
 msgid "WN"
 msgstr ""
 
-#: ..\PlanerFS.py:186
+#: ..\PlanerFS.py:185
 msgid "Wed"
 msgstr ""
 
-#: ..\PlanerFS.py:222 ..\PlanerFS.py:395
+#: ..\PlanerFS.py:221 ..\PlanerFS.py:392
 msgid "cal.1"
 msgstr ""
 
-#: ..\PlanerFS.py:225 ..\PlanerFS.py:238
+#: ..\PlanerFS.py:224 ..\PlanerFS.py:237
 msgid "Update data"
 msgstr ""
 
-#: ..\PlanerFS.py:226 ..\PlanerFS.py:228 ..\PlanerFS.py:416 ..\PlanerFS.py:971
+#: ..\PlanerFS.py:225 ..\PlanerFS.py:227 ..\PlanerFS.py:413 ..\PlanerFS.py:968
 msgid "Terminlist"
 msgstr ""
 
-#: ..\PlanerFS.py:227
+#: ..\PlanerFS.py:226
 msgid "Today"
 msgstr ""
 
-#: ..\PlanerFS.py:231
+#: ..\PlanerFS.py:230
 msgid "Close PlanerFS"
 msgstr ""
 
-#: ..\PlanerFS.py:232
+#: ..\PlanerFS.py:231
 msgid "Edit selected Termin"
 msgstr ""
 
-#: ..\PlanerFS.py:236
+#: ..\PlanerFS.py:235
 msgid "Show timer"
 msgstr ""
 
-#: ..\PlanerFS.py:237
+#: ..\PlanerFS.py:236
 msgid "Toggle Calender/Terminlist"
 msgstr ""
 
-#: ..\PlanerFS.py:239
+#: ..\PlanerFS.py:238
 msgid "Show current month"
 msgstr ""
 
-#: ..\PlanerFS.py:250 ..\PlanerFS.py:251
+#: ..\PlanerFS.py:249 ..\PlanerFS.py:250
 msgid "Change calendar file"
 msgstr ""
 
-#: ..\PlanerFS.py:252
+#: ..\PlanerFS.py:251
 msgid "Show buisness card of selected name"
 msgstr ""
 
-#: ..\PlanerFS.py:253
+#: ..\PlanerFS.py:252
 msgid "Show more Options in Menu"
 msgstr ""
 
-#: ..\PlanerFS.py:258
+#: ..\PlanerFS.py:257
 msgid "PlanerFSMenu"
 msgstr ""
 
-#: ..\PlanerFS.py:263 ..\PlanerFS.py:270
+#: ..\PlanerFS.py:262 ..\PlanerFS.py:269
 msgid "previous month"
 msgstr ""
 
-#: ..\PlanerFS.py:264 ..\PlanerFS.py:269
+#: ..\PlanerFS.py:263 ..\PlanerFS.py:268
 msgid "next Month"
 msgstr ""
 
-#: ..\PlanerFS.py:265 ..\PlanerFS.py:1346
+#: ..\PlanerFS.py:264 ..\PlanerFS.py:1338
 msgid "Open adress book"
 msgstr ""
 
-#: ..\PlanerFS.py:301
+#: ..\PlanerFS.py:300
 msgid ""
 "no icalendar import from system possible\n"
 "please ask in the forum of your image how it can be installed"
 msgstr ""
 
-#: ..\PlanerFS.py:392
+#: ..\PlanerFS.py:389
 msgid "cal.2"
 msgstr ""
 
-#: ..\PlanerFS.py:400 ..\PlanerFS.py:406
+#: ..\PlanerFS.py:397 ..\PlanerFS.py:403
 msgid " (active)"
 msgstr ""
 
-#: ..\PlanerFS.py:424 ..\plugin.py:174
+#: ..\PlanerFS.py:421 ..\plugin.py:163
 msgid "Error: at least one external file could not be loaded!"
 msgstr ""
 
-#: ..\PlanerFS.py:426
+#: ..\PlanerFS.py:424
 msgid "Successfully loaded data"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "April"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "August"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "December"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "February"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "January"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "July"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "June"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "March"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "May"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "November"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "October"
 msgstr ""
 
-#: ..\PlanerFS.py:635
+#: ..\PlanerFS.py:632
 msgid "September"
 msgstr ""
 
-#: ..\PlanerFS.py:709
+#: ..\PlanerFS.py:706
 msgid "Date Error"
 msgstr ""
 
-#: ..\PlanerFS.py:946 ..\PlanerFS.py:1127
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
 msgid "Friday"
 msgstr ""
 
-#: ..\PlanerFS.py:946 ..\PlanerFS.py:1127
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
 msgid "Monday"
 msgstr ""
 
-#: ..\PlanerFS.py:946 ..\PlanerFS.py:1127
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
 msgid "Saturday"
 msgstr ""
 
-#: ..\PlanerFS.py:946 ..\PlanerFS.py:1127
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
 msgid "Sunday"
 msgstr ""
 
-#: ..\PlanerFS.py:946 ..\PlanerFS.py:1127
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
 msgid "Thursday"
 msgstr ""
 
-#: ..\PlanerFS.py:946 ..\PlanerFS.py:1127
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
 msgid "Tuesday"
 msgstr ""
 
-#: ..\PlanerFS.py:946 ..\PlanerFS.py:1127
+#: ..\PlanerFS.py:943 ..\PlanerFS.py:1124
 msgid "Wednesday"
 msgstr ""
 
-#: ..\PlanerFS.py:964
+#: ..\PlanerFS.py:961
 msgid "Events"
 msgstr ""
 
-#: ..\PlanerFS.py:1059
+#: ..\PlanerFS.py:1056
 msgid "Add new event"
 msgstr ""
 
-#: ..\PlanerFS.py:1159
+#: ..\PlanerFS.py:1153
 msgid "Internal calculated holiday, import not possible"
 msgstr ""
 
-#: ..\PlanerFS.py:1166 ..\PlanerFS.py:1180
+#: ..\PlanerFS.py:1160 ..\PlanerFS.py:1174
 msgid "external file can not be edited, Import this event?"
 msgstr ""
 
-#: ..\PlanerFS.py:1166 ..\PlanerFS.py:1180 ..\PlanerFS.py:1188
+#: ..\PlanerFS.py:1160 ..\PlanerFS.py:1174 ..\PlanerFS.py:1182
 msgid "Termin from downloaded file"
 msgstr ""
 
-#: ..\PlanerFS.py:1169
+#: ..\PlanerFS.py:1163
 msgid "Select for edit or new"
 msgstr ""
 
-#: ..\PlanerFS.py:1188
+#: ..\PlanerFS.py:1182
 msgid "Entry can only be copied from external to internal (*...)"
 msgstr ""
 
-#: ..\PlanerFS.py:1300
+#: ..\PlanerFS.py:1293
 msgid "Caution, this is a recurring appointment! Delete recurring appointment?"
 msgstr ""
 
-#: ..\PlanerFS.py:1302
+#: ..\PlanerFS.py:1295
 msgid "Do you really want to delete this entry?"
 msgstr ""
 
-#: ..\PlanerFS.py:1332
+#: ..\PlanerFS.py:1324
 msgid "Insert new event / timer"
 msgstr ""
 
-#: ..\PlanerFS.py:1334
+#: ..\PlanerFS.py:1326
 msgid "edit selected  entry"
 msgstr ""
 
-#: ..\PlanerFS.py:1335
+#: ..\PlanerFS.py:1327
 msgid "Delete selected  entry"
 msgstr ""
 
-#: ..\PlanerFS.py:1339
+#: ..\PlanerFS.py:1331
 msgid "Import selected  entry"
 msgstr ""
 
-#: ..\PlanerFS.py:1342
+#: ..\PlanerFS.py:1334
 msgid "parameters setting"
 msgstr ""
 
-#: ..\PlanerFS.py:1343
+#: ..\PlanerFS.py:1335
 msgid "Color an category setting"
 msgstr ""
 
-#: ..\PlanerFS.py:1345
+#: ..\PlanerFS.py:1337
 msgid "Edit online calendar list"
 msgstr ""
 
-#: ..\PlanerFS.py:1351
+#: ..\PlanerFS.py:1343
 msgid "Show errors"
 msgstr ""
 
-#: ..\PlanerFS.py:1352
+#: ..\PlanerFS.py:1344
 msgid "About"
 msgstr ""
 
-#: ..\PlanerFS.py:1353
+#: ..\PlanerFS.py:1345
 msgid "Menu"
 msgstr ""
 
-#: ..\plugin.py:388 ..\plugin.py:429
+#: ..\plugin.py:375 ..\plugin.py:416
 msgid "PlanerFS address book"
 msgstr ""
 
-#: ..\plugin.py:411
+#: ..\plugin.py:398
 msgid "PlanerFS"
 msgstr ""
 
-#: ..\plugin.py:428
+#: ..\plugin.py:415
 msgid "Schedule appointments, view events"
 msgstr ""
 
-#: ..\plugin.py:429
+#: ..\plugin.py:416
 msgid "addresses and phone numbers search, find, manage, and more"
 msgstr ""
 
-#: ..\plugin.py:431
+#: ..\plugin.py:418
 msgid "PlanerFS overview"
 msgstr ""
 
-#: ..\plugin.py:431
+#: ..\plugin.py:418
 msgid "Show start screen with overview"
 msgstr ""
 
@@ -1650,4 +1646,3 @@ msgstr ""
 #: ..\timer.py:118
 msgid "Timer message"
 msgstr ""
-

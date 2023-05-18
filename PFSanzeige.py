@@ -1,6 +1,7 @@
 # PYTHON IMPORTS
 from configparser import ConfigParser
 from datetime import datetime, date
+from os.path import join
 from time import strftime
 
 # ENIGMA IMPORTS
@@ -15,7 +16,7 @@ from Screens.InfoBarGenerics import InfoBarNotifications
 from skin import parseColor
 
 # PLUGIN IMPORTS
-from . import _  # for localized messages
+from . import CONFIGFILE, PLUGINPATH, _ # for localized messages
 
 try:
 	from Plugins.Extensions.LCD4linux.module import L4Lelement
@@ -52,7 +53,7 @@ class FehlerAnzeige(Screen, InfoBarNotifications):
 
 class Timermeldung(Screen, InfoBarNotifications):
 	ALLOW_SUSPEND = True
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/timermeldung.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/timermeldung.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -60,7 +61,7 @@ class Timermeldung(Screen, InfoBarNotifications):
 		self.conf = conf
 		self.m_dauer = 0
 		configparser = ConfigParser()
-		configparser.read("/etc/ConfFS/PlanerFS.conf")
+		configparser.read(CONFIGFILE)
 		if configparser.has_section("settings"):
 			l1 = configparser.items("settings")
 			for k, v in l1:
@@ -99,12 +100,12 @@ class Timermeldung(Screen, InfoBarNotifications):
 			self.sounder = 1
 			self.oldService = self.session.nav.getCurrentlyPlayingServiceReference()
 			if sound == "AUDIO":
-				self.musicfile = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/PFSsound.mp3"
+				self.musicfile = join(PLUGINPATH, "PFSsound.mp3")
 			elif sound == "radio":
 				if self.url:
 					self.musicfile = self.url
 				else:
-					self.musicfile = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/PFSsound.mp3"
+					self.musicfile = join(PLUGINPATH, "PFSsound.mp3")
 				self["text1"].setText(_("radio alarm Clock"))
 			self.onLayoutFinish.append(self.klang)
 			if sound == "AUDIO":
@@ -165,7 +166,7 @@ class Timermeldung(Screen, InfoBarNotifications):
 
 class startscreen8(Screen, InfoBarNotifications):
 	ALLOW_SUSPEND = True
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/startscreen.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/startscreen.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -174,7 +175,7 @@ class startscreen8(Screen, InfoBarNotifications):
 		self.z_liste = ("0", "1", "1", "0", "1", "1", "0", "0", "0", "0")
 		self.conf = conf
 		configparser = ConfigParser()
-		configparser.read("/etc/ConfFS/PlanerFS.conf")
+		configparser.read(CONFIGFILE)
 		if configparser.has_section("settings"):
 			l1 = configparser.items("settings")
 			for k, v in l1:
@@ -268,7 +269,7 @@ class startscreen8(Screen, InfoBarNotifications):
 						color1 = color
 						alter2 = ""
 						jubi = None
-						categories = x[2].lower()
+						categories = x[2].lower() if x[2] else "none"
 						d_check = _(d.strftime("%a")) + d.strftime(", %d.%m.")
 						zeit = ""
 						if len(x) > 12 and x[12]:

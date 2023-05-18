@@ -1,25 +1,24 @@
 # PYTHON IMPORTS
 from configparser import ConfigParser
 from datetime import datetime, timedelta
-from os.path import exists, isfile
+from os.path import exists, isfile, join
 from re import compile
 from requests import get
 from time import localtime, strftime, strptime
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, _ # for localized messages
 from .routines import Rules
 
 version = ""
 altloesch = 365
 altloesch_on = "No"
-CONFIGFILE = "'/etc/ConfFS/PlanerFS.conf'"
-termindatei = "/etc/ConfFS/PlanerFS.ics"
-cardfile = "/etc/ConfFS/PlanerFS.vcf"
+DATAFILE = join(CONFIGPATH, "PlanerFS.ics")
+CARDFILE = join(CONFIGPATH, "PlanerFS.vcf")
 cals_dir = "/tmp/"
 if exists(CONFIGFILE):
 	configparser = ConfigParser()
-	configparser.read("/etc/ConfFS/PlanerFS.conf")
+	configparser.read(CONFIGFILE)
 	if configparser.has_section("settings"):
 		if configparser.has_option("settings", "version"):
 			version = configparser.get("settings", "version")
@@ -38,7 +37,7 @@ class all_import():
 			list1 = []
 			list2 = []
 			if exists(CONFIGFILE):
-				list1 = self.einles(termindatei)
+				list1 = self.einles(DATAFILE)
 			list2 = self.einles(imp_datei)
 			if len(list2) > 0:
 				list1.extend(list2)
@@ -107,7 +106,7 @@ class all_import():
 				else:
 					continue
 		events.append("\nEND:VCALENDAR")
-		with open(termindatei, "w") as f2:
+		with open(DATAFILE, "w") as f2:
 			f2.writelines(events)
 		self.ok = 1
 
@@ -147,12 +146,12 @@ class vcf_import():
 		if imp_datei != None:
 			list1 = []
 			list2 = []
-			if exists(cardfile):
-				list1 = self.einles(cardfile)
+			if exists(CARDFILE):
+				list1 = self.einles(CARDFILE)
 			list2 = self.einles(imp_datei)
 			if len(list2) > 0:
 				list1.extend(list2)
-				with open(cardfile, "w") as f2:
+				with open(CARDFILE, "w") as f2:
 					for x in list1:
 						for x2 in x:
 							f2.write(x2 + "\n")
@@ -188,7 +187,7 @@ class vcf_import():
 
 class online_import():
 	def run(self, datei=None, fer=None, nofer=True):
-		opath = '/etc/ConfFS/PlanerFS_online.txt'
+		opath = join(CONFIGPATH, "PlanerFS_online.txt")
 		if datei and exists(datei):
 			opath = datei
 		onl_lines = []
@@ -199,7 +198,7 @@ class online_import():
 		ferien = fer
 		if ferien is None and nofer is False and exists(CONFIGFILE):
 			configparser = ConfigParser()
-			configparser.read("/etc/ConfFS/PlanerFS.conf")
+			configparser.read(CONFIGFILE)
 			if configparser.has_option("settings", "ferien"):
 				f1 = 0
 				f2 = "0"

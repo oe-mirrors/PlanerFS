@@ -7,7 +7,7 @@ from os.path import getsize
 from time import timezone, localtime, altzone
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, _ # for localized messages
 
 def getTimeDiffUTC():
 	offset = timezone if (localtime().tm_isdst == 0) else altzone
@@ -165,7 +165,7 @@ class Rules():
 		return rule
 
 	def parseEvent(self, lines, index=None, filename="", schicht=None):
-		dname = filename.replace('/etc/ConfFS/', '')
+		dname = filename.replace(CONFIGPATH, '')
 		startTime = time(0)
 		summary = ''
 		mask = {}
@@ -356,7 +356,7 @@ class Rules():
 			index = 0
 			gcal = None
 			schicht1 = None
-			dname = datei.replace('/etc/ConfFS/', '')
+			dname = datei.replace(CONFIGPATH, '')
 			err = ""
 			gcal = Calendar().from_ical(cal_datei)
 			startTime = time(0)
@@ -652,7 +652,7 @@ class schicht():
 			return
 		all_list = []
 		configparser = ConfigParser()
-		configparser.read("/etc/ConfFS/PlanerFS.conf")
+		configparser.read(CONFIGFILE)
 		schicht = ("0", "0", "0")
 		schicht_colors = {}
 		if configparser.has_section("settings"):

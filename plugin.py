@@ -23,10 +23,10 @@ from Screens.MessageBox import MessageBox
 from Screens.Standby import inStandby
 from Screens import Standby
 from Tools import Notifications
-from Tools.Directories import SCOPE_SYSETC, SCOPE_PLUGINS, SCOPE_CURRENT_SKIN, resolveFilename, copyfile, fileExists
+from Tools.Directories import SCOPE_PLUGINS, resolveFilename, copyfile, fileExists
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, _ # for localized messages
 from .timer import Timer_dats
 from .routines import schicht
 from .termin import TerminList
@@ -37,12 +37,10 @@ from .PFSpaint import mspFS_paint
 from .PFSwe import PFS_show_we
 from .PlanerFS import PlanerFS7
 
-version = "10.0beta"
+version = "10.0b"
 txt = "Version: %s\n" % version
-cal_files_path = join(resolveFilename(SCOPE_SYSETC), "ConfFS/")
-CONFIGFILE = join(cal_files_path, "PlanerFS.conf")
-ONLINETEXT = join(cal_files_path, "PlanerFS_online.txt")
-termindatei = join(cal_files_path, "PlanerFS.ics")
+ONLINETEXT = join(CONFIGPATH, "PlanerFS_online.txt")
+termindatei = join(CONFIGPATH, "PlanerFS.ics")
 PLUGINPATH = join(resolveFilename(SCOPE_PLUGINS), "Extensions/PlanerFS/")
 try:
 	from Plugins.Extensions.LCD4linux.module import L4Lelement
@@ -51,36 +49,36 @@ except Exception:
 	L4L = None
 	txt += "No L4L\n"
 
-if not exists(cal_files_path):
-	makedirs(cal_files_path)
+if not exists(CONFIGPATH):
+	makedirs(CONFIGPATH)
 if not fileExists(termindatei):
 	copyfile(join(PLUGINPATH, "sample.ics"), termindatei)
-if not fileExists(join(cal_files_path, "PlanerFS.vcf")):
-	copyfile(join(PLUGINPATH, "sample.vcf"), join(cal_files_path, "PlanerFS.vcf"))
+if not fileExists(join(CONFIGPATH, "PlanerFS.vcf")):
+	copyfile(join(PLUGINPATH, "sample.vcf"), join(CONFIGPATH, "PlanerFS.vcf"))
 conf = {
 		"ext_menu": "True",
 		"startscreen_plus": "True",
 		"version": "",
 		"plfs_list": "",
 		"timer_on": "On",
-		"akt_intv": 24,
+		"akt_intv": "24",
 		"startanzeige2": "systemstart",
 		"timestartstandby": "No",
 		"kalender_art": "Gregorian",
-		"vorschaum": 3,
+		"vorschaum": "3",
 		"starttime": "None",
 		"autosync": "No",
 		"sec_file": "none",
-		"cal_menu": 1,
-		"adr_menu": 1,
+		"cal_menu": "1",
+		"adr_menu": "1",
 		"l4l_on": "Yes",
-		"l4l_lcd": 1,
-		"l4l_screen": 1,
-		"l4l_font": 40,
-		"l_ferien": 0,
-		"ferien": 0,
-		"schicht_send_url": None,
-		"dat_dir": cal_files_path,
+		"l4l_lcd": "1",
+		"l4l_screen": "1",
+		"l4l_font": "40",
+		"l_ferien": "0",
+		"ferien": "0",
+		"schicht_send_url": "None",
+		"dat_dir": CONFIGPATH,
 		"cals_dir": "/tmp/",
 		"categories": "Keine,Geburtstag,Feiertag,Jahrestag,Hochzeitstag,Keine,Keine,Keine,Keine,Keine",
 		"cat_color_list": "#00008B,#D2691E,#006400,#696969,#FFD700,#000000,#B22222,#8B8878,#CD0000,#00868B,#f0f8ff,#ff4500,#20343c4f,#deb887,#228B22,#5F9EA0,#DC143C,#F0F8FF,#EEC900",
@@ -104,15 +102,9 @@ if exists(CONFIGFILE):
 			elif k == "l4l_font":
 				l4l_sets[2] = int(v)
 			elif k == "date_dir":
-				if v.endswith("/"):
-					conf["dat_dir"] = v
-				else:
-					conf["dat_dir"] = v + "/"
+				conf["dat_dir"] = v if v.endswith("/") else "%s/" % v
 			else:
-				try:
-					conf[k] = int(v)
-				except Exception:
-					conf[k] = v
+				conf[k] = v
 		if str(conf["version"]) != version:
 			configparser.read(CONFIGFILE)
 			configparser.set("settings", "version", version)
@@ -161,7 +153,7 @@ class einlesen():
 			erg = 1
 			if conf["autosync"] == "Yes":
 				path = ONLINETEXT
-				if conf["dat_dir"] != cal_files_path and exists(conf["dat_dir"] + "PlanerFS_online.txt"):
+				if conf["dat_dir"] != CONFIGPATH and exists(conf["dat_dir"] + "PlanerFS_online.txt"):
 					path = conf["dat_dir"] + "PlanerFS_online.txt"
 				erg = online_import().run(path, fer, True)
 				if erg == 0 and not inStandby:

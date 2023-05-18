@@ -6,21 +6,21 @@ from os.path import join
 from PIL import Image, ImageFont, ImageDraw
 
 # ENIGMA IMPORTS
-from Tools.Directories import fileExists
+from Tools.Directories import fileExists, resolveFilename, SCOPE_FONTS
 
 # PLUGIN IMPORTS
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH
 from .routines import schicht
 
 configparser = ConfigParser()
 try:
 	from Plugins.Extensions.LCD4linux.module import L4Lelement
 	configparser = ConfigParser()
-	configparser.read("/etc/ConfFS/PlanerFS.conf")
+	configparser.read(CONFIGFILE)
 	if configparser.has_option("settings", "l4l_sets"):
 		l4l_sets = configparser.get("settings", "l4l_sets").split(":")
 	else:
 		l4l_sets = ("On", "1", "1", "0", "60", "100", "500", "10", "On", "0")
-
 	L4Lmspfs = L4Lelement()
 	l4l = True
 	schicht_send = None
@@ -30,13 +30,10 @@ try:
 		schicht_send_url = configparser.get("settings", "schicht_send_url")
 except Exception:
 	l4l = None
-
 heute = date.today()
-
 
 class mspFS_paint:
 	def __init__(self, liste=None):
-
 		if l4l and liste:
 			try:
 				remove("/tmp/mspFS.png")
@@ -44,10 +41,10 @@ class mspFS_paint:
 				remove("/tmp/mspFS2.png")
 			except Exception:
 				pass
-			if fileExists("/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/schichtpicons/err.png"):
+			if fileExists(join(PLUGINPATH, "schichtpicons/err.png")):
 				schicht1 = schicht().parseSchicht(liste, (None, None))
 				if schicht1:
-					picon_path = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/schichtpicons"
+					picon_path = join(PLUGINPATH, "schichtpicons")
 					#for i in xrange(1,3):
 					for i in range(3):
 						txt = str(schicht1[i - 1][1])
@@ -55,14 +52,15 @@ class mspFS_paint:
 						if not len(txt.strip()):
 							txt = "notext"
 						file1 = txt + ".png"
-						if fileExists(join("/etc/ConfFS/Schichtpicons", file1)):
-							path1 = "/etc/ConfFS/Schichtpicons"
+						schichtpicons = join(CONFIGPATH, "Schichtpicons")
+						if fileExists(join(schichtpicons, file1)):
+							path1 = schichtpicons
 						elif not fileExists(join(picon_path, file1)):
 							path1 = picon_path
 							file1 = 'err.png'
 						pt = join(path1, file1)
-						dt = "/tmp/mspFS" + str(i) + ".png"
-						system('cp ' + pt + ' ' + dt)
+						dt = "/tmp/mspFS%s.png" % i
+						system("cp %s %s" % (pt, dt))
 					self.paint_l4l(schicht1)
 
 	def paint_l4l(self, mySchicht):
@@ -75,7 +73,6 @@ class mspFS_paint:
 			left = "0%"
 		else:
 			left = str(l4l_sets[9]) + "%"
-
 		if breit > hoch:
 			quer = 1
 			anz = int(breit / (size + abstand))
@@ -100,12 +97,13 @@ class mspFS_paint:
 			txt = mySchicht[i2][1]
 			if len(txt) > 3:
 				txt = txt[:3]
-			TextSize = int(size * 0.8)
-			font = ImageFont.truetype("/usr/share/fonts/nmsbd.ttf", TextSize, encoding='unic')
+			textsize = int(size * 0.8)
+			fontfile = resolveFilename(SCOPE_FONTS, "nmsbd.ttf")
+			font = ImageFont.truetype(fontfile, textsize, encoding='unic')
 			w, h = draw.textsize(txt, font=font)
 			while w > int(size * 0.95):  # max 90% solange verkleinern
-				TextSize -= 1
-				font = ImageFont.truetype("/usr/share/fonts/nmsbd.ttf", TextSize, encoding='unic')
+				textsize -= 1
+				font = ImageFont.truetype(fontfile, textsize, encoding='unic')
 				w, h = draw.textsize(txt, font=font)
 			colx = tuple(int(col[i:i + lv // 3], 16) for i in range(0, lv, lv // 3))  # col from hex
 			col2 = (colx[0], colx[1], colx[2], 0)

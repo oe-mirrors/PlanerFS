@@ -15,18 +15,18 @@ from Screens.MessageBox import MessageBox
 from Tools.Directories import copyfile
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, _ # for localized messages
 from .PFSimport import all_import, vcf_import
 
 last_backup_path = "/"
 internet_File = ""
-dat_dir = '/etc/ConfFS/'
+dat_dir = CONFIGPATH
 cals_dir = '/tmp/'
 sec_file = None
 download_name = "download"
-if exists('/etc/ConfFS/PlanerFS.conf'):
+if exists(CONFIGFILE):
 	configparser = ConfigParser()
-	configparser.read("/etc/ConfFS/PlanerFS.conf")
+	configparser.read(CONFIGFILE)
 	if configparser.has_section("settings"):
 		if configparser.has_option("settings", "last_backup_path"):
 			last_backup_path = configparser.get("settings", "last_backup_path")
@@ -43,7 +43,7 @@ DWide = getDesktop(0).size().width()
 
 
 class PFS_filemenu7(Screen):
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFSmenulist.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -205,14 +205,14 @@ class PFS_filemenu7(Screen):
 			if isfile(path):
 				last_backup_path = path
 				conf_l = []
-				with open('/etc/ConfFS/PlanerFS.conf', 'r') as fp:
+				with open(CONFIGFILE, 'r') as fp:
 					conf_lines = fp.readlines()
 				for x in conf_lines:
 					split = x.strip().split(' = ', 1)
 					if split[0] == "Backup Path":
 						x = "Backup Path = %s" % last_backup_path
 					conf_l.append(x)
-				with open("/etc/ConfFS/PlanerFS.conf", "w") as f:
+				with open(CONFIGFILE, "w") as f:
 					f.writelines(conf_l)
 				self.settigspath = path + "ConfFS.tar.gz"
 				if isfile(self.settigspath):
@@ -257,7 +257,7 @@ class BackupLocationBox(LocationBox):
 
 
 class del_files7(Screen):
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFSmenulist.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -392,7 +392,7 @@ class del_files7(Screen):
 
 
 class PFS_allfilelist(Screen):
-	skindatei = "/usr/lib/enigma2/python/Plugins/Extensions/PlanerFS/skin/%s/PFSmenulist.xml" % ("fHD" if DWide > 1300 else "HD")
+	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if DWide > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 

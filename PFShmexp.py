@@ -7,8 +7,8 @@ from re import compile
 from time import localtime, mktime
 
 # PLUGIN IMPORTS
+from . import CONFIGPATH, CONFIGFILE
 from .routines import Feiertage, Rules, Next_Termin
-
 conf = {
 		  "kalender_art": "Gregorian",
 		  "sec_file": "none",
@@ -17,15 +17,15 @@ conf = {
 		  "l_ferien": 0,
 		  "ferien": 0,
 		  "schicht_col": {"F": "#008B45", "S": "#FFD700", "N": "#3A5FCD", "fr": "#858585"},
-		  "dat_dir": '/etc/ConfFS/',
+		  "dat_dir": CONFIGPATH,
 		  "categories": "Keine,Geburtstag,Feiertag,Jahrestag,Hochzeitstag,Keine,Keine,Keine,Keine,Keine",
 		  }
 
 schicht_start = 0
 categories1 = (_('Birthday'), _('Anniversary'), _('Wedding day'), 'Birthday', 'Anniversary', 'Wedding day')
-if exists('/etc/ConfFS/PlanerFS.conf'):
+if exists(CONFIGFILE):
 	configparser = ConfigParser()
-	configparser.read("/etc/ConfFS/PlanerFS.conf")
+	configparser.read(CONFIGFILE)
 	if configparser.has_section("settings"):
 		l1 = configparser.items("settings")
 		for k, v in l1:
