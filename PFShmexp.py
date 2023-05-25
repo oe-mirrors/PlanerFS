@@ -1,13 +1,13 @@
 # PYTHON IMPORTS
 from configparser import ConfigParser
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, date
 from os import listdir
 from os.path import exists, isfile
 from re import compile
 from time import localtime, mktime
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE
+from . import CONFIGPATH, CONFIGFILE, _  # for localized messages
 from .routines import Feiertage, Rules, Next_Termin
 conf = {
 		  "kalender_art": "Gregorian",
@@ -31,7 +31,7 @@ if exists(CONFIGFILE):
 		for k, v in l1:
 			if k in conf and v.strip() != "":
 				if k == "categories":
-					categories1 = v.encode("UTF-8")
+					categories1 = v
 					categories1 = list(categories1.split(","))
 				else:
 					try:
@@ -65,25 +65,23 @@ class hm_exp(object):
 					nf = (nf_file, conf["cals_dir"] + cal_file)
 					if not nf in files:
 						files.append(nf)
-		return(files)
+		return (files)
 
 	def get_caldates(self, vorsch=1, term_datei1=None):
 		lt = localtime()
 		self.monat = lt[1]
 		self.jahr = lt[0]
-		today = datetime.date.today()
-		st2 = localtime()
+		today = date.today()
 		self.altdat = today
 		altjahr = self.altdat.year
 		altmonat = self.altdat.month
-		self.altdatum = datetime.date(altjahr, altmonat, 1)
+		self.altdatum = date(altjahr, altmonat, 1)
 		if not isinstance(conf["schicht_col"], dict):
 			conf["schicht_col"] = eval(conf["schicht_col"])
 		self.schichtnamen = []
 		if isinstance(conf["schicht_col"], dict):
-			for key in conf["schicht_col"].iterkeys():
+			for key in conf["schicht_col"].keys():
 				self.schichtnamen.append(key)
-
 		fileliste1 = []
 		allterm = []
 		alltim = []
@@ -91,7 +89,6 @@ class hm_exp(object):
 			fileliste1.append(("nix", term_datei1))
 		else:
 			fileliste1 = self.get_calfiles()
-
 		for term_datei in fileliste1:
 			termd = term_datei[1]
 			terminlist = []
@@ -103,7 +100,7 @@ class hm_exp(object):
 				if monat > 12:
 					monat = self.monat - 12 + int(vorsch)
 					jahr = self.jahr + 1
-				end = datetime.date(jahr, monat, 1) - timedelta(1)
+				end = date(jahr, monat, 1) - timedelta(1)
 				if conf["kalender_art"] == "Gregorian":
 					self.bewegl_feiertage = Feiertage().ostern_greg(self.jahr)
 					if int(end.year) > self.jahr:
@@ -119,13 +116,12 @@ class hm_exp(object):
 						next_date = (x2[3].year, x2[3].month, x2[3].day)
 						y = (next_date, x2[0], x2[2], x2[1], x2[3])
 						terminlist.append(y)
-
 			elif termd:
 				self.termindatei = termd
 				if self.monat == 12:
-					sdt1 = datetime.date(self.jahr + 1, 1, 1) - timedelta(1)
+					sdt1 = date(self.jahr + 1, 1, 1) - timedelta(1)
 				else:
-					sdt1 = datetime.date(self.jahr, self.monat + 1, 1) - timedelta(1)
+					sdt1 = date(self.jahr, self.monat + 1, 1) - timedelta(1)
 				self.monatstage = int(sdt1.day)
 				dataLines = None
 				if isfile(self.termindatei):
@@ -148,10 +144,10 @@ class hm_exp(object):
 					mask['END'] = compile(r"^END:VEVENT")
 					inEvent = False
 					index = 0
+					eventLines = []
 					for line in dataLines:
 						line = line.replace("\r", "")
 						if mask['BEGIN'].match(line):
-							eventLines = []
 							inEvent = True
 						elif mask['END'].match(line) and inEvent:
 							parse1 = Rules().parseEvent(eventLines, index, fname, self.schichtnamen)
@@ -161,9 +157,7 @@ class hm_exp(object):
 							index += 1
 						elif inEvent:
 							eventLines.append(line)
-
-				nowyear = today.year
-				if self.altdatum <= datetime.date(self.jahr, self.monat, 1):
+				if self.altdatum <= date(self.jahr, self.monat, 1):
 					for x in self.events:
 						sr = 1
 						if len(x) > 16 and x[14]:

@@ -14,7 +14,8 @@ from Screens.Screen import Screen
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE, PLUGINPATH,_ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, _  # for localized messages
+
 
 class PlanerFSonline_files(Screen, ConfigListScreen):
 	skindatei = join(PLUGINPATH, "skin/%s/PFSconf.xml" % ("fHD" if getDesktop(0).size().width() > 1300 else "HD"))
@@ -40,9 +41,8 @@ class PlanerFSonline_files(Screen, ConfigListScreen):
 		self.onl_list2 = []
 		self.index = ("", 9)
 		if exists(self.path):
-			fp = open(self.path, 'r')
-			conf_lines = fp.readlines()
-			fp.close()
+			with open(self.path, 'r') as fp:
+				conf_lines = fp.readlines()
 			for x in conf_lines:
 				x = x.strip()
 				fail = 0
@@ -90,10 +90,7 @@ class PlanerFSonline_files(Screen, ConfigListScreen):
 					'right': self.kn,
 				}, -2
 		)
-		self["numactions"] = NumberActionMap(["InputActions"],
-		{
-				"1": self.keyNumberGlobal,
-		}, -1)
+		self["numactions"] = NumberActionMap(["InputActions"], {"1": self.keyNumberGlobal, }, -1)
 		if not self.err in self["config"].onSelectionChanged:
 			self["config"].onSelectionChanged.append(self.err)
 		self.reloadList()
@@ -179,20 +176,20 @@ class PlanerFSonline_files(Screen, ConfigListScreen):
 					if self.index[0] == "new":
 						self.onl_list2.append((ret, "new url", aktiv, 0, 1))
 					else:
-						self.onl_list2[self.index[0]] = en
+						self.onl_list2[int(self.index[0])] = en
 					self.reloadList()
 
-	def reloadList(self, num=None):
-		list = []
+	def reloadList(self):
+		liste = []
 		for x in self.onl_list2:
 			tl = "name (inactiv)" if x[2] == "#" else "name"
-			list.extend((
+			liste.extend((
 						getConfigListEntry(tl, NoSave(ConfigText(default=x[0], fixed_size=False)), 1, x),
 						getConfigListEntry("", NoSave(ConfigText(default=x[1], fixed_size=False)), 2, x),
 						getConfigListEntry("zeige in Kalender", NoSave(ConfigSelection(choices=[("1", 1), ("2", 2)], default=x[4])), 3, x),
 						getConfigListEntry(""),
 						))
-		self.list = list
+		self.list = liste
 		self["config"].setList(self.list)
 
 	def err(self):
@@ -227,5 +224,5 @@ class PlanerFSonline_files(Screen, ConfigListScreen):
 			f.writelines(liste)
 		if self.altliste != self.onl_list2:
 			from PFSimport import online_import
-			online_import().run(self.path, None, 1)
+			online_import().run(self.path, None, True)
 		self.close()

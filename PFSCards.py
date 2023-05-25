@@ -1,12 +1,12 @@
 # PYTHON IMPORTS
-import base64
+from base64 import decodebytes, encodebytes
 from configparser import ConfigParser
 from os import remove
 from os.path import exists, isfile, join
 from re import compile
 
 # ENIGMA IMPORTS
-from enigma import getDesktop, ePicLoad, getDesktop
+from enigma import ePicLoad
 from Components.ActionMap import HelpableActionMap, ActionMap
 from Components.ConfigList import ConfigListScreen
 from Components.Input import Input
@@ -23,7 +23,7 @@ from Screens.InfoBarGenerics import InfoBarNotifications
 from skin import parseColor
 
 # PLUGIN IMPORTS
-from . import CONFIGFILE, PLUGINPATH, _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, DWIDE, _  # for localized messages
 from .routines_vc import Cards_parse
 
 try:
@@ -32,7 +32,6 @@ try:
 except ImportError:
 	fbf = None
 
-DWide = getDesktop(0).size().width()
 color_list = []
 if exists(CONFIGFILE):
 	configparser = ConfigParser()
@@ -44,10 +43,12 @@ if len(color_list) < 18:
 	color_list = ("#00008B", "#D2691E", "#006400", "#696969", "#FFD700", "#000000", "#B22222", "#8B8878", "#CD0000", "#00868B", "#f0f8ff", "#ff4500", "#20343c4f", "#deb887", "#228B22", "#5F9EA0", "#DC143C", "#F0F8FF", "#EEC900")
 color_days = color_list[10]
 cal_background = color_list[12]
+CARDFILE = join(CONFIGPATH, "PlanerFS.vcf")
+
 
 class PFS_show_card7(Screen, InfoBarNotifications):
 	ALLOW_SUSPEND = True
-	skindatei = join(PLUGINPATH, "skin/%s/PFScard.xml" % ("fHD" if DWide > 1300 else "HD"))
+	skindatei = join(PLUGINPATH, "skin/%s/PFScard.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -73,12 +74,12 @@ class PFS_show_card7(Screen, InfoBarNotifications):
 		self["adr2_background"] = Label()
 		self["Actions"] = ActionMap(["OkCancelActions", "DirectionActions", "ColorActions"],
 		{
-				"green": self.new_card,
-				"blue": self.call,
-				"red": self.close,
-				"yellow": self.edit,
-				"cancel": self.cancel,
-				"ok": self.cancel,
+		"green": self.new_card,
+		"blue": self.call,
+		"red": self.close,
+		"yellow": self.edit,
+		"cancel": self.cancel,
+		"ok": self.cancel,
 		}, -2)
 		self.picload = ePicLoad()
 		self.ds = []
@@ -92,24 +93,19 @@ class PFS_show_card7(Screen, InfoBarNotifications):
 		self["adr"].setText(self.adr)
 		self["mail"].setText(self.mail)
 		self["geb"].setText(self.geb4)
-		self.setTitle("PlanerFS " + _("business card") + " - " + self.name)
-		if len(self.ds[10]):
-			if self.ds[10][1] and self.ds[10][1] != "":
-				self.pic_file = "/tmp/plfs_pic." + self.ds[10][2]
-				f = open(self.pic_file, "w")
-				pic = base64.decodestring(self.ds[10][1])
+		self.setTitle("PlanerFS %s - %s" % (_("business card"), self.name))
+		if len(self.ds[10]) and self.ds[10][1] and self.ds[10][1] != "":
+			self.pic_file = "/tmp/plfs_pic." + self.ds[10][2]
+			with open(self.pic_file, "wb") as f:
+				pic = decodebytes(self.ds[10][1])
 				f.write(pic)
-				f.close()
-				self.setPicture(self.pic_file)
+			self.setPicture(self.pic_file)
 		if len(self.tel) > 0:
 			self.tel1 = []
 			for x in self.tel:
 				if len(x[2].replace(' ', '')) > 0:
 					self.tel1.append((str(x[0]), str(x[2]), x[0], x[2]))
-			if fbf == None:
-				self["tel_listlabel"].style = "not selected"
-			else:
-				self["tel_listlabel"].style = "default"
+			self["tel_listlabel"].style = "not selected" if fbf is None else "default"
 			self["tel_listlabel"].setList(self.tel1)
 
 	def edit(self):
@@ -131,9 +127,7 @@ class PFS_show_card7(Screen, InfoBarNotifications):
 			self.name = ""
 			self.mail = "Mail:\n"
 			self.geb4 = _("Birthday") + ":\n"
-			if self.name == None and self.index == None:
-				pass
-			elif self.index != None:
+			if self.name is not None and self.index is not None:
 				for x in self.cards_liste:
 					if x[0] == self.index:
 						self.ds = x  # self.cards_liste[self.index]
@@ -150,8 +144,6 @@ class PFS_show_card7(Screen, InfoBarNotifications):
 							if self.ds[6][1] == "0-1-1":
 								self.new_geb = geb
 							break
-						else:
-							pass
 			if len(self.ds) > 0:
 				if self.ds[3] and self.ds[3][1] and len(self.ds[3][1]) > 7:
 					adresse = self.ds[3][1].strip('\r\n')
@@ -178,17 +170,16 @@ class PFS_show_card7(Screen, InfoBarNotifications):
 					self.tel = self.ds[7]
 			else:
 				self.ds = [None, ["N", ""], ["FN", ""], ["ADR;HOME", ";;;;;;"], ["ADR;WORK", ";;;;;;"], ["EMAIL;PREF;INTERNET", " "], ["BDAY", "0-1-1"], [], (), "", ("", "", "")]
-
 			self.tel_liste_anzeigen()
 
 	def call(self):
 		if fbf and len(str(self["tel_listlabel"].getCurrent()[1])) > 1:
 			p_num = str(self["tel_listlabel"].getCurrent()[1])
 			p_num = p_num.replace(" ", "")
-#			self.session.open(MessageBox, p_num, type = MessageBox.TYPE_INFO)
+			self.session.open(MessageBox, p_num, type=MessageBox.TYPE_INFO)
 			fbf().dial(p_num)
 		else:
-			self.session.open(MessageBox, "no FritzCall installed", type=MessageBox.TYPE_INFO)
+			self.session.open(MessageBox, _("no FritzCall installed"), type=MessageBox.TYPE_INFO)
 
 	def changed(self):
 		self["key_blue"].setText(" ")
@@ -214,19 +205,18 @@ class PFS_show_card7(Screen, InfoBarNotifications):
 
 class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 	ALLOW_SUSPEND = True
-	skindatei = join(PLUGINPATH, "skin/%s/PFSconf.xml" % ("fHD" if DWide > 1300 else "HD"))
+	skindatei = join(PLUGINPATH, "skin/%s/PFSconf.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
-	def __init__(self, session, ds=[], index=None, new_geb=None):
+	def __init__(self, session, ds=None, index=None, new_geb=None):
 		self.cards_liste = PFS_read_vcards().cards1
+		self.ds = ds if ds else []
 		self.index = index
 		if self.index:
 			for x in self.cards_liste:
 				if x[0] == self.index:
 					self.ds = x
-		else:
-			self.ds = ds  # []
 		self.zus = []
 		if len(self.ds) > 7:
 			self.zus = self.ds[8]
@@ -241,8 +231,8 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 		self.adress_work = self.ds[4][1].split(";")
 		if len(self.adress_work) < 7:
 			self.adress_work.extend(('', '', '', '', '', ''))
-		f = open("/tmp/adr1.txt", "a")
-		f.write(str(self.ds) + "\n")
+		with open("/tmp/adr1.txt", "a") as f:
+			f.write(str(self.ds) + "\n")
 		if new_geb:
 			geb = new_geb.split("-")
 		else:
@@ -285,14 +275,14 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 		self["help"] = Label(_("Press 'OK' for Virtual Keyboard"))
 		self["setupActions"] = ActionMap(["SetupActions", "DirectionActions", "ColorActions"],
 		{
-				"green": self.save,
-				"blue": self.call,
-				"red": self.cancel1,
-				"yellow": self.swap_extend,
-				"cancel": self.cancel1,
-				"down": self.downPressed,
-				"up": self.upPressed,
-				"ok": self.ok,
+		"green": self.save,
+		"blue": self.call,
+		"red": self.cancel1,
+		"yellow": self.swap_extend,
+		"cancel": self.cancel1,
+		"down": self.downPressed,
+		"up": self.upPressed,
+		"ok": self.ok,
 		}, -2)
 		self.setTitle(_("PlanerFS: ") + _("vCard - Edit"))
 		self.reloadList()
@@ -303,8 +293,8 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 			fbf().dial(p_num)
 
 	def refresh(self):
-		list = []
-		list.extend((
+		liste = []
+		liste.extend((
 				getConfigListEntry(_("Name"), self.name),
 				getConfigListEntry(_("Designation"), self.anzeigename),
 				getConfigListEntry(_("Street"), self.strasse),
@@ -318,7 +308,7 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 				getConfigListEntry(_("Tel. " + _("WORK")), self.tel_work),
 				))
 		if self.extended:
-			list.extend((
+			liste.extend((
 				getConfigListEntry(_("Tel.4 "), self.tel_4),
 				getConfigListEntry(_("Tel.5 "), self.tel_5),
 				getConfigListEntry(_("WORK"),),
@@ -327,7 +317,7 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 				getConfigListEntry(_("zip code") + " (" + _("WORK") + ")", self.plz_w),
 				getConfigListEntry(_("land") + " (" + _("WORK") + ")", self.land_w),
 				))
-		self.list = list
+		self.list = liste
 
 	def swap_extend(self):
 		self.extended = False if self.extended else True
@@ -348,7 +338,7 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 		if idx < l:
 			self.reloadList()
 			self["config"].setCurrentIndex(idx)
-			self.help()
+			self.gethelp()
 
 	def upPressed(self):
 		idx = self["config"].getCurrentIndex()
@@ -357,22 +347,22 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 		self["config"].setCurrentIndex(idx)
 		self.help()
 
-	def help(self):
+	def gethelp(self):
 		self["key_blue"].setText("")
-		help = ""
+		helptext = ""
 		cur = self["config"].getCurrent()
 		cur = cur and cur[1]
 		if cur == self.tel_home or cur == self.tel_mobil or cur == self.tel_work or cur == self.tel_4 or cur == self.tel_5:
 			if fbf and len(str(self["config"].getCurrent()[1].getText())) > 1:
 				self["key_blue"].setText(_("Call Number"))
-				help = _("Edit Call-Number") + "\n" + _("or\n call the Number with blue Key")
+				helptext = _("Edit Call-Number") + "\n" + _("or\n call the Number with blue Key")
 			else:
-				help = _("Edit Call-Number")
+				helptext = _("Edit Call-Number")
 		elif cur == self.name or cur == self.strasse or cur == self.ort or cur == self.mail or cur == self.anzeigename:
-			help = _("Press 'OK' for Virtual Keyboard")
+			helptext = _("Press 'OK' for Virtual Keyboard")
 		else:
-			help = ""
-		self["help"].setText(help)
+			helptext = ""
+		self["help"].setText(helptext)
 
 	def texteingabeFinished(self, ret):
 		if ret is not None:
@@ -450,17 +440,17 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 						zus_list = zus_list + x4  # +"\n"
 			if x[10][1] != "":
 				pic = x[10][0] + ":\n"
-				pic2 = base64.decodestring(x[10][1])
-				pic3 = base64.encodestring(pic2)
-				pic4 = pic3.split("\n")
+				pic2 = decodebytes(x[10][1])
+				pic3 = encodebytes(pic2)
+				pic4 = pic3.split(b"\n")
 				pic5 = ""
 				for zeile in pic4:
-					pic5 = pic5 + " " + zeile + "\n"
+					pic5 = "%s %s\n" % (pic5, zeile)
 				pic = pic + pic4
 				zus_list = zus_list + pic
 			detailliste = on + anzeige_name + name + adr1 + adr2 + mail + geburtstag + tel_x + zus_list + off
 			cards2.append(str(detailliste))
-		with open(CONFIGFILE, "w") as f2:
+		with open(CARDFILE, "w") as f2:
 			f2.writelines(cards2)
 		self.close(self.name.value, None, self.index)
 
@@ -472,8 +462,8 @@ class PFS_read_vcards:
 	def __init__(self):
 		dataLines = []
 		self.cards1 = []
-		if isfile(CONFIGFILE):
-			with open(CONFIGFILE, 'r') as tempFile:
+		if isfile(CARDFILE):
+			with open(CARDFILE, 'r') as tempFile:
 				dataLines.extend(tempFile.readlines())
 		if dataLines:
 			mask = {}
@@ -497,7 +487,7 @@ class PFS_read_vcards:
 
 
 class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
-	skindatei = join(PLUGINPATH, "skin/%s/PFScard_list.xml" % ("fHD" if DWide > 1300 else "HD"))
+	skindatei = join(PLUGINPATH, "skin/%s/PFScard_list.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -523,7 +513,6 @@ class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
 			self["d" + str(x)] = Label()
 			self["d" + str(x)].setText(self.bs_list[x][1])
 		#self["Actions"] = HelpableActionMap(["OkCancelActions","DirectionActions", "ColorActions", "EPGSelectActions"],
-
 		self["ColorActions"] = HelpableActionMap(self, "ColorActions",
 		{
 				"red": (self.delete, _("Delete  buisness card of selected Name")),
@@ -552,9 +541,8 @@ class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
 		self.session.openWithCallback(self.read, PFS_edit_cards)
 
 	def show_card(self):
-		#f=open("/tmp/card","a")
-		#f.write(str(self["name_listlabel"].l.getCurrentSelection()[0])+"\n")
-		#f.close()
+#		with open("/tmp/card","a") as f:
+#			f.write(str(self["name_listlabel"].l.getCurrentSelection()[0])+"\n")
 		if self["name_listlabel"].getCurrent():
 			l1 = self["name_listlabel"].getCurrent()
 			self.session.openWithCallback(self.read, PFS_show_card7, l1[0], None, l1[1][0])  #name,geb,index
@@ -575,8 +563,6 @@ class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
 		self["d" + str(self.bs_index)].instance.setForegroundColor(parseColor(color_days))
 		if self.bs_index > 0:
 			self.bs_index -= 1
-			bs = self.bs_list[self.bs_index]
-
 		else:
 			self.bs_index = 26
 		bs = self.bs_list[self.bs_index]
@@ -612,13 +598,8 @@ class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
 				filtered = [x for x in self.cards_liste if x[1][1].startswith(buchstabe)]
 				n_list = []
 				for x in filtered:
-					res = [x]
-					if len(x[1][1].strip()):
-						text1 = str(x[1][1])
-					else:
-						text1 = str(x[2][1])
+					text1 = str(x[1][1]) if len(x[1][1].strip()) else str(x[2][1])
 					n_list.append((text1, x))
-
 				self["name_listlabel"].setList(n_list)
 				#self["name_listlabel"].build_nameList(filtered)
 
@@ -628,19 +609,12 @@ class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
 		self["d0"].instance.setBackgroundColor(parseColor("#C8EAFF"))
 		self["d0"].instance.setForegroundColor(parseColor("#000000"))
 		for x in range(1, 27):
-
 			self["d" + str(x)].instance.setBackgroundColor(parseColor(cal_background))
 			self["d" + str(x)].instance.setForegroundColor(parseColor(color_days))
-
 		n_list = []
 		for x in self.cards_liste:
-			res = [x]
-			if len(x[1][1].strip()):
-				text1 = str(x[1][1])
-			else:
-				text1 = str(x[2][1])
+			text1 = str(x[1][1]) if len(x[1][1].strip()) else str(x[2][1])
 			n_list.append((text1, x))
-
 		self["name_listlabel"].setList(n_list)  # build_nameList(self.cards_liste)
 
 	def cancel(self):
@@ -651,30 +625,29 @@ class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
 			try:
 				ind = self.cards_liste.index(self["name_listlabel"].getCurrent()[1])
 				del self.cards_liste[ind]  #[1]
-
 				cards2 = []
 				for x in self.cards_liste:
 					detailliste = ""
-
 					on = "BEGIN:VCARD\n"
 					off = "END:VCARD\n"
-					name = x[2][0] + ":" + x[2][1].encode("utf-8") + "\n"
-					anzeige_name = x[1][0] + ":" + x[1][1] + "\n"
+					builder = "%s:%s\n"
+					name = builder % (x[2][0], x[2][1])
+					anzeige_name = builder % (x[1][0], x[1][1])
 					adr1 = ""
 					if len(x[3][1].replace(";", "")) > 1:
-						adr1 = x[3][0] + ":" + x[3][1] + "\n"
+						adr1 = builder % (x[3][0], x[3][1])
 					adr2 = ""
 					if len(x[4][1].replace(";", "")) > 1:
-						adr2 = x[4][0] + ":" + x[4][1] + "\n"
+						adr2 = builder % (x[4][0], x[4][1])
 					mail = ""
 					if len(x[5][1]) > 0:
-						mail = x[5][0] + ":" + x[5][1] + "\n"
+						mail = builder % (x[5][0], x[5][1])
 					geburtstag = ""
 					if x[6][1] != "0-1-1" and len(x[6][1]) > 0:
-						geburtstag = x[6][0] + ":" + x[6][1] + "\n"
+						geburtstag = builder % (x[6][0], x[6][1])
 					tel_x = ""
 					if len(x[11]):
-						notiz = x[11][0] + ":" + x[11][1]
+						notiz = "%s:%s" % (x[11][0], x[11][1])
 					tel_x = ""
 					for x_tel in x[7]:
 						if len(x_tel[2]):
@@ -695,17 +668,17 @@ class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
 					if x[10][1] != "":
 						pic = x[10][0] + ":\n"
 						pic_data = str(x[10][1]) + "\n"
-						pic2 = base64.decodestring(x[10][1])
-						pic3 = base64.encodestring(pic2)
-						pic4 = pic3.split("\n")
+						pic2 = decodebytes(x[10][1])
+						pic3 = encodebytes(pic2)
+						pic4 = pic3.split(b"\n")
 						pic5 = ""
 						for zeile in pic4:
-							pic5 = pic5 + " " + zeile + "\n"
+							pic5 = "%s %s\n" % (pic5, zeile)
 						pic = pic + pic5
 						zus_list = zus_list + pic
 					detailliste = on + anzeige_name + name + adr1 + adr2 + mail + geburtstag + tel_x + zus_list + off
 					cards2.append(str(detailliste))
-				with open(CONFIGFILE, "w") as f2:
+				with open(CARDFILE, "w") as f2:
 					f2.writelines(cards2)
 				self.read()
 			except Exception:

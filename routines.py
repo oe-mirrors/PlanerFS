@@ -7,7 +7,8 @@ from os.path import getsize
 from time import timezone, localtime, altzone
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE, _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, _  # for localized messages
+
 
 def getTimeDiffUTC():
 	offset = timezone if (localtime().tm_isdst == 0) else altzone
@@ -248,8 +249,7 @@ class Rules():
 					rule = self.parseRule(rule)
 			elif mask['Categories'].match(line):
 				categories = mask['Categories'].match(line).group(1)
-#				categories = categories.strip('\r\n').encode("UTF-8")
-				categories = categories.strip()
+				categories = categories.strip('\r\n')
 			elif mask['Comment'].match(line):
 				comment = mask['Comment'].match(line).group(1)
 				comment = comment.strip('\r\n')
@@ -333,7 +333,7 @@ class Rules():
 				elif trigger1.startswith(":-"):
 					trigger1 = trigger1[1:]
 					d = match(r'.*?(\d+)', trigger1)
-					t_t = int(d.group(1)) if d else ""
+					t_t = int(d.group(1)) if d else 0
 					if trigger1[2] == "T":
 						if trigger1.endswith("M"):
 							td = "m"

@@ -4,7 +4,6 @@ from os import listdir, unlink
 from os.path import exists, join, isfile
 
 # ENIGMA IMPORTS
-from enigma import getDesktop
 from Components.ActionMap import NumberActionMap
 from Components.config import ConfigLocations
 from Components.Sources.List import List
@@ -15,7 +14,7 @@ from Screens.MessageBox import MessageBox
 from Tools.Directories import copyfile
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, ICSNAME, ICSFILE, VCFNAME, DWIDE, VERSION, _  # for localized messages
 from .PFSimport import all_import, vcf_import
 
 last_backup_path = "/"
@@ -39,11 +38,10 @@ if exists(CONFIGFILE):
 		if configparser.has_option("settings", "cals_dir"):
 			cals_dir = configparser.get("settings", "cals_dir")
 backup_path = ConfigLocations(default=[last_backup_path])
-DWide = getDesktop(0).size().width()
 
 
 class PFS_filemenu7(Screen):
-	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if DWide > 1300 else "HD"))
+	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -66,7 +64,7 @@ class PFS_filemenu7(Screen):
 		lista.append(("6", _('Copy ics-File of PlanerFS path'), 'copy_out'))
 		lista.append(("7", _('Import all events from an ics file'), 'import_all'))
 		lista.append(("8", _('Import all cards from an vcf file'), 'import_vcf'))
-		if not exists('/etc/ConfFS/PlanerFS2.ics'):
+		if not exists(ICSFILE):
 			lista.append(("9", _('make second calendar'), 'make_sec'))
 		self.setTitle("PlanerFS: " + _("Files Handling"))
 		self["menulist"].setList(lista)
@@ -123,8 +121,8 @@ class PFS_filemenu7(Screen):
 		self.session.open(PFS_allfilelist)
 
 	def make_sec(self):
-		with open('/etc/ConfFS/PlanerFS2.ics', "w") as f:
-			f.write("BEGIN:VCALENDAR\nMETHOD:PUBLISH\nPRODID: -Enigma2-Plugin / PlanerFSsec %s\nVERSION:2.0\nEND:VCALENDAR" % version)
+		with open(ICSFILE, "w") as f:
+			f.write("BEGIN:VCALENDAR\nMETHOD:PUBLISH\nPRODID: -Enigma2-Plugin / PlanerFSsec %s\nVERSION:2.0\nEND:VCALENDAR" % VERSION)
 		self.session.open(MessageBox, _("second calendar was created successfully, to see push-button Bouquet on the calendar"), MessageBox.TYPE_INFO)
 		self.close()
 
@@ -133,7 +131,7 @@ class PFS_filemenu7(Screen):
 		self.session.openWithCallback(self.callCopy_in, BackupLocationBox, _("Please select source path..."), "", "/tmp/", ConfigLocations(default=["/tmp/"]))
 
 	def copy_out(self):
-		cal_files_path = "/etc/ConfFS/"
+		cal_files_path = CONFIGPATH
 		cal_files = []
 		if exists(cal_files_path):
 			for cal_file in listdir(cal_files_path):
@@ -145,7 +143,7 @@ class PFS_filemenu7(Screen):
 			self.session.open(MessageBox, _(_("No ics-File in this Path exist!")), MessageBox.TYPE_INFO)
 
 	def import_path(self):
-		self.session.openWithCallback(self.callImport, BackupLocationBox, _("Please select source path..."), "", "/etc/ConfFS/", ConfigLocations(default=["/tmp/", "/etc/ConfFS/"]))
+		self.session.openWithCallback(self.callImport, BackupLocationBox, _("Please select source path..."), "", CONFIGPATH, ConfigLocations(default=["/tmp/", CONFIGPATH]))
 
 	def callImport(self, path):
 		if self.vcf == 0:
@@ -153,7 +151,7 @@ class PFS_filemenu7(Screen):
 			if path is not None:
 				if exists(path):
 					for cal_file in listdir(path):
-						if cal_file.endswith(".ics") and join(path, "PlanerFS.ics") != "/etc/ConfFS/PlanerFS.ics":
+						if cal_file.endswith(".ics") and join(path, ICSNAME) != ICSFILE:
 							cal_files.append((cal_file, join(path, cal_file)))
 				if len(cal_files) > 0:
 					self.session.open(del_files7, cal_files, "importer")
@@ -165,7 +163,7 @@ class PFS_filemenu7(Screen):
 			if path is not None:
 				if exists(path):
 					for vcf_file in listdir(path):
-						if vcf_file.endswith(".vcf") and join(path, vcf_file) != "PlanerFS.vcf":
+						if vcf_file.endswith(".vcf") and join(path, vcf_file) != VCFNAME:
 							vcf_files.append((vcf_file, join(path, vcf_file)))
 				if len(vcf_files) > 0:
 					self.session.open(del_files7, vcf_files, "importer_vcf")
@@ -174,11 +172,11 @@ class PFS_filemenu7(Screen):
 					self.session.open(MessageBox, _("No vcf-File in this Path exist!"), MessageBox.TYPE_INFO)
 
 	def del_1(self):
-		cal_files_path = "/etc/ConfFS/"
+		cal_files_path = CONFIGPATH
 		cal_files = []
 		if exists(cal_files_path):
 			for cal_file in listdir(cal_files_path):
-				if cal_file.endswith(".ics") and cal_file != "PlanerFS.ics":
+				if cal_file.endswith(".ics") and cal_file != ICSNAME:
 					cal_files.append((cal_file, join(cal_files_path, cal_file)))
 		if len(cal_files) > 0:
 			self.session.open(del_files7, cal_files, "delete")
@@ -257,7 +255,7 @@ class BackupLocationBox(LocationBox):
 
 
 class del_files7(Screen):
-	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if DWide > 1300 else "HD"))
+	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -315,8 +313,8 @@ class del_files7(Screen):
 	def import_all(self):
 #		try:
 		if 1 == 1:
-			with open("/tmp/PlanerFS-Errors.txt","a") as f:
-				f.write(str(self["menulist"].getCurrent())+"\n")
+			with open("/tmp/PlanerFS-Errors.txt", "a") as f:
+				f.write(str(self["menulist"].getCurrent()) + "\n")
 			if self["menulist"].getCurrent()[0]:
 				source = (self["menulist"].getCurrent()[1])
 				importdatei = source  # "/etc/ConfFS/test.ics"
@@ -345,8 +343,8 @@ class del_files7(Screen):
 		if 1 == 1:
 			if self["menulist"].getCurrent()[0]:
 				source = (self["menulist"].getCurrent()[1])
-				target = join("/etc/ConfFS/", self["menulist"].getCurrent()[0])
-				ret = copyfile(source, target)
+				target = join(CONFIGPATH, self["menulist"].getCurrent()[0])
+				copyfile(source, target)
 				self.exit()
 #		except Exception as e:
 #			self.writing(str(e))
@@ -392,7 +390,7 @@ class del_files7(Screen):
 
 
 class PFS_allfilelist(Screen):
-	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if DWide > 1300 else "HD"))
+	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -417,6 +415,7 @@ class PFS_allfilelist(Screen):
 	def read(self):
 		files = []
 		onlines = None
+		sec_file = ""
 		files.append(("", 'in dir: >> /etc/ConfFS/', 1, ""))
 		if exists('/etc/ConfFS/PlanerFS.ics'):
 			files.append(("", " " * 5 + '/etc/ConfFS/PlanerFS.ics', 1, ""))
@@ -430,9 +429,9 @@ class PFS_allfilelist(Screen):
 						onlines = dat_dir + cal_file
 					if cal_file.endswith(".ics"):
 						files.append(("", " " * 5 + dat_dir + cal_file, 1, ""))
-		for cal_file in listdir(conf["cals_dir"]):
+		for cal_file in listdir(cals_dir):
 			if cal_file.endswith(".ics"):
-				files.append(("", conf["cals_dir"] + cal_file, 1, ""))
+				files.append(("", join(cals_dir, cal_file), 1, ""))
 		if onlines:
 			files.append(("", "in online-file: " + str(onlines), None, "", ""))
 			fp = open(onlines, 'r')

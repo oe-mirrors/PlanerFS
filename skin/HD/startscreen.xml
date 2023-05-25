@@ -25,8 +25,8 @@
 		</convert>
 	</widget>
 	<widget name="countdown" position="94,555" size="610,45" zPosition="4" font="Regular;20" foregroundColor="#ffffff"  backgroundColor="#20343c4f"  valign="center" halign="center" transparent="0" />
-	<ePixmap pixmap="skin_default/buttons/button_green.png" position="165,598" zPosition="2" size="24,24" transparent="1" alphatest="on" />
-	<widget name="greentext" position="200,593" size="140,24" font="Regular;21" zPosition="3" valign="center" halign="left" foregroundColor="#000000" backgroundColor="#ffffff" transparent="0" />
-	<ePixmap pixmap="skin_default/buttons/button_yellow.png" position="365,598" zPosition="2" size="24,24" transparent="1" alphatest="on" />
-	<widget name="yellowtext" position="400,593" size="140,24" font="Regular;21" zPosition="3" valign="center" halign="left" foregroundColor="#000000" backgroundColor="#ffffff" transparent="0" />
+	<eLabel name="green" position="255,590" size="8,30" backgroundColor="green" zPosition="2" />
+	<widget name="greentext" position="270,592" size="120,24" font="Regular;21" zPosition="3" valign="center" halign="left" foregroundColor="#000000" backgroundColor="#ffffff" transparent="0" />
+	<eLabel name="yellow" position="405,590" size="8,30" backgroundColor="yellow" zPosition="2" />
+	<widget name="yellowtext" position="420,592" size="120,24" font="Regular;21" zPosition="3" valign="center" halign="left" foregroundColor="#000000" backgroundColor="#ffffff" transparent="0" />
 </screen>

@@ -1,6 +1,6 @@
 # PYTHON IMPORTS
 from configparser import ConfigParser
-from datetime import datetime
+from datetime import datetime, date
 from os import unlink
 from os.path import exists
 from time import mktime
@@ -12,7 +12,7 @@ from Screens.MessageBox import MessageBox
 from Tools import Notifications
 
 # PLUGIN IMPORTS
-from . import CONFIGFILE
+from . import CONFIGFILE, _  # for localized messages
 from .PFSanzeige import Timermeldung
 
 try:
@@ -56,17 +56,16 @@ class TimerList():
 						aktiv = str(x[5])
 					if x[6] and x[6] != None:
 						wdhlg = "repeat"
-					if wdhlg == "unique" and datetime.date(x[3].year, x[3].month, x[3].day) < datetime.date.today():
+					if wdhlg == "unique" and date(x[3].year, x[3].month, x[3].day) < date.today():  # ToDo
 						aktiv = "no_activ"
-					stunde = x[3].hour
-					minute = x[3].minute
+					stunde = x[3].hour  # ToDo
+					minute = x[3].minute  # ToDo
 					melder = ((3600 * int(stunde)) + (60 * int(minute)), x[0], aktiv, sound, wdhlg, x[1], x[7])
 					self.timerlist.append(melder)
 
 
 class Timer_dats:
 	def __init__(self, Akt=None, liste=None, DPKG=None):
-
 		self.termin_timer = eTimer()
 		self.termin_timer.callback.append(self.T_Box)
 		self.ti_liste = []
@@ -92,25 +91,23 @@ class Timer_dats:
 	def Next_Termin(self):
 		if len(self.timerlist2):
 			new_timer = self.timerlist2[0]
-			self.timer_dats = self.timerlist2[0]
+			self.timerdats = self.timerlist2[0]
 			if new_timer[0] > 10:
 				self.termin_timer.startLongTimer(new_timer[0])
 			del self.timerlist2[0]
 
 	def from_deep(self, timerdat=None):
 		if timerdat:
-			self.timer_dats = timerdat
+			self.timerdats = timerdat
 			self.T_Box()
 
 	def T_Box(self):
-		startvol = 10
-		url = self.timer_dats[5]
-		sound = "No"
-		text = self.timer_dats[1]
-		vol = self.timer_dats[2]
-		sound = self.timer_dats[4]
-		anz_dauer = self.timer_dats[3]
-		aktiv = self.timer_dats[6]
+		url = self.timerdats[5]
+		text = self.timerdats[1]
+		vol = self.timerdats[2]
+		sound = self.timerdats[4]
+		anz_dauer = self.timerdats[3]
+		aktiv = self.timerdats[6]
 		startvol = int(vol[0])
 		self.sound = sound
 		self.ex_timer = eTimer()
@@ -121,18 +118,18 @@ class Timer_dats:
 			MyElements.add("plFS.08.box1", {"Typ": "box", "PosX": 0, "PosY": 0, "Color": "red", "Fill": True, "Width": s1[0], "Height": s1[1], "Screen": str(l4l_screen), "Mode": "OnMediaIdle", "Lcd": str(l4l_lcd)})
 			MyElements.add("plFS.09.txt1", {"Typ": "txt", "Text": txt, "Pos": 30, "Size": str(l4lm_font), "Lines": 3, "Screen": str(l4l_screen), "Mode": "OnMediaIdle", "Lcd": str(l4l_lcd)})
 			MyElements.setScreen(str(l4l_screen), str(l4l_lcd))
-#		if Screens.Standby.inStandby:
+#		if Standby.inStandby:
 #		         self.ti_liste.append(text)
 #		         Standby.inStandby.onHide.append(self.T_Liste)
 #		         if l4l and alarmdauer>0:
 #		             self.ex_timer.timeout.get().append(self.l4l_exit)
 #		             self.ex_timer.startLongTimer(alarmdauer)
 #		text="",anz_dauer=0,sound=None,vol=(10,100),url=None
-		if Screens.Standby.inStandby:
+		if Standby.inStandby:
 			eActionMap.getInstance().bindAction('', -0x7FFFFFFF, self.rcKeyPressed)
 			if aktiv == "sb" or aktiv == "dsb":
 				self.vol_down(startvol)
-				Screens.Standby.inStandby.Power()
+				Standby.inStandby.Power()
 				Notifications.AddNotification(Timermeldung, text, anz_dauer, sound, vol, url, None)
 			else:
 				if not exists("/tmp/plfst1"):

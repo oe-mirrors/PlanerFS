@@ -2,13 +2,15 @@
 from re import compile
 
 # PLUGIN IMPORTS
-from . import _ # for localized messages
+from . import _  # for localized messages
+
 
 class Cards_parse():
 #		mask['N2']=compile(r"^N;.*:(.*).*")
 	def parseCards(self, lines, index=None):
 		mask = {}
 		zus_list = []
+		detail_list = None
 		mask['N'] = compile(r"^N(.*).*")
 		mask['FN'] = compile(r"^FN:(.*)")
 		mask['ADR'] = compile(r"^ADR;.*:(.*).*")
@@ -38,7 +40,6 @@ class Cards_parse():
 		mask['CLASS'] = compile(r"^CLASS:(.*).*")
 		mask['KEY'] = compile(r"^KEY;(.*).*")
 		mask['NOTE'] = compile(r"^NOTE;(.*).*")
-
 		count = list(range(1, len(lines)))
 		for i in count:
 			data = lines[i]

@@ -24,10 +24,11 @@ except Exception:
 	l4l = None
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, _  # for localized messages
 
 lt = localtime()
 heute = "%02i.%02i.%04i" % (lt[2], lt[1], lt[0])
+
 
 class PlanerFSConfiguration(Screen, ConfigListScreen):
 	skindatei = join(PLUGINPATH, "skin/%s/PFSconf.xml" % ("fHD" if getDesktop(0).size().width() > 1300 else "HD"))
@@ -126,11 +127,10 @@ class PlanerFSConfiguration(Screen, ConfigListScreen):
 				if cal_file.endswith(".ics") and cal_file != "PlanerFS.ics":
 					calf = (CONFIGPATH + "/" + cal_file, cal_file)
 					cal_files.append(calf)
-		if self.conf["dat_dir"] != CONFIGPATH and self.conf["dat_dir"] != CONFIGPATH:
-			if exists(self.conf["dat_dir"]):
-				for cal_file in listdir(self.conf["dat_dir"]):
-					if cal_file.endswith(".ics"):
-						cal_files.append(self.conf["dat_dir"] + cal_file)
+		if self.conf["dat_dir"] != CONFIGPATH and exists(self.conf["dat_dir"]):
+			for cal_file in listdir(self.conf["dat_dir"]):
+				if cal_file.endswith(".ics"):
+					cal_files.append(self.conf["dat_dir"] + cal_file)
 		cal_files.append(self.conf["sec_file"])
 		calf = ("none", _("none"))
 		cal_files.append(calf)
@@ -294,38 +294,38 @@ class PlanerFSConfiguration(Screen, ConfigListScreen):
 					if d1 <= date.today():
 						d2 = date.today() + timedelta(1)
 						self.countdown_dat.value = [d2.day, d2.month, d2.year]
-				if len(ret) and not "pd" in ret:
+				if len(ret) and "pd" not in ret:
 					self.session.open(MessageBox, _("No placeholder 'pd' for count of days in text!"), MessageBox.TYPE_ERROR)
 			self.reloadList()
 
 	def refresh(self):
-		list = []
-		list.extend((
+		liste = []
+		liste.extend((
 				getConfigListEntry(_("Setting Start"), self.startanzeige2, "startanzeige2"),
 				getConfigListEntry(_("Another directory for data files") + " (ics)", self.dat_dir, "dat_dir"),
 				))
 
 		if self.startanzeige2.value == "time" or self.startanzeige2.value == "standby and time" or self.startanzeige2.value == "systemstart and time":
-			list.extend((getConfigListEntry(_("Start-Time"), self.startTime, "starttime"),))
+			liste.extend((getConfigListEntry(_("Start-Time"), self.startTime, "starttime"),))
 			if self.startanzeige2.value != "standby and time":
-				list.extend((
+				liste.extend((
 					getConfigListEntry(_("When standby(Idle) display later"), self.timestartstandby, "timestartstandby"),
 				))
 		if self.startanzeige2.value != "Off":
-			list.extend((
+			liste.extend((
 				getConfigListEntry(_("Months for events preview"), self.vorschaum, "vorschaum"),
 				getConfigListEntry(_("Holidays in Startscreen"), self.holidays_in_Startscreen, "holidays_in_startscreen"),
 				getConfigListEntry(_("2. File for Startscreen"), self.sec_file, "sec_file"),
 				getConfigListEntry(_("Start Display AutoHide (0=Off)"), self.Start_Display_AutoHide, "start_display_autohide"),
 				getConfigListEntry(_("Startscreen lines"), self.start_back, "start_back"),
 				))
-		list.extend((
+		liste.extend((
 				getConfigListEntry(_("update every ? minutes,0=Off"), self.akt_intv, "akt_intv"),
 				getConfigListEntry(_("delete old events"), self.altloesch_on, "altloesch_on"),
 				))
 		if self.altloesch_on.value == "Yes":
-			list.extend((getConfigListEntry(_("delete older than (days)"), self.altloesch, "altloesch"),))
-		list.extend((
+			liste.extend((getConfigListEntry(_("delete older than (days)"), self.altloesch, "altloesch"),))
+		liste.extend((
 				getConfigListEntry(""),
 				getConfigListEntry(_("Timer / Reminder")),
 				getConfigListEntry(_("Timer on"), self.timer_on, "timer_on"),
@@ -335,28 +335,28 @@ class PlanerFSConfiguration(Screen, ConfigListScreen):
 				getConfigListEntry(_("Timer max volume"), self.m_vol_max, "m_vol_max"),
 				))
 		if self.m_sound.value == "radio":
-			list.extend((getConfigListEntry(_("radio url"), self.m_radio_url, "m_radio_url"),))
-		list.extend((
+			liste.extend((getConfigListEntry(_("radio url"), self.m_radio_url, "m_radio_url"),))
+		liste.extend((
 				getConfigListEntry(""),
 				getConfigListEntry(_("extern dats")),
 				getConfigListEntry(_("floating holidays"), self.kalender_art, "kalender_art"),
 				 ))
-		list.extend((getConfigListEntry(_("download on Start"), self.autosync, "autosync"),))
-		list.extend((getConfigListEntry(_("extern events color in calendar"), self.extern_color, "extern_color"),))
-		list.extend((getConfigListEntry(_("Show external reminders"), self.erinn_ext, "erinn_ext"),))
-		list.extend((getConfigListEntry(_("Use shift plan"), self.schicht_art, "schicht_art"),))
+		liste.extend((getConfigListEntry(_("download on Start"), self.autosync, "autosync"),))
+		liste.extend((getConfigListEntry(_("extern events color in calendar"), self.extern_color, "extern_color"),))
+		liste.extend((getConfigListEntry(_("Show external reminders"), self.erinn_ext, "erinn_ext"),))
+		liste.extend((getConfigListEntry(_("Use shift plan"), self.schicht_art, "schicht_art"),))
 		if self.schicht_art.value > 0:
-			list.extend((getConfigListEntry(" " * 5 + "(" + _("Settings in Menu->Shift Setting...") + ")"),))
-			list.extend((getConfigListEntry(" " * 5 + _("Identifier text in calendar"), self.schicht_bez, "schicht_bez"),))
-			list.extend((getConfigListEntry(" " * 5 + _("Show shift on startscreen"), self.schicht_onstart, "schicht_onstart"),))
-			list.extend((getConfigListEntry(" " * 5 + _("Differentiate between: with/without description"), self.schicht_beschr, "schicht_beschr"),))
+			liste.extend((getConfigListEntry(" " * 5 + "(" + _("Settings in Menu->Shift Setting...") + ")"),))
+			liste.extend((getConfigListEntry(" " * 5 + _("Identifier text in calendar"), self.schicht_bez, "schicht_bez"),))
+			liste.extend((getConfigListEntry(" " * 5 + _("Show shift on startscreen"), self.schicht_onstart, "schicht_onstart"),))
+			liste.extend((getConfigListEntry(" " * 5 + _("Differentiate between: with/without description"), self.schicht_beschr, "schicht_beschr"),))
 		else:
 			self.schicht_onstart.value = 0
-		list.extend((getConfigListEntry(_("Show repetitions in lists"), self.doubles, "doubles"),))
+		liste.extend((getConfigListEntry(_("Show repetitions in list"), self.doubles, "doubles"),))
 		if self.conf["ferien"]:
-			list.extend((getConfigListEntry("Ferien im Startscreen", self.l_ferien, "l_ferien"),))
+			liste.extend((getConfigListEntry("Ferien im Startscreen", self.l_ferien, "l_ferien"),))
 		if l4l:
-			list.extend((
+			liste.extend((
 				 getConfigListEntry(""),
 				 getConfigListEntry("LCD4Linux-Settings"),
 				 getConfigListEntry(_("lcd on/off"), self.l4l_on, "l4l_on"),
@@ -367,7 +367,7 @@ class PlanerFSConfiguration(Screen, ConfigListScreen):
 				 getConfigListEntry(_("write text file"), self.l4l_ges_file, "l4l_ges_file"),
 				 getConfigListEntry(_("maximum characters per line"), self.l4l_ges_file_len, "l4l_ges_file_len"),
 				 ))
-		list.extend((
+		liste.extend((
 				getConfigListEntry(""),
 				getConfigListEntry(_("calendar in Menu:"), self.cal_menu, "cal_menu"),
 				getConfigListEntry(_("address book in Menu:"), self.adr_menu, "adr_menu"),
@@ -378,14 +378,14 @@ class PlanerFSConfiguration(Screen, ConfigListScreen):
 				getConfigListEntry(_("Countdown-Text:"), self.countdown_text, "cd_text"),
 				))
 		if len(self.countdown_text.value):
-			list.extend((getConfigListEntry(_("Countdown-Dat:"), self.countdown_dat, "cd_dat"),))
+			liste.extend((getConfigListEntry(_("Countdown-Dat:"), self.countdown_dat, "cd_dat"),))
 		else:
 			self.countdown_dat.value = [self.now[2], self.now[1], self.now[0]]
 		if not len(self.alt_list):
-			for x in list:
+			for x in liste:
 				if len(x) > 2:
 					self.alt_list.append(str(x[1].value))
-		self.list = list
+		self.list = liste
 
 	def reloadList(self):
 		self.refresh()
@@ -458,57 +458,56 @@ class PlanerFSConfiguration(Screen, ConfigListScreen):
 			if len(x) > 2:
 				l_2.append(str(x[1].value))
 		if self.alt_list != l_2 or self.altferien != self.conf["ferien"]:
-			self.session.openWithCallback(self.saveConfirm, MessageBox, _("Restart PlanerFS for new settings\nPlease wait a moment"), MessageBox.TYPE_INFO, timeout=3)
+			self.session.openWithCallback(self.saveConfirm, MessageBox, _("Restart PlanerFS for new settings\nPlease wait a moment"), MessageBox.TYPE_INFO, timeout=1)
 		else:
 			self.close(True, self.session)
 
-	def saveConfirm(self, answer=None):
-		from .plugin import Termin_Timer
+	def saveConfirm(self):
 		Termin_Timer().Starter2()
 		self.close(True, self.session, "restart")
 
 	def gethelp(self):
-		helptext= None
+		helptext = None
 		cur = self["config"].getCurrent()
 		cur = cur and cur[1]
 		if cur == self.startanzeige2:    #("Event by Date")),(2, _("Event by Rules")),(1, _("Timer")
-			helptext= _("When is the start screen displayed?")
+			helptext = _("When is the start screen displayed?")
 #		elif cur == self.schicht_ics:
 #			help=_("Enter the name that describes the shift plan in PlannerFS_online.txt")
 #		elif cur == self.countdown_text or cur == self.countdown_dat:
 #			helptext= _("for countdown in start display (pd days to christmas)")
 		elif cur == self.doubles:
-			helptext= _("Show same named appointment with all dates?") + "\n(Startscreen, LCD4Linux)"
+			helptext = _("Show same named appointment with all dates?") + "\n(Startscreen, LCD4Linux)"
 		elif cur == self.l_ferien:
-			helptext= _("View Holidays in Lists?") + "\n(Startscreen, LCD4Linux)"
+			helptext = _("View Holidays in Lists?") + "\n(Startscreen, LCD4Linux)"
 		elif cur == self.vorschaum:
-			helptext= _("How many months in advance, the dates are displayed in the startup screen?")
+			helptext = _("How many months in advance, the dates are displayed in the startup screen?")
 		elif cur == self.holidays_in_Startscreen:
-			helptext= _("Holidays are to be displayed in the startup screen?")
+			helptext = _("Holidays are to be displayed in the startup screen?")
 		elif cur == self.timer_on:
-			helptext= _("For timer: off = the feature timer is off, there are no timer processed")
+			helptext = _("For timer: off = the feature timer is off, there are no timer processed")
 		elif cur == self.Start_Display_AutoHide:
-			helptext= _("After how many seconds to the startup screen will disappear automatically? (0 = not Auto-hide)")
+			helptext = _("After how many seconds to the startup screen will disappear automatically? (0 = not Auto-hide)")
 		elif cur == self.kalender_art:
-			helptext= _("Floating holidays to Gregorian or Julian calendar to calculate or calculate off")
+			helptext = _("Floating holidays to Gregorian or Julian calendar to calculate or calculate off")
 		elif cur == self.altloesch_on:
-			helptext= _("If a date is copied, deleted or created, appointments can be older than they should automatically be deleted (default for days in the next step). Events with no rules that have an end-date have less than today minus default days are deleted without asking!")
+			helptext = _("If a date is copied, deleted or created, appointments can be older than they should automatically be deleted (default for days in the next step). Events with no rules that have an end-date have less than today minus default days are deleted without asking!")
 		elif cur == self.altloesch:
-			helptext= _("For example: if you enter here 365, with end-dates earlier date 365 days will be deleted.")
+			helptext = _("For example: if you enter here 365, with end-dates earlier date 365 days will be deleted.")
 		elif cur == self.autosync:
-			helptext= _("pick up the latest data automatically at startup?")
+			helptext = _("pick up the latest data automatically at startup?")
 #		elif cur==self.online_on_kal:
 #			help=_("show events from additional calendar files or online calendar in calendar 1 or calendar 2")
 		elif cur == self.extern_color:
-			helptext= _("colored date on the calendar for events from additional calendar files or online calendar")
+			helptext = _("colored date on the calendar for events from additional calendar files or online calendar")
 		elif cur == self.l4l_ges_file:
-			helptext= _("write /tmp/plfs_ges for 'see text file' in LCD4Linux")
+			helptext = _("write /tmp/plfs_ges for 'see text file' in LCD4Linux")
 		elif cur == self.l4l_ges_file_len:
-			helptext= _("Limit line length")
+			helptext = _("Limit line length")
 		elif cur == self.ansicht:
-			helptext= _("Show on start big or split screen")
+			helptext = _("Show on start big or split screen")
 		elif cur == self.countdown_text or cur == self.countdown_dat:
-			helptext= _("Countdown for the start display and LCD screen, insert in the text 'pd' for the number of days")
+			helptext = _("Countdown for the start display and LCD screen, insert in the text 'pd' for the number of days")
 		if helptext:
 			self.session.open(MessageBox, helptext, MessageBox.TYPE_INFO)
 
