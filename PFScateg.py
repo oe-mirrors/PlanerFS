@@ -16,7 +16,7 @@ from Screens.InputBox import InputBox
 from Screens.MessageBox import MessageBox
 
 # PLUGIN IMPORTS
-from . import CONFIGFILE, PLUGINPATH, _ # for localized messages
+from . import CONFIGFILE, PLUGINPATH, DWIDE, _  # for localized messages
 
 pfscolor_list = ("#006400", "#BDB76B", "#556B2F", "#CAFF70", "#BCEE68", "#A2CD5A", "#6E8B3D", "#8FBC8F", "#C1FFC1",
 "#B4EEB4", "#9BCD9B", "#698B69", "#228B22", "#ADFF2F", "#7CFC00", "#90EE90", "#20B2AA", "#32CD32", "#3CB371", "#00FA9A", "#F5FFFA", "#6B8E23", "#C0FF3E", "#B3EE3A", "#9ACD32",
@@ -53,11 +53,10 @@ pfscolor_list = ("#006400", "#BDB76B", "#556B2F", "#CAFF70", "#BCEE68", "#A2CD5A
 "#8C7853", "#D98719", "#B87333", "#DC143C", "#5C4033", "#A9A9A9", "#4A766E", "#871F78", "#8FBC8B", "#97694F", "#855E42", "#856363", "#F5CCCC", "#D19275", "#527F76", "#215E21",
 "#4B0082", "#E9C2A6", "#E47833", "#EAEAAE", "#9370D8", "#A68064", "#23238E", "#4E4EFF", "#FF6EC7", "#00009C", "#EBC79E", "#CFB53B", "#D87093", "#D9D9F3", "#5959AB", "#8C1717",
 "#6B4226", "#FF1CAE", "#38B0DE", "#CDCDCD",)
-DWide = getDesktop(0).size().width()
 
 
 class color_select(Screen):
-	skindatei = join(PLUGINPATH, "skin/%s/PFScatset.xml" % ("fHD" if DWide > 1300 else "HD"))
+	skindatei = join(PLUGINPATH, "skin/%s/PFScatset.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -67,11 +66,10 @@ class color_select(Screen):
 		self.skinName = "PFS_categorie_conf5"
 		self["catmenu"] = List([])
 		self["catmenu"].style = "colorsx"
-		self["key_green"] = Label()
 		self["key_red"] = Label()
+		self["key_green"] = Label()
 		self["key_yellow"] = Label()
 		self["key_blue"] = Label()
-
 		calist = []
 		i = 0
 		self.sel_index = 0
@@ -89,7 +87,6 @@ class color_select(Screen):
 			self.setTitle(_("Select Color for: ") + kat)
 		self["catmenu"].setList(calist)
 		self.onLayoutFinish.append(self.move)
-
 		self["actions"] = ActionMap(["OkCancelActions", "ColorActions"],
 		{
 				"ok": self.keyOK,
@@ -110,7 +107,7 @@ class color_select(Screen):
 
 
 class PFS_categorie_conf7(Screen, HelpableScreen):
-	skindatei = join(PLUGINPATH, "skin/%s/PFScatset.xml" % ("fHD" if DWide > 1300 else "HD"))
+	skindatei = join(PLUGINPATH, "skin/%s/PFScatset.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -133,42 +130,34 @@ class PFS_categorie_conf7(Screen, HelpableScreen):
 				l1 = configparser.items("settings")
 				for k, v in l1:
 					if k == "categories":
-						categories = v.encode("UTF-8")
+						categories = v
 					elif k == "z_liste":
 						self.z_liste = list(v.split(","))
 					elif k == "cat_color_list":
 						mcolor_list = v.split(",")
-
 		self.categories = list(categories.split(","))
 		self.color_list = list(mcolor_list)
-
 		allcolor_list = ["#00008B", "#D2691E", "#006400", "#696969", "#FFD700", "#000000", "#B22222", "#8B8878", "#CD0000", "#00868B", "#f0f8ff", "#ff4500", "#20343c4f", "#deb887", "#228B22", "#5F9EA0", "#DC143C", "#F0F8FF", "#EEC900", "#20343c4f", "#f0f8ff"]
-
 		if len(self.color_list) < 21:
 			self.color_list.extend(allcolor_list[len(self.color_list):])
-
 		if len(self.categories) < 10:
 			self.categories = [_("None"), _("Birthday"), _("Holiday"), _("Anniversary"), _("Wedding day"), _("None"), _("None"), _("None"), _("None"), _("None")]
 		self.categories.extend((_("calendar days"), _("calendar holiday"), _("calendar background"), _("calendar event"), _("calendar today background"), _("list inactive"), _("list anniversaries"), _("list text"), _("list heading"), _("startscreen background"), _("startscreen text")))
-
 		Screen.__init__(self, session)
 		self.skinName = "PFS_categorie_conf5"
 		HelpableScreen.__init__(self)
 		self.setTitle(_("Edit colors and categories"))
 		self.list = []
 		self["catmenu"] = List([])
-
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
 		self["key_yellow"] = Label(_("Years"))
 		self["key_blue"] = Label(_("Color"))
-
 		self["OkCancelActions"] = HelpableActionMap(self, "OkCancelActions",
 		{
 				"cancel": (self.cancel, _("Cancel")),
 				"ok": (self.text, _("Edit text for categorie")),
 		})
-
 		self["ColorActions"] = HelpableActionMap(self, "ColorActions",
 		{
 				"green": (self.save, _("Save and exit")),
@@ -176,7 +165,6 @@ class PFS_categorie_conf7(Screen, HelpableScreen):
 				"yellow": (self.red2, _("Toggle number of years")),
 				"blue": (self.colors, _("Open color list")),
 		})
-
 		self.alt_list = []
 		self.alt_list.extend(self.categories)
 		self.alt_list.extend(self.color_list)
@@ -184,7 +172,6 @@ class PFS_categorie_conf7(Screen, HelpableScreen):
 		self.onLayoutFinish.append(self.load_list)
 
 	def load_list(self, ind=0):
-
 		liste = []
 		text_col = self.color_list[10]
 		bg_col = self.color_list[12]
@@ -193,16 +180,13 @@ class PFS_categorie_conf7(Screen, HelpableScreen):
 		self.t_farb1 = int(text_col.lstrip('#'), 16)
 		self.t_farb2 = int(bg_col.lstrip('#'), 16)
 		for x in range(len(self.color_list)):
-			try:
-				text = _(self.categories[x])
-				zaehle = ", " + _("Not number of years")
-				if x < 10:
-					if self.z_liste[x] == "1":
-						zaehle = ", " + _("Number of years")
-					text = _("Category") + ": " + _(self.categories[x]) + zaehle
-				liste.append((_(self.categories[x]), self.color_list[x], text))
-			except Exception:
-				pass
+			text = _(self.categories[x])
+			zaehle = ", " + _("Not number of years")
+			if x < 10:
+				if self.z_liste[x] == "1":
+					zaehle = ", " + _("Number of years")
+				text = _("Category") + ": " + _(self.categories[x]) + zaehle
+			liste.append((_(self.categories[x]), self.color_list[x], text))
 		alist = []
 		for x in liste:
 			txtcol = int(text_col.lstrip('#'), 16)
@@ -213,7 +197,6 @@ class PFS_categorie_conf7(Screen, HelpableScreen):
 			elif x[0] == _("startscreen background") or x[0] == _("startscreen text"):
 				txtcol = int(self.color_list[20].lstrip('#'), 16)
 				bgcol = int(self.color_list[19].lstrip('#'), 16)
-
 			elif x[0] == _("calendar holiday"):
 				txtcol = int(x[1].lstrip('#'), 16)
 				self.t_farb2 = txtcol
@@ -222,7 +205,6 @@ class PFS_categorie_conf7(Screen, HelpableScreen):
 				txtcol = int(x[1].lstrip('#'), 16)
 			else:
 				bgcol = int(x[1].lstrip('#'), 16)
-
 			res = (" text", x[2], txtcol, bgcol, x)
 			alist.append(res)
 		#if not len(self.alt_list):
@@ -272,12 +254,11 @@ class PFS_categorie_conf7(Screen, HelpableScreen):
 		self.col = ",".join(self.color_list)
 		zz = ",".join(self.z_liste)
 		if exists(CONFIGFILE):
-			self.configparser2.set("settings", "categories", self.catego.decode("utf-8"))
+			self.configparser2.set("settings", "categories", self.catego)  # .decode("utf-8")
 			self.configparser2.set("settings", "cat_color_list", self.col)
 			self.configparser2.set("settings", "z_liste", zz)
-			fp = open(CONFIGFILE, "w")
-			self.configparser2.write(fp)
-		#self.close(1)
+			with open(CONFIGFILE, "w") as fp:
+				self.configparser2.write(fp)
 		#if self.col != self.color_list or zz
 		self.new_list = []
 		self.new_list.extend(self.categories)
@@ -302,7 +283,7 @@ class schicht_conf(Screen, HelpableScreen):
 		L4l = True
 	except Exception:
 		L4l = None
-	skindatei = join(PLUGINPATH, "skin/%s/PFScatset.xml" % ("fHD" if DWide > 1300 else "HD"))
+	skindatei = join(PLUGINPATH, "skin/%s/PFScatset.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 
@@ -312,9 +293,7 @@ class schicht_conf(Screen, HelpableScreen):
 		schicht = ("0", "0", "0")
 		configparser = ConfigParser()
 		configparser.read(CONFIGFILE)
-
 		if configparser.has_section("settings"):
-
 			if configparser.has_option("settings", "schicht_art"):
 				schicht = str(configparser.get("settings", "schicht_art")).split(",")
 				if len(schicht) < 3:
@@ -323,13 +302,10 @@ class schicht_conf(Screen, HelpableScreen):
 				self.schicht_colors = eval(configparser.get("settings", "schicht_col"))
 			else:
 				self.schicht_colors = {"F": "#008B45", "S": "#FFD700", "N": "#3A5FCD", "fr": "#858585"}
-
 			if configparser.has_option("settings", "l4l_sets"):
 				l4l_sets = configparser.get("settings", "l4l_sets").split(":")
-
 			else:
 				l4l_sets = ("On", "1", "1", "0", "80", "500", "100", "10", "On,Idle", "0")
-
 		schicht_des = int(schicht[2])
 		if not _("without text") in self.schicht_colors:
 			self.schicht_colors[_("without text")] = "#858585"
@@ -346,24 +322,20 @@ class schicht_conf(Screen, HelpableScreen):
 		self.list = []
 		self["catmenu"] = List([])
 		self["catmenu"].style = "schicht"
-
 		self.idx = 0
 		self.lcl_sets2 = list(l4l_sets)
 		if len(self.lcl_sets2) == 9:
 			self.lcl_sets2.append("0")
 		#self.list=[]
-
 		self["key_green"] = Label(_("Save"))
 		self["key_red"] = Label(_("Cancel"))
 		self["key_yellow"] = Label(_("delete"))
 		self["key_blue"] = Label(_("New"))
-
 		self["OkCancelActions"] = HelpableActionMap(self, "OkCancelActions",
 		{
 				"cancel": (self.cancel, _("Cancel")),
 				"ok": (self.text, _("Edit selected option")),
 		})
-
 		self["ColorActions"] = HelpableActionMap(self, "ColorActions",
 		{
 				"green": (self.save, _("Save and exit")),
@@ -373,18 +345,17 @@ class schicht_conf(Screen, HelpableScreen):
 		})
 		self["catmenu"].onSelectionChanged.append(self.changed)
 		self.onLayoutFinish.append(self.load_list)
-#
-#			"blue": (self.colors,_("Open color list")),
+#		"blue": (self.colors,_("Open color list")),
 
 	def changed(self):
 		if self["catmenu"].getCurrent()[4] == "sch_col":
 			self["key_yellow"].show()
-#                self["pic_yellow"].show()
+#			self["pic_yellow"].show()
 			self["key_blue"].show()
-#                self["pic_blue"].show()
+#		self["pic_blue"].show()
 		else:
 			self["key_yellow"].hide()
-#                self["pic_yellow"].hide()
+#			self["pic_yellow"].hide()
 #		self["pic_blue"].hide()
 			self["key_blue"].hide()
 
@@ -397,7 +368,7 @@ class schicht_conf(Screen, HelpableScreen):
 		bgcol = None  # int(bgcol.lstrip('#'), 16)
 		liste.append((" >> " + _("Shift colors:"), "", txtcol, bgcol, "sch_col", ""))
 		colb = []
-		for key, v in self.schicht_colors.iteritems():
+		for key, v in self.schicht_colors.items():
 			if key not in colb:
 				colb.append(key)
 				liste.append((key, "", txtcol, int(v.lstrip('#'), 16), "sch_col", (key, v)))
@@ -436,7 +407,6 @@ class schicht_conf(Screen, HelpableScreen):
 		if self["catmenu"].getCurrent()[4] == "sch_col":
 			self.colors()
 		elif self["catmenu"].getCurrent()[0].strip() != "":
-
 			auswahl = self["catmenu"].getCurrent()[0]
 			if auswahl == _("Show in LCD"):
 				self.session.openWithCallback(self.choice_back, ChoiceBox, title=_("Show on LCD"), list=((_("activate"), "On"), (_("deactivate"), "Off")))
@@ -492,7 +462,6 @@ class schicht_conf(Screen, HelpableScreen):
 		if not configparser2.has_section("settings"):
 			configparser2.add_section("settings")
 		configparser2.set("settings", "schicht_col", str(self.schicht_colors))
-
 		if L4l:
 			configparser2.set("settings", "l4l_sets", ':'.join(map(str, self.lcl_sets2)))
 		fp = open(CONFIGFILE, "w")

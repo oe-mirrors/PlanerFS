@@ -1,22 +1,22 @@
-<!--for class PanerFS_menu7 -->
-<!--for class PFS_filemenu7 -->
-<!--for class del_files7 -->
-<screen name ="menulist7" position="240,100" size="900,630" title="PlanerFS" >
-	<widget source="menulist" render="Listbox" position="20,10" size="880,600" scrollbarMode="showOnDemand" foregroundColor="#FFFFFF" enableWrapAround="1" >
+<!--for class PanerFS_menu -->
+<!--for class PFS_filemenu -->
+<!--for class del_files -->
+<screen name="menulist7" position="360,150" size="900,630" title="PlanerFS">
+	<widget source="menulist" render="Listbox" position="30,15" size="1110,450" scrollbarMode="showOnDemand" foregroundColor="#FFFFFF" enableWrapAround="1">
 		<convert type="TemplatedMultiContent">
-			{"templates":
-                            {"default": (50,[
-    					    MultiContentEntryText(pos = (10, 0), size = (30, 50), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 0),
-                                            MultiContentEntryText(pos = (40, 0), size = (850, 50), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
-					],True),
-
-                            "files": (50,[
-    					    MultiContentEntryText(pos = (10, 0), size = (870, 50), font=0, flags = RT_HALIGN_LEFT|RT_VALIGN_CENTER, text = 1),
-
-					],True),
-                             },	"fonts": [gFont("Regular", 32),gFont("Regular", 28)],
-                             "itemHeight": 50
+			{"templates": 
+				{"default": (45,
+					[
+					MultiContentEntryText(pos=(15,0), size=(45,45), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER, text=0), 
+					MultiContentEntryText(pos=(45,0), size=(1095,45), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER, text=1), 
+					],True), 
+					"files": (45,
+					[
+					MultiContentEntryText(pos=(15,0), size=(1095,45), font=0, flags=RT_HALIGN_LEFT|RT_VALIGN_CENTER, text=1), 
+					],True), 
+				},	"fonts": [gFont("Regular",33), gFont("Regular",42)], "itemHeight":45
 			}
 		</convert>
 	</widget>
 </screen>
+

@@ -2,15 +2,16 @@
 <!--for class PFS_edit_Termin -->
 <!--for class PFS_edit_cards -->
 <!--for class PlanerFSonline_files -->
-<screen name="PFSconf" title= "" position="center,center" size="1200,880">
-		<ePixmap position="0,5" size="220,50" pixmap="skin_default/buttons/red.png" transparent="1" alphatest="on" />
-		<ePixmap position="210,5" size="220,50" pixmap="skin_default/buttons/green.png" transparent="1" alphatest="on" />
-		<ePixmap position="420,5" size="220,50" pixmap="skin_default/buttons/yellow.png" transparent="1" alphatest="on" />
-		<ePixmap position="630,5" size="220,50" pixmap="skin_default/buttons/blue.png" transparent="1" alphatest="on" />
-		<widget name="key_red" position="0,5" zPosition="1" size="200,40" valign="center" halign="left" font="Regular;30" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget name="key_green" position="210,5" zPosition="1" size="200,40" valign="center" halign="left" font="Regular;30" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget name="key_yellow" position="420,5" zPosition="1" size="200,40" valign="center" halign="left" font="Regular;30" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget name="key_blue" position="630,5" zPosition="1" size="300,40" valign="center" halign="left" font="Regular;30" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
-		<widget name="config" position="5,50" size="890,552" scrollbarMode="showOnDemand" itemHeight="40" font="Regular;32" /> 
-		<widget name="help" position="5,620" size="890,63" font="Regular;30" foregroundColor="#000000" backgroundColor="#C0D7FF" valign="center" halign="center" />
+<screen name="PFSconf" title="" position="center,center" size="1200,930">
+	<eLabel name="red" position="7,0" size="12,60" backgroundColor="red" zPosition="1" />
+	<eLabel name="green" position="307,0" size="12,60" backgroundColor="green" zPosition="1" />
+	<eLabel name="yellow" position="607,0" size="12,60" backgroundColor="yellow" zPosition="1" />
+	<eLabel name="blue" position="907,0" size="12,60" backgroundColor="blue" zPosition="1" />
+	<widget name="key_red" position="30,10" zPosition="1" size="300,36" valign="center" halign="left" font="Regular;30" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+	<widget name="key_green" position="330,10" zPosition="1" size="300,36" valign="center" halign="left" font="Regular;30" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+	<widget name="key_yellow" position="630,10" zPosition="1" size="300,36" valign="center" halign="left" font="Regular;30" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+	<widget name="key_blue" position="930,10" zPosition="1" size="300,36" valign="center" halign="left" font="Regular;30" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
+	<widget name="config" position="7,75" size="1185,780" scrollbarMode="showOnDemand" itemHeight="39" font="Regular;30" />
+	<widget name="help" position="7,855" size="1185,60" font="Regular;30" foregroundColor="#000000" backgroundColor="#C0D7FF" valign="center" halign="center" />
 </screen>
+

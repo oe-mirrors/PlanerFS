@@ -22,11 +22,11 @@ from Plugins.Plugin import PluginDescriptor
 from Screens.MessageBox import MessageBox
 from Screens.Standby import inStandby
 from Screens import Standby
-from Tools import Notifications
-from Tools.Directories import SCOPE_PLUGINS, resolveFilename, copyfile, fileExists
+from Tools.Directories import copyfile, fileExists
+from Tools.Notifications import AddNotification, AddNotificationWithCallback
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE, _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, ICSFILE, ONLINETEXT, VERSION, _  # for localized messages
 from .timer import Timer_dats
 from .routines import schicht
 from .termin import TerminList
@@ -37,11 +37,7 @@ from .PFSpaint import mspFS_paint
 from .PFSwe import PFS_show_we
 from .PlanerFS import PlanerFS7
 
-version = "10.0b"
-txt = "Version: %s\n" % version
-ONLINETEXT = join(CONFIGPATH, "PlanerFS_online.txt")
-termindatei = join(CONFIGPATH, "PlanerFS.ics")
-PLUGINPATH = join(resolveFilename(SCOPE_PLUGINS), "Extensions/PlanerFS/")
+txt = "VERSION: %s\n" % VERSION
 try:
 	from Plugins.Extensions.LCD4linux.module import L4Lelement
 	L4L = True
@@ -51,8 +47,8 @@ except Exception:
 
 if not exists(CONFIGPATH):
 	makedirs(CONFIGPATH)
-if not fileExists(termindatei):
-	copyfile(join(PLUGINPATH, "sample.ics"), termindatei)
+if not fileExists(ICSFILE):
+	copyfile(join(PLUGINPATH, "sample.ics"), ICSFILE)
 if not fileExists(join(CONFIGPATH, "PlanerFS.vcf")):
 	copyfile(join(PLUGINPATH, "sample.vcf"), join(CONFIGPATH, "PlanerFS.vcf"))
 conf = {
@@ -105,10 +101,10 @@ if exists(CONFIGFILE):
 				conf["dat_dir"] = v if v.endswith("/") else "%s/" % v
 			else:
 				conf[k] = v
-		if str(conf["version"]) != version:
+		if str(conf["version"]) != VERSION:
 			configparser.read(CONFIGFILE)
-			configparser.set("settings", "version", version)
-			conf["version"] = version
+			configparser.set("settings", "version", VERSION)
+			conf["version"] = VERSION
 			with open(CONFIGFILE, "w") as file1:
 				configparser.write(file1)
 else:
@@ -139,6 +135,7 @@ cal_menu = conf["cal_menu"]
 adr_menu = conf["adr_menu"]
 startscreen_plus = conf["startscreen_plus"]
 
+
 class einlesen():
 	def __init__(self, r=False):
 		if r:
@@ -157,7 +154,7 @@ class einlesen():
 					path = conf["dat_dir"] + "PlanerFS_online.txt"
 				erg = online_import().run(path, fer, True)
 				if erg == 0 and not inStandby:
-					Notifications.AddNotification(MessageBox, "PlanerFS\n" + _("Error: at least one external file could not be loaded!"), type=MessageBox.TYPE_ERROR, timeout=30)
+					AddNotification(MessageBox, "PlanerFS\n" + _("Error: at least one external file could not be loaded!"), type=MessageBox.TYPE_ERROR, timeout=30)
 			files = []
 			if conf["kalender_art"] != "Off":
 				files.append("kalender")
@@ -261,8 +258,8 @@ class Termin_Timer():
 			self.startzeit_timer.stop()
 			self.startzeit_timer = None
 		self.run_timer = None
-		if not exists(termindatei):
-			with open(termindatei, "w") as f:
+		if not exists(ICSFILE):
+			with open(ICSFILE, "w") as f:
 				f.write("BEGIN:VCALENDAR\nMETHOD:PUBLISH\nPRODID: -EnigmaII-Plugin / PlanerFS " + conf["version"] + "\nVERSION:2.0")
 				f.write("\nEND:VCALENDAR")
 		einlesen(True)
@@ -312,7 +309,7 @@ class Termin_Timer():
 		if self.standby_check_timer1:
 			self.standby_check_timer1.startLongTimer(60)
 		if len(plfs_list):
-			Notifications.AddNotificationWithCallback(check_re, startscreen8, plfs_list, conf["version"])
+			AddNotificationWithCallback(check_re, startscreen8, plfs_list, conf["version"])
 
 	def aktual(self):
 		einlesen(True)
@@ -347,40 +344,49 @@ class Termin_Timer():
 			else:
 				display_size = self.MyElements.getResolution(l4l_sets[0])[1]
 				self.display_timer.startLongTimer(2)
+
+
 if len(txt):
 	with open("/tmp/PlanerFS-Errors.txt", "w") as f:
 		f.write(txt)
 	txt = ""
 t_timer = Termin_Timer()
 
+
 def uebersicht(session, **kwargs):
 	einlesen(True)
-	session.openWithCallback(check_re, startscreen8, plfs_list, version)
+	session.openWithCallback(check_re, startscreen8, plfs_list, VERSION)
+
 
 def main(session, **kwargs):
 	session.openWithCallback(check_re, PlanerFS7)
+
 
 def check_re(session=None, *args):
 	if session and args:
 		main(session)
 
+
 def adress(session, **kwargs):
-	session.open(PFS_show_card_List7, None, version)
+	session.open(PFS_show_card_List7, None, VERSION)
+
 
 def adress_menu(menuid, **kwargs):
 	if menuid == "mainmenu":
 		return [(_("PlanerFS address book"), adress, "PlanerFS address book", 58)]
 	return []
 
+
 def pfs_wecker(session, **kwargs):
 	session.open(PFS_show_we)
+
 
 def pfs_wecker2(**kwargs):
 	begin = -1
 	if len(plfstimer_list):
-		if exists(termindatei):
+		if exists(ICSFILE):
 			TL = TerminList()
-			l2 = TL.getlists(termindatei, 1)
+			l2 = TL.getlists(ICSFILE, 1)
 			tim_list = l2[1]
 			tim_list.sort(key=lambda x: x[10])
 			for x in tim_list:
@@ -390,16 +396,19 @@ def pfs_wecker2(**kwargs):
 					break
 	return begin
 
+
 def calen_menu(menuid, **kwargs):
 	if menuid == "mainmenu":
 		return [(_("PlanerFS"), main, "PlanerFS", 57)]
 	return []
+
 
 def autostart(**kwargs):
 	if "session" in kwargs:
 		session = kwargs["session"]
 		t_timer.saveSession(session)
 	t_timer.Starter()
+
 
 def Plugins(**kwargs):
 	pfc_list = [PluginDescriptor.WHERE_PLUGINMENU]

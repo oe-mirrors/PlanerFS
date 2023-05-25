@@ -7,14 +7,12 @@ from requests import get
 from time import localtime, strftime, strptime
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE, _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, ICSFILE, VCFFILE, _  # for localized messages
 from .routines import Rules
 
 version = ""
 altloesch = 365
 altloesch_on = "No"
-DATAFILE = join(CONFIGPATH, "PlanerFS.ics")
-CARDFILE = join(CONFIGPATH, "PlanerFS.vcf")
 cals_dir = "/tmp/"
 if exists(CONFIGFILE):
 	configparser = ConfigParser()
@@ -37,7 +35,7 @@ class all_import():
 			list1 = []
 			list2 = []
 			if exists(CONFIGFILE):
-				list1 = self.einles(DATAFILE)
+				list1 = self.einles(ICSFILE)
 			list2 = self.einles(imp_datei)
 			if len(list2) > 0:
 				list1.extend(list2)
@@ -47,6 +45,7 @@ class all_import():
 	def write_liste(self, liste):
 		eventliste = liste
 		events = []
+		self.altdat = None
 		ev_start = "BEGIN:VCALENDAR\nMETHOD:PUBLISH\nPRODID: -EnigmaII-Plugin / PlanerFS " + version + "\nVERSION:2.0"
 		events.append(ev_start)
 		for x in eventliste:
@@ -101,12 +100,12 @@ class all_import():
 			if altloesch_on == "No":
 				events.append(str(detailliste))
 			else:
-				if self.altdatum >= self.altdat:  # siehe PlanerFS.self.altdat = datetime(altdat.year, altdat.month, altdat.day, 23, 59, 59)
+				if self.altdat and self.altdatum >= self.altdat:  # siehe PlanerFS.self.altdat = datetime(altdat.year, altdat.month, altdat.day, 23, 59, 59)
 					events.append(str(detailliste))
 				else:
 					continue
 		events.append("\nEND:VCALENDAR")
-		with open(DATAFILE, "w") as f2:
+		with open(ICSFILE, "w") as f2:
 			f2.writelines(events)
 		self.ok = 1
 
@@ -146,12 +145,12 @@ class vcf_import():
 		if imp_datei != None:
 			list1 = []
 			list2 = []
-			if exists(CARDFILE):
-				list1 = self.einles(CARDFILE)
+			if exists(VCFFILE):
+				list1 = self.einles(VCFFILE)
 			list2 = self.einles(imp_datei)
 			if len(list2) > 0:
 				list1.extend(list2)
-				with open(CARDFILE, "w") as f2:
+				with open(VCFFILE, "w") as f2:
 					for x in list1:
 						for x2 in x:
 							f2.write(x2 + "\n")

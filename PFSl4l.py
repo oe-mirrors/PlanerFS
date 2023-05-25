@@ -4,9 +4,9 @@ from datetime import datetime, date
 from os.path import exists
 
 # PLUGIN IMPORTS
-from . import CONFIGFILE, _ # for localized messages
+from . import CONFIGFILE, _  # for localized messages
 
-conf =	{
+conf = {
 		"vorschaum": 3,
 		"countdown": 0,
 		"sec_file": "",
@@ -30,7 +30,7 @@ if exists(CONFIGFILE):
 			elif k == "z_liste":
 				z_liste = list(v.split(","))
 			elif k == "categories":
-				categories1 = v.encode("UTF-8")
+				categories1 = v
 				categories1 = list(categories1.split(","))
 			else:
 				try:
@@ -186,6 +186,8 @@ class PFS_l4l():
 		mHight = s1
 		if countdown > 0:
 			mHight = s1 - ((font + 10) * 2)
+		size = font
+		x = None
 		for x in ges_list:
 			if i < 20:
 				if f is not None and txt_w and (x[3] == 0 or x[3] == 2):
@@ -221,7 +223,8 @@ class PFS_l4l():
 				break
 		if countdown > 0:
 			cd_text = countdown_text.replace("pd", str(countdown))  # Sommerurlaub!"
-			MyElements.add("PLFSlist.05.txt" + str(i + 2), {"Typ": "txt", "Align": "18%", "Pos": str(pos + 20), "Text": cd_text, "Size": str(size), "Color": x[2], "Screen": str(screen), "Lcd": str(lcd), "Mode": "OnMediaIdle"})
+			if x:
+				MyElements.add("PLFSlist.05.txt" + str(i + 2), {"Typ": "txt", "Align": "18%", "Pos": str(pos + 20), "Text": cd_text, "Size": str(size), "Color": x[2], "Screen": str(screen), "Lcd": str(lcd), "Mode": "OnMediaIdle"})
 
 		MyElements.setRefresh()
 		if f is not None and txt_w:

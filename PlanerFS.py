@@ -24,7 +24,7 @@ from re import compile
 from time import localtime, strftime, strptime
 
 # ENIGMA IMPORTS
-from enigma import getDesktop, eTimer
+from enigma import eTimer
 from Components.ActionMap import NumberActionMap, HelpableActionMap
 from Components.Label import Label
 from Components.Pixmap import Pixmap
@@ -43,7 +43,7 @@ except ImportError:
 	fbf = None
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, _ # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, ICSNAME, ICSNAME2, ICSFILE, VCFFILE, ERRORLOG, DWIDE, _  # for localized messages
 from .PFSconfig import PlanerFSConfiguration
 from .PFScateg import PFS_categorie_conf7, schicht_conf
 from .PFSCards import PFS_show_card7, PFS_show_card_List7
@@ -109,14 +109,6 @@ color_inactiv = Farben().farb_re(color_list[15])
 rot = Farben().farb_re(color_list[16])
 weiss = Farben().farb_re(color_list[17])
 ansicht = 1
-DWide = getDesktop(0).size().width()
-CONFIGPATH = "/etc/ConfFS"
-icsdatei = "PlanerFS.ics"
-icsdatei2 = "PlanerFS2.ics"
-termindatei = "%s/%s" % (CONFIGPATH, icsdatei)
-termindatei_2 = "%s/%s" % (CONFIGPATH if isfile("%s/%s" % (CONFIGPATH, icsdatei2)) else "", icsdatei2)
-vcfdatei = "%s/PlanerFS.vcf" % CONFIGPATH
-ERRORLOG = "/tmp/PlanerFS-Errors.txt"
 lt = localtime()
 
 
@@ -127,11 +119,11 @@ class PlanerFS7(Screen, HelpableScreen):
 		global color_list
 		global categories1
 		global cal_bg, color_inactiv, rot, weiss
-		skindatei = join(PLUGINPATH, "skin/%s/PlanerFS.xml" % ("fHD" if DWide > 1300 else "HD"))
+		skindatei = join(PLUGINPATH, "skin/%s/PlanerFS.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 		with open(skindatei) as tmpskin:
 			self.skin = tmpskin.read()
 		configparser = ConfigParser()
-		configparser.read("/etc/ConfFS/PlanerFS.conf")
+		configparser.read(CONFIGFILE)
 		if configparser.has_section("settings"):
 			l1 = configparser.items("settings")
 			for k, v in l1:
@@ -273,7 +265,7 @@ class PlanerFS7(Screen, HelpableScreen):
 		self.altdat = datetime(altdat.year, altdat.month, altdat.day, 23, 59, 59)
 		self.monat = lt[1]
 		self.jahr = lt[0]
-		self.terminfile = termindatei
+		self.terminfile = ICSFILE
 		if self.monat == 12:
 			sdt1 = date(self.jahr + 1, 1, 1) - timedelta(1)
 		else:
@@ -301,8 +293,8 @@ class PlanerFS7(Screen, HelpableScreen):
 		self.session.open(MessageBox, text, MessageBox.TYPE_INFO, close_on_any_key=True, timeout=15)
 
 	def vcards(self):
-		if not exists(vcfdatei):
-			open(vcfdatei, "wb").close()
+		if not exists(VCFFILE):
+			open(VCFFILE, "wb").close()
 		if self["event_list"].getCurrent() is not None:
 			name_x = self["event_list"].getCurrent()[3][1]
 			geb = self["event_list"].getCurrent()[3][3]
@@ -310,9 +302,9 @@ class PlanerFS7(Screen, HelpableScreen):
 			self.session.open(PFS_show_card7, name_x, geb2)
 
 	def vcards_list(self):
-		if not exists(vcfdatei):
-			open(vcfdatei, "wb").close()
-		if exists(vcfdatei):
+		if not exists(VCFFILE):
+			open(VCFFILE, "wb").close()
+		if exists(VCFFILE):
 			if self.cards_on:
 				self.close(None)
 			else:
@@ -415,7 +407,7 @@ class PlanerFS7(Screen, HelpableScreen):
 			self["greena_1"].show()
 			self["list_titel"].show()
 
-	def green(self): # liste alle dat-Termine bilden und senden
+	def green(self):  # liste alle dat-Termine bilden und senden
 		erg = online_import().run("%sPlanerFS_online.txt" % conf["dat_dir"], (conf["ferien"], 9), True)
 		if erg == 0:
 			text = "%s\n/tmp/PlanerFS_Errors.txt" % _("Error: at least one external file could not be loaded!")
@@ -430,12 +422,12 @@ class PlanerFS7(Screen, HelpableScreen):
 		self.schichtfile = None
 		if exists(CONFIGPATH):
 			for cal_file in listdir(CONFIGPATH):
-				if cal_file.endswith(".ics"):  # and cal_file != icsdatei2 and cal_file != icsdatei:
+				if cal_file.endswith(".ics"):  # and cal_file != ICSNAME2 and cal_file != ICSNAME:
 					cal_files.append("%s/%s" % (CONFIGPATH, cal_file))
 		for cal_file in listdir(conf["cals_dir"]):
 			if cal_file.endswith(".ics"):
 				cal_files.append(conf["cals_dir"] + cal_file)
-		if conf["dat_dir"] != '/etc/ConfFS/':
+		if conf["dat_dir"] != CONFIGPATH:
 			if exists(conf["dat_dir"]):
 				for cal_file in listdir(conf["dat_dir"]):
 					if cal_file.endswith(".ics"):
@@ -461,7 +453,7 @@ class PlanerFS7(Screen, HelpableScreen):
 					if parse1:
 						tx_tsr = "%s2" % conf["cals_dir"]
 						modu2 = False
-						if icsdatei2 in file or tx_tsr in file:
+						if ICSNAME2 in file or tx_tsr in file:
 							ica2.extend(parse1)
 						else:
 							ica.extend(parse1)
@@ -488,12 +480,12 @@ class PlanerFS7(Screen, HelpableScreen):
 				check.append(ch2)
 				if conf["schicht_art"] and x[14]:
 					in1 = None
-					if icsdatei in str(x[9]) or icsdatei2 in str(x[9]):
+					if ICSNAME in str(x[9]) or ICSNAME2 in str(x[9]):
 						in1 = x
 						self.eigen_events.append(x)
 					self.schichtlist.append((x[0], x[2], x[3], x[5], x[6], in1, x[17]))
 				else:
-					if icsdatei in str(x[9]) or icsdatei2 in str(x[9]):
+					if ICSNAME in str(x[9]) or ICSNAME2 in str(x[9]):
 						self.eigen_events.append(x)
 					if num == 2:
 						self.events2.append(x)
@@ -527,15 +519,15 @@ class PlanerFS7(Screen, HelpableScreen):
 				parse1 = Rules().parseEvent(eventLines, index, fname, self.schichtnamen).decode()
 				if parse1:
 					in1 = None
-					if icsdatei in rname or icsdatei2 in rname:
+					if ICSNAME in rname or ICSNAME2 in rname:
 						self.eigen_events.append(parse1)
 					if conf["schicht_art"] and parse1[14]:
 						in1 = None
-						if icsdatei in rname or icsdatei2 in rname:
+						if ICSNAME in rname or ICSNAME2 in rname:
 							in1 = parse1
 						self.schichtlist.append((parse1[0], parse1[2], parse1[3], parse1[5], parse1[6], in1, parse1[17]))
 					else:
-						if icsdatei2 in rname or "%s2" % conf["cals_dir"] in rname:
+						if ICSNAME2 in rname or "%s2" % conf["cals_dir"] in rname:
 							self.events2.append(parse1)
 						else:
 							self.events.append(parse1)
@@ -589,7 +581,7 @@ class PlanerFS7(Screen, HelpableScreen):
 								zeit2 = (x[3].hour, x[3].minute)
 					color = None
 					eigen_num = 2
-					if x[9] == icsdatei or x[9] == icsdatei2:
+					if x[9] == ICSNAME or x[9] == ICSNAME2:
 						eigen_num = 0
 					if len(x) > 16:
 						y = (next_date, x[0], x[1], x[2], x[3], x[4], x[5], self.jahr, x[6], x[7], x[8], eigen_num, x[9], x[10], zeit, index, zaehler, x[12], zeit2, x[13], repeat, x[11], x[15], x[16], x)
@@ -780,8 +772,7 @@ class PlanerFS7(Screen, HelpableScreen):
 							tp = msp_liste[0]
 							if len(x[0]):
 								tp = msp_liste[int(x[0]) - 1]
-								ext_color = Farben().farb_re(tp[2])  # int(tp[2].lstrip('#'), 16)
-								msp_t_list.append(" ", ext_color, tp[1])
+								msp_t_list.append(" ", Farben().farb_re(tp[2]), tp[1])  # int(tp[2].lstrip('#'), 16)
 							else:
 								msp_t_list.append(" ", Farben().farb_re(self.cal_background), tp[1])  # int(self.cal_background.lstrip('#'), 16))
 						self.d3list.append(txt)
@@ -827,7 +818,7 @@ class PlanerFS7(Screen, HelpableScreen):
 					minute = x[2].minute
 				eigen = 1
 				minu = (stunde * 60) + minute
-				if x[9] == icsdatei or x[9] == icsdatei2:
+				if x[9] == ICSNAME or x[9] == ICSNAME2:
 					eigen = 0
 				y = (minu, x[0], x[1], x[2], x[3], x[4], x[5], self.jahr, x[6], x[7], x[8], eigen, x[9], x[10], None, index, None, x[12], None, x[13], None, x[11], x[15], x)
 				timerliste2.append(y)
@@ -1062,7 +1053,7 @@ class PlanerFS7(Screen, HelpableScreen):
 				edt = le[4]
 				zeit = (edt[2].hour, edt[2].minute)
 				zeit2 = (edt[3].hour, edt[3].minute)
-				ed2 = (le[3], edt[0], edt[1], edt[2], edt[3], edt[4], edt[5], self.jahr, edt[6], edt[7], edt[8], 0, edt[9], edt[10], zeit, -1, edt[11], edt[12], zeit2, edt[13], 0)
+				ed2 = tuple(le[3], edt[0], edt[1], edt[2], edt[3], edt[4], edt[5], self.jahr, edt[6], edt[7], edt[8], 0, edt[9], edt[10], zeit, -1, edt[11], edt[12], zeit2, edt[13], 0)
 				self.ed_list.append((tp_txt, ed2))
 				if zeit != (0, 0) or zeit2 != (0, 0):
 					tplus = " " + str(zeit[0]) + ":" + str(zeit[1]) + " - " + str(zeit2[0]) + ":" + str(zeit2[1])
@@ -1124,7 +1115,7 @@ class PlanerFS7(Screen, HelpableScreen):
 		days = (_("Monday"), _("Tuesday"), _("Wednesday"), _("Thursday"), _("Friday"), _("Saturday"), _("Sunday"))
 		day = currdate.weekday()
 		day_name = days[day]
-		datum =  "%s, %0.2d. %s" % (day_name, currdate.day, self.monatsname)
+		datum = "%s, %0.2d. %s" % (day_name, currdate.day, self.monatsname)
 		text = "%s: %s\n%s" % (datum, tp_txt, text.replace("dogage", ""))
 		self["description"].setText(text)
 
@@ -1179,7 +1170,7 @@ class PlanerFS7(Screen, HelpableScreen):
 			g = self.import_termin
 			if len(g) > 20:
 				if g[11] == 0:
-					text = "%s\n%s\n%s" % (_("Termin from downloaded file"), self.import_termin[12], _("Entry can only be copied from external to internal (*...)")) # +self.import_termin[12]
+					text = "%s\n%s\n%s" % (_("Termin from downloaded file"), self.import_termin[12], _("Entry can only be copied from external to internal (*...)"))  # +self.import_termin[12]
 					self.session.open(MessageBox, text, type=MessageBox.TYPE_INFO, close_on_any_key=True, timeout=3)
 				else:
 					self.edit_index = None
@@ -1199,7 +1190,7 @@ class PlanerFS7(Screen, HelpableScreen):
 			events = []
 			ev_start = "BEGIN:VCALENDAR\nMETHOD:PUBLISH\nPRODID: -Enigma2-Plugin / PlanerFS " + self.version + "\nVERSION:2.0"
 			events.append(ev_start)
-			fname = icsdatei if self.kalnum == 1 else icsdatei2
+			fname = ICSNAME if self.kalnum == 1 else ICSNAME2
 			for x in eventliste:
 				if x[9] is None or fname in str(x[9]):
 					anzeige = ""
@@ -1310,7 +1301,7 @@ class PlanerFS7(Screen, HelpableScreen):
 
 
 class PanerFS_menu7(Screen):
-	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if getDesktop(0).size().width() > 1300 else "HD"))
+	skindatei = join(PLUGINPATH, "skin/%s/PFSmenulist.xml" % ("fHD" if DWIDE > 1300 else "HD"))
 	with open(skindatei) as tmpskin:
 		skin = tmpskin.read()
 

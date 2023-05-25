@@ -6,7 +6,7 @@ from re import compile
 from time import localtime, mktime
 
 # PLUGIN IMPORTS
-from . import CONFIGFILE, _ # for localized messages
+from . import CONFIGFILE, _  # for localized messages
 from .routines import Feiertage, Rules, Next_Termin
 
 schicht_start = 0

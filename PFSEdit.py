@@ -17,7 +17,8 @@ from Screens.ChoiceBox import ChoiceBox
 from Screens.VirtualKeyBoard import VirtualKeyBoard
 
 # PLUGIN IMPORTS
-from . import CONFIGFILE, _ # for localized messages
+from . import CONFIGFILE, _  # for localized messages
+
 
 class PFS_edit_Termin(ConfigListScreen, Screen):
 
