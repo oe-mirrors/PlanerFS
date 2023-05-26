@@ -26,7 +26,7 @@ from Tools.Directories import copyfile, fileExists
 from Tools.Notifications import AddNotification, AddNotificationWithCallback
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, ICSFILE, ONLINETEXT, VERSION, _  # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, ICSFILE, VCFFILE, ONLINETEXT, VERSION, _  # for localized messages
 from .timer import Timer_dats
 from .routines import schicht
 from .termin import TerminList
@@ -49,8 +49,8 @@ if not exists(CONFIGPATH):
 	makedirs(CONFIGPATH)
 if not fileExists(ICSFILE):
 	copyfile(join(PLUGINPATH, "sample.ics"), ICSFILE)
-if not fileExists(join(CONFIGPATH, "PlanerFS.vcf")):
-	copyfile(join(PLUGINPATH, "sample.vcf"), join(CONFIGPATH, "PlanerFS.vcf"))
+if not fileExists(VCFFILE):
+	copyfile(join(PLUGINPATH, "sample.vcf"), VCFFILE)
 conf = {
 		"ext_menu": "True",
 		"startscreen_plus": "True",
@@ -266,11 +266,10 @@ class Termin_Timer():
 		if akt_intv > 0:
 			self.aktual_timer.timeout.get().append(self.aktual)
 			self.aktual_timer.startLongTimer(akt_intv)
-		if conf["timer_on"] == "On":
-			if len(plfstimer_list):
-				global time_timer
-				time_timer = Timer_dats(None, None, None)
-				time_timer.startTimer(self.session, plfstimer_list, None)
+		if conf["timer_on"] == "On" and len(plfstimer_list):
+			global time_timer
+			time_timer = Timer_dats(None, None, None)
+			time_timer.startTimer(self.session, plfstimer_list, None)
 		if start_s != "None" and "time" in start_s:
 			st = conf["starttime"].strip().split(':')
 			sek = ((int(st[0]) * 60) + int(st[1]))  # stunde
@@ -284,17 +283,14 @@ class Termin_Timer():
 			elif start < 20:
 				start = 86400 - start
 			self.startzeit_timer.startLongTimer(start)
-		if "systemstart" in start_s:
-			if systemstart == 0:
-				self.Days()
-				systemstart = 1
+		if "systemstart" in start_s and systemstart == 0:
+			self.Days()
+			systemstart = 1
 		if "standby" in start_s:
 			self.standby_check_timer1 = eTimer()
 			self.standby_check_timer1.timeout.get().append(self.standby_on)
 			self.standby_check_timer1.startLongTimer(60)
 			self.standby_on()
-		else:
-			pass
 		if L4L is not None and conf["l4l_on"] == "Yes":
 			self.l4l()
 
@@ -383,17 +379,16 @@ def pfs_wecker(session, **kwargs):
 
 def pfs_wecker2(**kwargs):
 	begin = -1
-	if len(plfstimer_list):
-		if exists(ICSFILE):
-			TL = TerminList()
-			l2 = TL.getlists(ICSFILE, 1)
-			tim_list = l2[1]
-			tim_list.sort(key=lambda x: x[10])
-			for x in tim_list:
-				if x[10] + (config.recording.margin_before.value * 60) > time():
-					dump(x, open("/media/hdd/plfs_dstart", 'wb'), 1)
-					begin = x[10] + (config.recording.margin_before.value * 60) + (x[11] * 60)
-					break
+	if len(plfstimer_list) and exists(ICSFILE):
+		TL = TerminList()
+		l2 = TL.getlists(ICSFILE, 1)
+		tim_list = l2[1]
+		tim_list.sort(key=lambda x: x[10])
+		for x in tim_list:
+			if x[10] + (config.recording.margin_before.value * 60) > time():
+				dump(x, open("/media/hdd/plfs_dstart", "wb"), 1)
+				begin = x[10] + (config.recording.margin_before.value * 60) + (x[11] * 60)
+				break
 	return begin
 
 

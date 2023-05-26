@@ -462,8 +462,8 @@ class PlanerFSConfiguration(Screen, ConfigListScreen):
 		else:
 			self.close(True, self.session)
 
-	def saveConfirm(self):
-		Termin_Timer().Starter2()
+	def saveConfirm(self, answer=False):
+#		plugin.Termin_Timer().Starter2()
 		self.close(True, self.session, "restart")
 
 	def gethelp(self):

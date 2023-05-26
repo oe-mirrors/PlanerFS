@@ -265,11 +265,11 @@ class PFS_categorie_conf7(Screen, HelpableScreen):
 		self.new_list.extend(self.color_list)
 		self.new_list.extend(self.z_liste)
 		if self.alt_list != self.new_list:
-			self.session.openWithCallback(self.saveConfirm, MessageBox, _("Restart PlanerFS for new settings\nPlease wait a moment"), MessageBox.TYPE_INFO, timeout=5)
+			self.session.openWithCallback(self.saveConfirm, MessageBox, _("Restart PlanerFS for new settings\nPlease wait a moment"), MessageBox.TYPE_INFO, timeout=1)
 		else:
 			self.close(None)
 
-	def saveConfirm(self, answer=None):
+	def saveConfirm(self, answer=False):
 		self.close(True, self.session, "restart")
 
 	def cancel(self):

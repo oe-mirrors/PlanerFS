@@ -23,7 +23,7 @@ from Screens.InfoBarGenerics import InfoBarNotifications
 from skin import parseColor
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, DWIDE, _  # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, VCFFILE, DWIDE, _  # for localized messages
 from .routines_vc import Cards_parse
 
 try:
@@ -43,7 +43,6 @@ if len(color_list) < 18:
 	color_list = ("#00008B", "#D2691E", "#006400", "#696969", "#FFD700", "#000000", "#B22222", "#8B8878", "#CD0000", "#00868B", "#f0f8ff", "#ff4500", "#20343c4f", "#deb887", "#228B22", "#5F9EA0", "#DC143C", "#F0F8FF", "#EEC900")
 color_days = color_list[10]
 cal_background = color_list[12]
-CARDFILE = join(CONFIGPATH, "PlanerFS.vcf")
 
 
 class PFS_show_card7(Screen, InfoBarNotifications):
@@ -450,7 +449,7 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 				zus_list = zus_list + pic
 			detailliste = on + anzeige_name + name + adr1 + adr2 + mail + geburtstag + tel_x + zus_list + off
 			cards2.append(str(detailliste))
-		with open(CARDFILE, "w") as f2:
+		with open(VCFFILE, "w") as f2:
 			f2.writelines(cards2)
 		self.close(self.name.value, None, self.index)
 
@@ -462,8 +461,8 @@ class PFS_read_vcards:
 	def __init__(self):
 		dataLines = []
 		self.cards1 = []
-		if isfile(CARDFILE):
-			with open(CARDFILE, 'r') as tempFile:
+		if isfile(VCFFILE):
+			with open(VCFFILE, 'r') as tempFile:
 				dataLines.extend(tempFile.readlines())
 		if dataLines:
 			mask = {}
@@ -678,7 +677,7 @@ class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
 						zus_list = zus_list + pic
 					detailliste = on + anzeige_name + name + adr1 + adr2 + mail + geburtstag + tel_x + zus_list + off
 					cards2.append(str(detailliste))
-				with open(CARDFILE, "w") as f2:
+				with open(VCFFILE, "w") as f2:
 					f2.writelines(cards2)
 				self.read()
 			except Exception:

@@ -43,34 +43,26 @@ class Feiertage():
 		m = (a + 11 * h + 22 * l) / 451
 		mon, tag = divmod(h + l - 7 * m + 114, 31)
 		startDate1 = datetime(int(jahr), int(mon), int(tag + 1))
-
 		x = (_("Easter Sunday"), _("Holiday"), startDate1, startDate1, None, None, jahr, _("Easter Sunday"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 + timedelta(1)
 		x = (_("Easter Monday"), _("Holiday"), startDate, startDate, None, None, jahr, _("Easter Monday"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 - timedelta(2)
 		x = (_("Good Friday"), _("Holiday"), startDate, startDate, None, None, jahr, _("Good Friday"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 + timedelta(39)
 		x = (_("Ascension"), _("Holiday"), startDate, startDate, None, None, jahr, _("Ascension"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 + timedelta(50)
 		x = (_("Whit Monday"), _("Holiday"), startDate, startDate, None, None, jahr, _("Whit Monday"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 + timedelta(49)
 		x = (_("Pentecost Sunday"), _("Holiday"), startDate, startDate, None, None, jahr, _("Pentecost Sunday"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 + timedelta(60)
 		x = (_("Corpus Christi"), _("Holiday"), startDate, startDate, None, None, jahr, _("Corpus Christi"))
 		bewegl_feiertage.append(x)
-
 		return (bewegl_feiertage)
 
 	def ostern_jul(self, jahr):
@@ -85,31 +77,24 @@ class Feiertage():
 		startDate1 = datetime(jahr, mon, tag + 1)
 		x = (_("Easter Sunday"), _("Holiday"), startDate1, startDate1, None, None, jahr, _("Easter Sunday"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 + timedelta(1)
 		x = (_("Easter Monday"), _("Holiday"), startDate, startDate, None, None, jahr, _("Easter Monday"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 - timedelta(2)
 		x = (_("Good Friday"), _("Holiday"), startDate, startDate, None, None, jahr, _("Good Friday"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 + timedelta(39)
 		x = (_("Ascension"), _("Holiday"), startDate, startDate, None, None, jahr, _("Ascension"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 + timedelta(50)
 		x = (_("Whit Monday"), _("Holiday"), startDate, startDate, None, None, jahr, _("Whit Monday"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 + timedelta(49)
 		x = (_("Pentecost Sunday"), _("Holiday"), startDate, startDate, None, None, jahr, _("Pentecost Sunday"))
 		bewegl_feiertage.append(x)
-
 		startDate = startDate1 + timedelta(60)
 		x = (_("Corpus Christi"), _("Holiday"), startDate, startDate, None, None, jahr, _("Corpus Christi"))
 		bewegl_feiertage.append(x)
-
 		return (bewegl_feiertage)
 
 
