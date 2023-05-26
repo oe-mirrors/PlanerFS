@@ -43,7 +43,7 @@ except ImportError:
 	fbf = None
 
 # PLUGIN IMPORTS
-from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, ICSNAME, ICSNAME2, ICSFILE, VCFFILE, ERRORLOG, DWIDE, _  # for localized messages
+from . import CONFIGPATH, CONFIGFILE, PLUGINPATH, ICSNAME, ICSNAME2, ICSFILE, VCFFILE, ERRORLOG, DWIDE, VERSION, _  # for localized messages
 from .PFSconfig import PlanerFSConfiguration
 from .PFScateg import PFS_categorie_conf7, schicht_conf
 from .PFSCards import PFS_show_card7, PFS_show_card_List7
@@ -68,7 +68,7 @@ conf = {
 		"extern_color": "On",
 		"kalender_art": "Gregorian",
 		"ansicht": 1,
-		"version": "",
+		"version": VERSION,
 		"cards_on": None,
 		"dat_dir": CONFIGPATH,
 		"schicht_art": 0,
@@ -294,7 +294,7 @@ class PlanerFS7(Screen, HelpableScreen):
 
 	def vcards(self):
 		if not exists(VCFFILE):
-			open(VCFFILE, "wb").close()
+			open(VCFFILE, "w").close()
 		if self["event_list"].getCurrent() is not None:
 			name_x = self["event_list"].getCurrent()[3][1]
 			geb = self["event_list"].getCurrent()[3][3]
@@ -303,7 +303,7 @@ class PlanerFS7(Screen, HelpableScreen):
 
 	def vcards_list(self):
 		if not exists(VCFFILE):
-			open(VCFFILE, "wb").close()
+			open(VCFFILE, "w").close()
 		if exists(VCFFILE):
 			if self.cards_on:
 				self.close(None)
@@ -900,15 +900,12 @@ class PlanerFS7(Screen, HelpableScreen):
 		if self["event_list"].getCurrent() is not None:
 			index = self["event_list"].getCurrent()[3]
 		if self["event_list"].getCurrent():
-			description = ""  # None
 			datum = ""
 			zeit = ""
 			location = ""
 			kat = ""
 			description = str(self["event_list"].getCurrent()[3][8]).replace("dogage", "")
-			if description is None or not len(description):
-				description = self["event_list"].getCurrent()[3][1]
-			elif self["event_list"].getCurrent()[3][1] not in description:
+			if self["event_list"].getCurrent()[3][1] not in description:
 				description = self["event_list"].getCurrent()[3][1] + ", " + description
 			description = description.replace('\\n', ', ')
 			kat1 = self["event_list"].getCurrent()[3][2]
