@@ -233,7 +233,7 @@ class PFS_l4l():
 
 class l4l_export():
 	def __init__(self, monate=None):
-		from plugin import plfs_list
+		from .plugin import plfs_list
 		new_l = []
 		for x in plfs_list:
 			jubi = 0
