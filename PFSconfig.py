@@ -304,7 +304,6 @@ class PlanerFSConfiguration(Screen, ConfigListScreen):
 				getConfigListEntry(_("Setting Start"), self.startanzeige2, "startanzeige2"),
 				getConfigListEntry(_("Another directory for data files") + " (ics)", self.dat_dir, "dat_dir"),
 				))
-
 		if self.startanzeige2.value == "time" or self.startanzeige2.value == "standby and time" or self.startanzeige2.value == "systemstart and time":
 			liste.extend((getConfigListEntry(_("Start-Time"), self.startTime, "starttime"),))
 			if self.startanzeige2.value != "standby and time":

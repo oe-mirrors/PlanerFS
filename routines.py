@@ -35,12 +35,12 @@ class Feiertage():
 		a = jahr % 19
 		b, c = divmod(jahr, 100)
 		d, e = divmod(b, 4)
-		f = (b + 8) / 25
-		g = (b - f + 1) / 3
+		f = int((b + 8) / 25)
+		g = int((b - f + 1) / 3)
 		h = (19 * a + b - d - g + 15) % 30
 		i, k = divmod(c, 4)
 		l = (32 + 2 * e + 2 * i - h - k) % 7
-		m = (a + 11 * h + 22 * l) / 451
+		m = int((a + 11 * h + 22 * l) / 451)
 		mon, tag = divmod(h + l - 7 * m + 114, 31)
 		startDate1 = datetime(int(jahr), int(mon), int(tag + 1))
 		x = (_("Easter Sunday"), _("Holiday"), startDate1, startDate1, None, None, jahr, _("Easter Sunday"))
@@ -570,9 +570,7 @@ class Next_Termin():
 					d4 = interval * 7
 					wd_list = ["MO", "TU", "WE", "TH", "FR", "SA", "SU"]
 					wo = (monat_anfang - st_date).days
-					wo2 = wo / 7
 					diff = d4 - ((wo + d4) % d4)
-					diff2 = (monat_anfang - timedelta(monat_anfang.weekday()))
 					diff = diff - d4
 					count1 = 0
 					st_date1 = st_date - timedelta(d4)
