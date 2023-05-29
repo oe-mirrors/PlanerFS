@@ -552,7 +552,6 @@ class PlanerFS7(Screen, HelpableScreen):
 		jetzt = (self.jahr, self.monat)
 		alist = self.events if self.kalnum == 1 else self.events2
 		for x in alist:
-#			x = [t.decode() if type(t) == bytes else t for t in x] Holger
 			zaehler = 0
 			if x[1] == "TIMER":
 				continue
@@ -620,7 +619,7 @@ class PlanerFS7(Screen, HelpableScreen):
 					y = (next_date, x[0], x[1], x[2], x[3], None, None, self.jahr, x[6], 0, None, 1, "br", None, None, None, None, None, None, None, None, None, None, None)
 					eventliste3.append(y)
 					self.feiertagsliste.append(next_date.day)
-		eventliste3.sort()
+		eventliste3.sort(key=lambda x: x[0])
 		monatsnamen = (_("January"), _("February"), _("March"), _("April"), _("May"), _("June"), _("July"), _("August"), _("September"), _("October"), _("November"), _("December"))
 		self.monatsname = monatsnamen[self.monat - 1]
 		self.timer = 0
