@@ -457,13 +457,11 @@ class PlanerFSConfiguration(Screen, ConfigListScreen):
 			if len(x) > 2:
 				l_2.append(str(x[1].value))
 		if self.alt_list != l_2 or self.altferien != self.conf["ferien"]:
-			self.session.openWithCallback(self.saveConfirm, MessageBox, _("Restart PlanerFS for new settings\nPlease wait a moment"), MessageBox.TYPE_INFO, timeout=1)
+			self.session.open(MessageBox, _("Restart PlanerFS for new settings\nPlease wait a moment"), MessageBox.TYPE_INFO, timeout=1)
+#			plugin.Termin_Timer().Starter2()
+			self.close(True, self.session, "restart")
 		else:
 			self.close(True, self.session)
-
-	def saveConfirm(self, answer=False):
-#		plugin.Termin_Timer().Starter2()
-		self.close(True, self.session, "restart")
 
 	def gethelp(self):
 		helptext = None
