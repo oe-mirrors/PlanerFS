@@ -95,8 +95,8 @@ class PFS_show_card7(Screen, InfoBarNotifications):
 		self.setTitle("PlanerFS %s - %s" % (_("business card"), self.name))
 		if len(self.ds[10]) and self.ds[10][1] and self.ds[10][1] != "":
 			self.pic_file = "/tmp/plfs_pic." + self.ds[10][2]
-			with open(self.pic_file, "wb") as f:
-				pic = decodebytes(self.ds[10][1])
+			with open(self.pic_file, "w") as f:
+				pic = decodebytes(self.ds[10][1]).decode()
 				f.write(pic)
 			self.setPicture(self.pic_file)
 		if len(self.tel) > 0:
@@ -436,16 +436,13 @@ class PFS_edit_cards(ConfigListScreen, Screen, InfoBarNotifications):
 			if len(x[8]) > 0:
 				for x4 in x[8]:
 					if len(x4) > 0:
-						zus_list = zus_list + x4  # +"\n"
+						zus_list = zus_list + x4
 			if x[10][1] != "":
 				pic = x[10][0] + ":\n"
-				pic2 = decodebytes(x[10][1])
-				pic3 = encodebytes(pic2)
-				pic4 = pic3.split(b"\n")
-				pic5 = ""
-				for zeile in pic4:
-					pic5 = "%s %s\n" % (pic5, zeile)
-				pic = pic + pic4
+				lines = ""
+				for zeile in encodebytes(decodebytes(x[10][1].encode())).decode().split("\n"):
+					lines = "%s %s\n" % (lines, zeile)
+				pic += lines
 				zus_list = zus_list + pic
 			detailliste = on + anzeige_name + name + adr1 + adr2 + mail + geburtstag + tel_x + zus_list + off
 			cards2.append(str(detailliste))
@@ -663,17 +660,13 @@ class PFS_show_card_List7(Screen, HelpableScreen, InfoBarNotifications):
 					if len(x[8]) > 0:
 						for x4 in x[8]:
 							if len(x4) > 0:
-								zus_list = zus_list + x4  # +"\n"
+								zus_list = zus_list + x4
 					if x[10][1] != "":
 						pic = x[10][0] + ":\n"
-						pic_data = str(x[10][1]) + "\n"
-						pic2 = decodebytes(x[10][1])
-						pic3 = encodebytes(pic2)
-						pic4 = pic3.split(b"\n")
-						pic5 = ""
-						for zeile in pic4:
-							pic5 = "%s %s\n" % (pic5, zeile)
-						pic = pic + pic5
+						lines = ""
+						for zeile in encodebytes(decodebytes(x[10][1].encode())).decode().split("\n"):
+							lines = "%s %s\n" % (lines, zeile)
+						pic += lines
 						zus_list = zus_list + pic
 					detailliste = on + anzeige_name + name + adr1 + adr2 + mail + geburtstag + tel_x + zus_list + off
 					cards2.append(str(detailliste))
