@@ -12,6 +12,5 @@
 	<widget name="key_yellow" position="630,10" zPosition="1" size="300,36" valign="center" halign="left" font="Regular;30" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 	<widget name="key_blue" position="930,10" zPosition="1" size="300,36" valign="center" halign="left" font="Regular;30" transparent="1" foregroundColor="white" shadowColor="black" shadowOffset="-1,-1" />
 	<widget name="config" position="7,75" size="1185,780" scrollbarMode="showOnDemand" itemHeight="39" font="Regular;30" />
-	<widget name="help" position="7,855" size="1185,60" font="Regular;30" foregroundColor="#000000" backgroundColor="#C0D7FF" valign="center" halign="center" />
+	<widget name="help" position="7,863" size="1185,60" font="Regular;30" foregroundColor="#000000" backgroundColor="#C0D7FF" valign="center" halign="center" />
 </screen>
-

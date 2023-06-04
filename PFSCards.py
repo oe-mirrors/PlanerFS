@@ -95,8 +95,8 @@ class PFS_show_card7(Screen, InfoBarNotifications):
 		self.setTitle("PlanerFS %s - %s" % (_("business card"), self.name))
 		if len(self.ds[10]) and self.ds[10][1] and self.ds[10][1] != "":
 			self.pic_file = "/tmp/plfs_pic." + self.ds[10][2]
-			with open(self.pic_file, "w") as f:
-				pic = decodebytes(self.ds[10][1]).decode()
+			with open(self.pic_file, "wb") as f:
+				pic = decodebytes(self.ds[10][1].encode())
 				f.write(pic)
 			self.setPicture(self.pic_file)
 		if len(self.tel) > 0:
