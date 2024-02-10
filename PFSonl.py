@@ -138,9 +138,8 @@ class PlanerFSonline_files(Screen, ConfigListScreen):
 			self.cur = self.cur and self.cur[1]
 			if self["config"].getCurrent()[3] in self.onl_list2:
 				self.index = (self.onl_list2.index(self["config"].getCurrent()[3]), self["config"].getCurrent()[2])
-			text1 = self.cur.value
-		titel = _("Enter Text")
-		self.session.openWithCallback(self.texteingabeFinished, VirtualKeyBoard, title=titel, text=text1)
+			text1 = str(self.cur.value)
+		self.session.openWithCallback(self.texteingabeFinished, VirtualKeyBoard, title=_("Enter Text"), text=text1)
 
 	def texteingabeFinished(self, ret):
 		if ret:
