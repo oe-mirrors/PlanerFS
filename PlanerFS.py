@@ -261,7 +261,7 @@ class PlanerFS7(Screen, HelpableScreen):
 				"seekBack": (self.rueck, _("previous month")),
 				}, -1)
 		self.today = date.today()
-		altdat = datetime.today() - timedelta(conf["altloesch"])
+		altdat = datetime.today() - timedelta(int(conf["altloesch"]))
 		self.altdat = datetime(altdat.year, altdat.month, altdat.day, 23, 59, 59)
 		self.monat = lt[1]
 		self.jahr = lt[0]
